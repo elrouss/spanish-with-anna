@@ -29,3 +29,7 @@ yarn-error.log*
 logs
 *.log
 npm-debug.log*
+
+/venv
+db.sqlite3
+__pycache__/
