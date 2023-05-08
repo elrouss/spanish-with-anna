@@ -56,7 +56,9 @@ class Feedback(models.Model):
             try:
                 parsed_number = phonenumbers.parse(self.phone.as_e164)
                 if not phonenumbers.is_valid_number(parsed_number):
-                    raise ValidationError('Неверный формат телефонного номера.')
+                    raise ValidationError(
+                        'Неверный формат телефонного номера.'
+                        )
             except phonenumbers.phonenumberutil.NumberParseException:
                 raise ValidationError('Неверный формат телефонного номера.')
 
