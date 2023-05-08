@@ -4,6 +4,7 @@ from django.core.exceptions import ValidationError
 from django.core.validators import EmailValidator
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
+from django.conf import settings
 
 
 class CustomUser(AbstractUser):
@@ -12,35 +13,41 @@ class CustomUser(AbstractUser):
 
 
 class Feedback(models.Model):
-    """Модель обратной связи"""
+    """
+    Модель для описания обратной связи.
+    """
     name = models.CharField(
+        'Имя',
         max_length=64,
-        verbose_name='Имя',
     )
     email = models.EmailField(
+        'Email',
         max_length=256,
-        verbose_name='Email',
-        validators=[EmailValidator(
-            message='Неправильный формат адреса электронной почты')],
+        validators=[
+            EmailValidator(
+                message='Неправильный формат адреса электронной почты'
+                )
+            ],
     )
     phone = PhoneNumberField(
+        'Телефон',
         blank=True,
         null=True,
-        verbose_name='Телефон',
     )
     message = models.TextField(
-        verbose_name='Сообщение',
+        'Сообщение',
     )
     time_create = models.DateTimeField(
+        'Дата отправки',
         auto_now_add=True,
-        verbose_name='Дата отправки'
         )
     user = models.ForeignKey(
-        CustomUser,
         verbose_name='Пользователь',
+        to=settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         blank=True,
         null=True,
+        related_name='feedbacks',
     )
 
     def clean(self):
