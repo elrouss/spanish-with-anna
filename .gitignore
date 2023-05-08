@@ -9,8 +9,14 @@
 # production
 /build
 
-# misc
-.DS_Store
+# Environments
+.venv
+env/
+venv/
+/venv
+ENV/
+env.bak/
+venv.bak/
 .env
 .env.local
 .env.development.local
@@ -23,13 +29,22 @@ yarn-error.log*
 
 # Optional REPL history
 .idea
-.vscode 
+
+# vs code
+/.DS_Store
+.DS_Store
+.vscode
 
 # Logs
 logs
 *.log
 npm-debug.log*
 
-/venv
+# Django stuff:
+*.log
+local_settings.py
 db.sqlite3
+db.sqlite3-journal
+
+
 __pycache__/
