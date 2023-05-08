@@ -8,7 +8,9 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 
 class CustomUser(AbstractUser):
-    """Модель пользователя"""
+    """
+    Модель для описания пользователя.
+    """
     pass
 
 
