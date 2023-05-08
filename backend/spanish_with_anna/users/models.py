@@ -1,10 +1,10 @@
 import phonenumbers
+from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.core.exceptions import ValidationError
 from django.core.validators import EmailValidator
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
-from django.conf import settings
 
 
 class CustomUser(AbstractUser):
