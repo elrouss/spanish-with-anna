@@ -1,3 +1,27 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from rest_framework.response import Response
 
-# Create your views here.
+from api.serializers import CreateFeedbackSerializer, ReadFeedbackSerializer
+from users.models import Feedback
+
+
+class FeedBackViewSet(viewsets.ModelViewSet):
+    queryset = Feedback.objects.all()
+    serializer_class = CreateFeedbackSerializer
+
+    def get_serializer_class(self):
+        if self.request.method in ('GET', 'PATCH'):
+            return ReadFeedbackSerializer
+        return CreateFeedbackSerializer
+    
+    def update(self, request, *args, **kwargs):
+        instance = self.get_object()
+        instance.is_finished = request.data.get(
+            'is_finished',
+            instance.is_finished
+            )
+        instance.is_double = request.data.get('is_double', instance.is_double)
+        instance.comment = request.data.get('comment', instance.comment)
+        instance.save()
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data)

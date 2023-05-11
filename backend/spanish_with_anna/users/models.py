@@ -1,8 +1,5 @@
-import phonenumbers
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser
-from django.core.exceptions import ValidationError
-from django.core.validators import EmailValidator
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -23,11 +20,6 @@ class Feedback(models.Model):
     email = models.EmailField(
         'Email',
         max_length=256,
-        validators=[
-            EmailValidator(
-                message='Неправильный формат адреса электронной почты'
-                )
-            ],
     )
     phone = PhoneNumberField(
         'Телефон',
@@ -49,18 +41,10 @@ class Feedback(models.Model):
         null=True,
         related_name='feedbacks',
     )
-
-    def clean(self):
-        super().clean()
-        if self.phone:
-            try:
-                parsed_number = phonenumbers.parse(self.phone.as_e164)
-                if not phonenumbers.is_valid_number(parsed_number):
-                    raise ValidationError(
-                        'Неверный формат телефонного номера.'
-                        )
-            except phonenumbers.phonenumberutil.NumberParseException:
-                raise ValidationError('Неверный формат телефонного номера.')
+    is_agree = models.BooleanField(default=False)
+    is_finished = models.BooleanField(default=False)
+    is_double = models.BooleanField(default=False)
+    comment = models.TextField()
 
     def save(self, *args, **kwargs):
         users_by_email = CustomUser.objects.filter(email=self.email)
