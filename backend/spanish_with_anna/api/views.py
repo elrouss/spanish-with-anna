@@ -6,15 +6,26 @@ from users.models import Feedback
 
 
 class FeedBackViewSet(viewsets.ModelViewSet):
+    """
+    Вьюсет для работы с обратной связью.
+    """
     queryset = Feedback.objects.all()
     serializer_class = CreateFeedbackSerializer
 
     def get_serializer_class(self):
+        """
+        Возвращает класс сериализатора для данного запроса
+        на основании метода запроса.
+        """
         if self.request.method in ('GET', 'PATCH'):
             return ReadFeedbackSerializer
         return CreateFeedbackSerializer
-    
+
     def update(self, request, *args, **kwargs):
+        """
+        Обновляет существующий объект обратной связи
+        и возвращает его сериализованное представление.
+        """
         instance = self.get_object()
         instance.is_finished = request.data.get(
             'is_finished',

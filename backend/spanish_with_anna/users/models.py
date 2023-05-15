@@ -30,7 +30,7 @@ class Feedback(models.Model):
         'Сообщение',
     )
     time_create = models.DateTimeField(
-        'Дата отправки',
+        'Дата создания',
         auto_now_add=True,
         )
     user = models.ForeignKey(
@@ -41,12 +41,32 @@ class Feedback(models.Model):
         null=True,
         related_name='feedbacks',
     )
-    is_agree = models.BooleanField(default=False)
-    is_finished = models.BooleanField(default=False)
-    is_double = models.BooleanField(default=False)
-    comment = models.TextField()
+    is_agree = models.BooleanField(
+        'Согласие на обработку персональных данных',
+        default=False,
+        blank=False,
+        null=False,
+        )
+    is_finished = models.BooleanField(
+        'Обращение обратной связи закрыто',
+        default=False,
+        )
+    is_double = models.BooleanField(
+        'Дубль обращения обратной связи',
+        default=False,
+        )
+    comment = models.TextField(
+        'Комментарий к обратной связи',
+    )
+    time_update = models.DateTimeField(
+        'Дата обновления',
+        auto_now=True,
+        )
 
     def save(self, *args, **kwargs):
+        """
+        Переопределяет метод save() для создания/обновления объектов модели.
+        """
         users_by_email = CustomUser.objects.filter(email=self.email)
         if users_by_email.count() > 0:
             self.user = users_by_email[0]
