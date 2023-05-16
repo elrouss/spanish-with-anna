@@ -1,8 +1,5 @@
-import phonenumbers
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser
-from django.core.exceptions import ValidationError
-from django.core.validators import EmailValidator
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -23,11 +20,6 @@ class Feedback(models.Model):
     email = models.EmailField(
         'Email',
         max_length=256,
-        validators=[
-            EmailValidator(
-                message='Неправильный формат адреса электронной почты'
-                )
-            ],
     )
     phone = PhoneNumberField(
         'Телефон',
@@ -38,7 +30,7 @@ class Feedback(models.Model):
         'Сообщение',
     )
     time_create = models.DateTimeField(
-        'Дата отправки',
+        'Дата создания',
         auto_now_add=True,
         )
     user = models.ForeignKey(
@@ -49,20 +41,32 @@ class Feedback(models.Model):
         null=True,
         related_name='feedbacks',
     )
-
-    def clean(self):
-        super().clean()
-        if self.phone:
-            try:
-                parsed_number = phonenumbers.parse(self.phone.as_e164)
-                if not phonenumbers.is_valid_number(parsed_number):
-                    raise ValidationError(
-                        'Неверный формат телефонного номера.'
-                        )
-            except phonenumbers.phonenumberutil.NumberParseException:
-                raise ValidationError('Неверный формат телефонного номера.')
+    is_agree = models.BooleanField(
+        'Согласие на обработку персональных данных',
+        default=False,
+        blank=False,
+        null=False,
+        )
+    is_finished = models.BooleanField(
+        'Обращение обратной связи закрыто',
+        default=False,
+        )
+    is_double = models.BooleanField(
+        'Дубль обращения обратной связи',
+        default=False,
+        )
+    comment = models.TextField(
+        'Комментарий к обратной связи',
+    )
+    time_update = models.DateTimeField(
+        'Дата обновления',
+        auto_now=True,
+        )
 
     def save(self, *args, **kwargs):
+        """
+        Переопределяет метод save() для создания/обновления объектов модели.
+        """
         users_by_email = CustomUser.objects.filter(email=self.email)
         if users_by_email.count() > 0:
             self.user = users_by_email[0]
