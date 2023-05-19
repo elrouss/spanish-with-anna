@@ -45,6 +45,9 @@ npm-debug.log*
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
+# at the time of development
+migrations/
+/migrations
 
 
 __pycache__/
