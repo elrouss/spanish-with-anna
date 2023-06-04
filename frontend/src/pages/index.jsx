@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { poppins } from '@/assets/fonts/fonts';
+import Intro from '../components/Intro/Intro';
 
 export default function Home() {
   return (
@@ -11,7 +12,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${poppins.className}`}>
-        <p>Here will be something soon</p>
+        {/* <p>Here will be something soon</p> */}
+        <Intro />
       </main>
     </>
   );
