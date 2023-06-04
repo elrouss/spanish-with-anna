@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { poppins } from '@/utils/fonts';
+import { poppins } from '@/assets/fonts/fonts';
 import styles from '@/styles/pages/Home.module.scss';
 
 export default function Home() {
