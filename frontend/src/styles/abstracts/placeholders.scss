@@ -1,0 +1,12 @@
+%indents-reset {
+  margin: 0;
+  padding: 0;
+}
+
+%button-default {
+  padding: 18px 40px;
+
+  border-radius: 50px;
+
+  transition: $animation-transition-common;
+}

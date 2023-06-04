@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { poppins } from '@/assets/fonts/fonts';
-import styles from '@/styles/pages/Home.module.scss';
 
 export default function Home() {
   return (
@@ -11,7 +10,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${poppins.className}`}>
+      <main className={`${poppins.className}`}>
         <p>Here will be something soon</p>
       </main>
     </>

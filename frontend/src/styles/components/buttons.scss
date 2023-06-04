@@ -1,0 +1,99 @@
+// DEFAULT BUTTON WITH DARK GREEN COLOR
+.button {
+  @extend %button-default;
+
+  @include renderFont(
+    $size: $font-size-main-text-l,
+    $line-height: $font-line-height-main-text-l,
+    $color: $color-main-1
+  );
+
+  border-radius: 50px;
+  background-color: $color-main-3;
+
+  &:hover {
+    background-color: $color-additional-5;
+    @include renderButtonBoxShadow();
+  }
+
+  &:active {
+    color: $color-complementary-8;
+
+    background-color: $color-main-3;
+    @include renderButtonBoxShadow($color: $color-complementary-7);
+  }
+
+  &_size_xl {
+    $size: 122.5px;
+
+    padding-right: $size;
+    padding-left: $size;
+  }
+}
+
+// YELLOW BUTTON
+.button-promo {
+  @extend %button-default;
+
+  @include renderFont(
+    $size: $font-size-main-text-l,
+    $line-height: $font-line-height-main-text-l
+  );
+
+  background-color: $color-accent-promo;
+
+  &:hover {
+    background-color: $color-accent-promo-additional-4;
+    @include renderButtonBoxShadow(
+      $height: 8px,
+      $radius: 8px,
+      $color: $color-accent-promo-additional-2
+    );
+  }
+
+  &:active {
+    color: $color-additional-3;
+
+    background-color: $color-accent-promo;
+    @include renderButtonBoxShadow(
+      $width: 1px,
+      $height: 5px,
+      $radius: 5px,
+      $color: rgba(0, 0, 0, 0.16)
+    );
+  }
+}
+
+// WHITE BUTTON
+.button-additional {
+  @extend %button-default;
+
+  @include renderFont(
+    $size: $font-size-main-text-l,
+    $line-height: $font-line-height-main-text-l,
+    $color: $color-main-text-2
+  );
+
+  background-color: $color-main-1;
+
+  &:hover {
+    background-color: $color-additional-1;
+    @include renderButtonBoxShadow(
+      $height: 7px,
+      $radius: 4px,
+      $color: $color-main-1
+    );
+  }
+
+  &:active {
+    color: $color-additional-3;
+
+    background-color: $color-additional-2;
+    @include renderButtonBoxShadow(
+      $width: 1px,
+      $height: 4px,
+      $radius: 4px,
+      $color: $color-additional-7
+    );
+  }
+}
