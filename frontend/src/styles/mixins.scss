@@ -1,0 +1,13 @@
+@mixin renderFont(
+  $family: 'Poppins',
+  $weight: 400,
+  $size: $font-size-main-text,
+  $line-height: $font-line-height-main-text,
+  $color: $color-main-text-1
+) {
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
