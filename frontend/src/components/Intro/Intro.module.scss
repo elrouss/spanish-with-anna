@@ -1,1 +1,49 @@
 @import '../../styles/index.scss';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1160px;
+  margin: 70px auto 0;
+}
+
+.content {
+  max-width: 429px;
+  padding-top: 16px;
+}
+
+.subtitle {
+  display: block;
+  width: fit-content;
+  padding: 7px 17px;
+  @include renderFont(
+    'Poppins',
+    400,
+    $font-size-main-text-s,
+    $font-line-height-main-text-s,
+    $color-main-text-1
+  );
+
+  border: 1px solid $color-accent-promo;
+  border-radius: 40px;
+}
+
+.headingImage {
+  margin-top: 10px;
+}
+
+.description {
+  margin: 41px 0 37px;
+  @include renderFont();
+}
+
+.button {
+  display: block;
+  width: fit-content;
+  min-width: 125px;
+  text-align: center;
+}
+
+.photo {
+  margin-right: -54px;
+}

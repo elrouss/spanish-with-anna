@@ -34,8 +34,8 @@ function Intro() {
       <Image
         className={styles.photo}
         lang="es"
-        width={620}
-        height={600}
+        width={626}
+        height={609}
         src={introImageMain}
         alt="Фото Анны"
       />
