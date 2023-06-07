@@ -1,0 +1,64 @@
+@import '../abstracts/variables/colors.scss';
+@import '../abstracts/variables/fonts.scss';
+
+.header {
+  border-bottom: 1px solid $color-complementary-1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+.container {
+  display: flex;
+  padding: 20px 140px;
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.logo {
+  height: 58px;
+  width: 50px;
+}
+
+.navigation {
+  margin-left: 63px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $font-size-main-text-l;
+  line-height: 1.375;
+  color: $color-main-text-2;
+}
+
+.navigationMenu {
+  display: flex;
+  gap: 83px;
+}
+
+.navigationAuth {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.navigationLink {
+  color: $color-main-text-2;
+  padding: 0 10px;
+}
+
+.dropDownMenuButton {
+  border: 0;
+  padding: 0;
+  background-color: $color-main-1;
+  cursor: pointer;
+  .navigationLink {
+    margin-right: 10px;
+  }
+}
+
