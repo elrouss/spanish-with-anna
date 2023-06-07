@@ -1,5 +1,5 @@
 @mixin renderFont(
-  $family: 'Poppins', // TODO: doesn't work with next fonts?
+  $family: var(--font-manrope),
   $weight: 400,
   $size: $font-size-main-text,
   $line-height: $font-line-height-main-text,
