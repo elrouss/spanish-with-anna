@@ -1,0 +1,73 @@
+@import '../../styles/index.scss';
+
+.footer {
+  width: 100%;
+
+  background-color: $color-main-5;
+}
+
+.wrapper {
+  max-width: $wrapper-main-desktop;
+  margin: 0 auto;
+  padding: 130px 0 50px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100px;
+  margin: 0 0 111px;
+}
+
+.logo {
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  height: 58px;
+}
+
+.listLink {
+  margin: 0;
+  padding: 0;
+}
+
+.copyright {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Manrope', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $font-size-main-text-s;
+  line-height: $font-line-height-main-text-s;
+  color: $color-secondary-4;
+}
+
+.constacts {
+  margin: 0;
+  padding: 0;
+  align-self: flex-end;
+}
+
+.listIcon {
+  display: flex;
+  align-items: center;
+  margin: 0 0 9px;
+}
+
+.icon {
+  margin: 0 11px 0 0;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.email {
+  @include renderFont(
+    $size: $font-size-main-text-s,
+    $line-height: $font-line-height-main-text-s,
+    $color: $color-secondary-4,
+  )
+}

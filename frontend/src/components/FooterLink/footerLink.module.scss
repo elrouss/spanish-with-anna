@@ -1,0 +1,28 @@
+@import '../../styles/index.scss';
+
+.item {
+  margin-bottom: 14px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.link {
+  font-family: 'Manrope', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $font-size-main-text-l;
+  line-height: $font-line-height-main-text-l;
+  color: $color-secondary-4;
+
+  transition: $animation-transition-common;
+
+  &:hover {
+    color: $color-main-3;
+  }
+
+  &:active {
+    color: $color-secondary-2;
+  }
+}

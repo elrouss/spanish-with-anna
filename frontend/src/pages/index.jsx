@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { poppins } from '@/assets/fonts/fonts';
+import Footer from '@/components/Footer/Footer';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <main className={`${poppins.className}`}>
         <p>Here will be something soon</p>
       </main>
+      <Footer />
     </>
   );
 }
