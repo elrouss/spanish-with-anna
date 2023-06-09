@@ -11,8 +11,12 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.wrapper}>
         <div className={styles.content}>
-          <Link href="/">
-            <IconLogo alt="логотип" />
+          <Link
+            href="/"
+            className={styles.logoLink}
+            aria-label="Логотип, ведущий на домашнюю страницу"
+          >
+            <IconLogo />
           </Link>
           <ul className={styles.listLink}>
             <FooterLink href="/#">Курсы</FooterLink>
@@ -22,17 +26,24 @@ function Footer() {
           <ul className={styles.listLink}>
             <FooterLink href="/#">Задать вопрос</FooterLink>
             <FooterLink href="/#">Права собственности</FooterLink>
-            <FooterLink href="/#">Политика конфидициальности</FooterLink>
+            <FooterLink href="/#">Политика конфиденциальность</FooterLink>
           </ul>
-          <div className={styles.constacts}>
+          <div className={styles.contacts}>
             <ul className={styles.listIcon}>
               <li className={styles.icon}>
-                <Link href="/#">
+                <Link
+                  href="https://www.youtube.com/@anna_spanish"
+                  className={styles.iconLink}
+                >
                   <IconYoutube alt="ютуб-канал" />
                 </Link>
               </li>
               <li className={styles.icon}>
-                <Link href="/#">
+                <Link
+                  href="https://t.me/AnnaBelyaeva_spb"
+                  className={styles.iconLink}
+                  aria-label="иконка, ведущий на тееграм аккаунт"
+                >
                   <IconTelegram alt="телеграм-канал" />
                 </Link>
               </li>

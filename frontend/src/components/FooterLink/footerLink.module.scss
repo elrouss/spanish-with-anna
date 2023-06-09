@@ -9,12 +9,11 @@
 }
 
 .link {
-  font-family: 'Manrope', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: $font-size-main-text-l;
-  line-height: $font-line-height-main-text-l;
-  color: $color-secondary-4;
+  @include renderFont(
+    $size: $font-size-main-text-l,
+    $line-height: $font-line-height-main-text-l,
+    $color: $color-secondary-4,
+  );
 
   transition: $animation-transition-common;
 

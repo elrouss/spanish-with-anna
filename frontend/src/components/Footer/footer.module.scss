@@ -20,33 +20,19 @@
   margin: 0 0 111px;
 }
 
-.logo {
-  margin: 0;
-  padding: 0;
-  width: 50px;
-  height: 58px;
-}
-
-.listLink {
-  margin: 0;
-  padding: 0;
+.logoLink {
+  align-self: flex-start;
 }
 
 .copyright {
-  margin: 0;
-  padding: 0;
-
-  font-family: 'Manrope', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: $font-size-main-text-s;
-  line-height: $font-line-height-main-text-s;
-  color: $color-secondary-4;
+  @include renderFont(
+    $size: $font-size-main-text-s,
+    $line-height: $font-line-height-main-text-s,
+    $color: $color-secondary-4,
+  )
 }
 
-.constacts {
-  margin: 0;
-  padding: 0;
+.contacts {
   align-self: flex-end;
 }
 
@@ -58,10 +44,21 @@
 
 .icon {
   margin: 0 11px 0 0;
+  width: 33px;
+  height: 32px;
 
   &:last-child {
     margin: 0;
   }
+}
+
+.iconLink {
+  display: inline-block;
+  width: 33px;
+  height: 32px;
+
+  border-radius: 100%;
+  overflow: hidden;
 }
 
 .email {
