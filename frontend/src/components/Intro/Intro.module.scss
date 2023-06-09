@@ -8,16 +8,16 @@
 }
 
 .content {
-  max-width: 429px;
+  max-width: 425px;
   padding-top: 16px;
 }
 
 .subtitle {
   display: block;
   width: fit-content;
-  padding: 7px 17px;
+  padding: 6px 21px;
   @include renderFont(
-    'Poppins',
+    var(--font-manrope),
     400,
     $font-size-main-text-s,
     $font-line-height-main-text-s,
@@ -33,14 +33,14 @@
 }
 
 .description {
-  margin: 41px 0 37px;
+  margin: 35px 0 40px;
   @include renderFont();
 }
 
 .button {
   display: block;
   width: fit-content;
-  min-width: 125px;
+  min-width: 120px;
   text-align: center;
 }
 

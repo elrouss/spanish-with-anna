@@ -1,15 +1,19 @@
-import { Poppins, Raleway } from 'next/font/google';
+import { Manrope, Raleway } from 'next/font/google';
 
-export const poppins = Poppins({
+export const manrope = Manrope({
   weight: '400',
   style: 'normal',
-  subsets: ['latin'],
+  subsets: ['cyrillic', 'latin'],
   fallback: ['Arial', 'Helvetica', 'sans-serif'],
+  display: 'swap',
+  variable: '--font-manrope',
 });
 
 export const raleway = Raleway({
   weight: '600',
   style: 'normal',
-  subsets: ['cyrillic'],
+  subsets: ['cyrillic', 'latin'],
   fallback: ['Arial', 'Helvetica', 'sans-serif'],
+  display: 'swap',
+  variable: '--font-raleway',
 });
