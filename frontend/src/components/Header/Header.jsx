@@ -7,46 +7,24 @@ import Button from '../Button/Button';
 import { manrope } from '@/assets/fonts/fonts';
 
 export default function Header() {
-  const [dropDownMenuIsOpen, setDropDownMenuIsOpen] = useState(false);
-  // Выкинуть или спрятать выпадающее меню в зависимости от стейта.
-  useEffect(() => {
-    const dropDownMenuStyle =
-      document.querySelector('#dropDownMenuStyle').style;
-    if (dropDownMenuIsOpen) {
-      dropDownMenuStyle.visibility = 'visible';
-      dropDownMenuStyle.opacity = 1;
-      dropDownMenuStyle.top = '60px';
-      dropDownMenuStyle.gap = '14px';
-      dropDownMenuStyle.padding = '16px';
-      dropDownMenuStyle.left = '-26px';
-    } else {
-      dropDownMenuStyle.visibility = 'hidden';
-      dropDownMenuStyle.opacity = 0;
-      dropDownMenuStyle.top = '20px';
-      dropDownMenuStyle.gap = '0';
-      dropDownMenuStyle.padding = '0';
-      dropDownMenuStyle.left = '-10px';
-    }
-  }, [dropDownMenuIsOpen]);
-  // Тоггл стейта при клике на кнопку.
+  const [isDropDownMenuOpen, setIsDropDownMenuOpen] = useState(false);
+
   function handleMenuClick() {
-    // eslint-disable-next-line no-unused-expressions
-    dropDownMenuIsOpen
-      ? setDropDownMenuIsOpen(false)
-      : setDropDownMenuIsOpen(true);
+    return isDropDownMenuOpen
+      ? setIsDropDownMenuOpen(false)
+      : setIsDropDownMenuOpen(true);
   }
-  // Задать стейту false? чтобы спрятать выпадающее меню при клике не на кнопку.
+
   useEffect(() => {
     document.addEventListener('click', (evt) => {
       if (
-        // Условие клика не на кнопку выглядит коряво. Хочу более элегантное, но пока не придумал.
         (evt.target.id ? !(evt.target.id === 'drop-button') : true) &&
         (!evt.target.parentElement ||
           (evt.target.parentElement.id
             ? !(evt.target.parentElement.id === 'drop-button')
             : true))
       ) {
-        setDropDownMenuIsOpen(false);
+        setIsDropDownMenuOpen(false);
       }
     });
   }, []);
@@ -69,7 +47,11 @@ export default function Header() {
                 <IconArrowDown />
               </button>
               <ul
-                className={styles.dropDownMenuContainer}
+                className={`${styles.dropDownMenuContainer}${
+                  isDropDownMenuOpen
+                    ? ` ${styles.dropDownMenuContainerActive}`
+                    : ''
+                }`}
                 id="dropDownMenuStyle"
               >
                 <li>
