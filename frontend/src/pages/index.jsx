@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { poppins } from '@/assets/fonts/fonts';
+import { manrope, raleway } from '@/assets/fonts/fonts';
 import Facts from '@/components/Facts/Facts';
 
 export default function Home() {
@@ -11,8 +11,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${poppins.className}`}>
-        {/* <p>Here will be something soon</p> */}
+      <main className={`${manrope.variable} ${raleway.variable}`}>
+        <h1>Here will be something soon</h1>
         <Facts />
       </main>
     </>

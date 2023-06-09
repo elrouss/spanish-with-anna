@@ -39,7 +39,7 @@
   margin: 0;
 
   @include renderFont(
-    'Poppins',
+    var(--font-manrope),
     400,
     $font-size-heading-accent,
     $font-line-height-heading-accent-s,
