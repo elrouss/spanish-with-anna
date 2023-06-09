@@ -10,9 +10,7 @@ export default function Header() {
   const [isDropDownMenuOpen, setIsDropDownMenuOpen] = useState(false);
 
   function handleMenuClick() {
-    return isDropDownMenuOpen
-      ? setIsDropDownMenuOpen(false)
-      : setIsDropDownMenuOpen(true);
+    setIsDropDownMenuOpen(!isDropDownMenuOpen);
   }
 
   useEffect(() => {
