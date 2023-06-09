@@ -13,19 +13,21 @@ export default function Header() {
     setIsDropDownMenuOpen(!isDropDownMenuOpen);
   }
 
+  function handleStopPropagation(evt) {
+    evt.stopPropagation();
+  }
+
   useEffect(() => {
-    document.addEventListener('click', (evt) => {
-      if (
-        (evt.target.id ? !(evt.target.id === 'drop-button') : true) &&
-        (!evt.target.parentElement ||
-          (evt.target.parentElement.id
-            ? !(evt.target.parentElement.id === 'drop-button')
-            : true))
-      ) {
-        setIsDropDownMenuOpen(false);
-      }
-    });
+    function closeMenu() {
+      setIsDropDownMenuOpen(false);
+    }
+
+    document.addEventListener('click', closeMenu);
+    return () => {
+      document.removeEventListener('click', closeMenu);
+    };
   }, []);
+
   return (
     <header className={`${styles.header} ${manrope.className}`}>
       <div className={styles.container}>
@@ -33,7 +35,12 @@ export default function Header() {
           <IconLogo />
         </Link>
         <nav className={styles.navigation}>
-          <ul className={styles.navigationMenu}>
+          <ul
+            role="menu"
+            className={styles.navigationMenu}
+            onClick={handleStopPropagation}
+            onKeyDown={() => {}}
+          >
             <li className={styles.dropDownMenu}>
               <button
                 className={styles.dropDownMenuButton}
