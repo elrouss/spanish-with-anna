@@ -23,6 +23,7 @@ export default function Header() {
     }
 
     document.addEventListener('click', closeMenu);
+
     return () => {
       document.removeEventListener('click', closeMenu);
     };
@@ -31,7 +32,11 @@ export default function Header() {
   return (
     <header className={`${styles.header} ${manrope.className}`}>
       <div className={styles.container}>
-        <Link className={styles.logo} href="/">
+        <Link
+          className={styles.logo}
+          href="/"
+          aria-label="Логотип, на домашнюю страницу"
+        >
           <IconLogo />
         </Link>
         <nav className={styles.navigation}>
@@ -47,6 +52,7 @@ export default function Header() {
                 type="button"
                 onClick={handleMenuClick}
                 id="drop-button"
+                aria-label="Меню курсов"
               >
                 <span className={styles.navigationText}>Онлайн-курсы</span>
                 <IconArrowDown />
