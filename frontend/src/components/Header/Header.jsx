@@ -41,8 +41,8 @@ export default function Header() {
         </Link>
         <nav className={styles.navigation}>
           <ul
-            role="menu"
             className={styles.navigationMenu}
+            role="menu"
             onClick={handleStopPropagation}
             onKeyDown={() => {}}
           >
@@ -51,7 +51,6 @@ export default function Header() {
                 className={styles.dropDownMenuButton}
                 type="button"
                 onClick={handleMenuClick}
-                id="drop-button"
                 aria-label="Меню курсов"
               >
                 <span className={styles.navigationText}>Онлайн-курсы</span>
@@ -63,7 +62,6 @@ export default function Header() {
                     ? ` ${styles.dropDownMenuContainerActive}`
                     : ''
                 }`}
-                id="dropDownMenuStyle"
               >
                 <li>
                   <Link className={styles.dropDownMenuNavigationLink} href="/">
