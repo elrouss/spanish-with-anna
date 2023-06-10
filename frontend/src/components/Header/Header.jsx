@@ -40,13 +40,13 @@ export default function Header() {
           <IconLogo />
         </Link>
         <nav className={styles.navigation}>
-          <ul
-            className={styles.navigationMenu}
-            role="menu"
-            onClick={handleStopPropagation}
-            onKeyDown={() => {}}
-          >
-            <li className={styles.dropDownMenu}>
+          <ul className={styles.navigationMenu}>
+            <li
+              className={styles.dropDownMenu}
+              onClick={handleStopPropagation}
+              onKeyDown={() => {}}
+              role="menuitem"
+            >
               <button
                 className={styles.dropDownMenuButton}
                 type="button"

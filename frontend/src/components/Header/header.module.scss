@@ -9,6 +9,17 @@
   width: 4px;
   background-color: $color-main-3;
   border-radius: 2px;
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+%pseudo-hover {
+  &:hover {
+    color: $color-main-3;
+    &::before {
+      opacity: 1;
+    }
+  }
 }
 
 @mixin pseudo-element($top, $left) {
@@ -51,7 +62,6 @@
     $line-height: 1.38,
     $color: $color-main-text-2
   );
-  font-style: normal;
 }
 
 .navigationMenu {
@@ -69,12 +79,11 @@
   position: relative;
   padding: 0 10px;
   color: $color-main-text-2;
-  &:hover {
-    color: $color-main-3;
-    &::before {
-      @include pseudo-element(28px, calc(50% - 2px));
-    }
+  transition: all .3s ease;
+  &::before {
+    @include pseudo-element(28px, calc(50% - 2px));
   }
+  @extend %pseudo-hover;
 }
 
 .dropDownMenuNavigationLink {
@@ -82,12 +91,11 @@
   padding-left: 10px;
   font-size: $font-size-main-text;
   color: $color-main-text-2;
-  &:hover {
-    color: $color-main-3;
-    &::before {
-      @include pseudo-element(calc(50% - 2px), -2px);
-    }
+  transition: all .3s ease;
+  &::before {
+    @include pseudo-element(calc(50% - 2px), -2px);
   }
+  @extend %pseudo-hover;
 }
 
 .dropDownMenu {
@@ -97,12 +105,11 @@
 .dropDownMenuButton {
   background-color: $color-main-1;
   cursor: pointer;
-  &:hover {
-    color: $color-main-3;
-    &::before {
-      @include pseudo-element(28px, calc(50% - 2px));
-    }
+  transition: all .3s ease;
+  &::before {
+    @include pseudo-element(28px, calc(50% - 2px));
   }
+  @extend %pseudo-hover;
 }
 
 .navigationText {
@@ -124,7 +131,7 @@
   border-radius: 0 0 20px 20px;
   visibility: hidden;
   opacity: 0;
-  transition: all .5s ease;
+  transition: all .3s ease;
 }
 
 .dropDownMenuContainerActive {
@@ -135,6 +142,5 @@
   gap: 14px;
   visibility: visible;
   opacity: 1;
-  transition: all 1s ease;
 }
 
