@@ -1,5 +1,21 @@
 @import '../abstracts/variables/colors.scss';
 @import '../abstracts/variables/fonts.scss';
+@import '../abstracts/mixins.scss';
+
+%pseudo-element-default {
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 4px;
+  background-color: $color-main-3;
+  border-radius: 2px;
+}
+
+@mixin pseudo-element($top, $left) {
+  @extend %pseudo-element-default;
+  top: $top;
+  left: $left;
+}
 
 .header {
   position: fixed;
@@ -30,11 +46,12 @@
   justify-content: space-between;
   flex-grow: 1;
   margin-left: 63px;
+  @include renderFont(
+    $size: $font-size-main-text-l,
+    $line-height: 1.38,
+    $color: $color-main-text-2
+  );
   font-style: normal;
-  font-weight: 400;
-  font-size: $font-size-main-text-l;
-  line-height: 1.375;
-  color: $color-main-text-2;
 }
 
 .navigationMenu {
@@ -55,14 +72,7 @@
   &:hover {
     color: $color-main-3;
     &::before {
-      content: '';
-      position: absolute;
-      left: calc(50% - 2px);
-      top: 28px;
-      height: 4px;
-      width: 4px;
-      background-color: $color-main-3;
-      border-radius: 2px;
+      @include pseudo-element(28px, calc(50% - 2px));
     }
   }
 }
@@ -75,14 +85,7 @@
   &:hover {
     color: $color-main-3;
     &::before {
-      content: '';
-      position: absolute;
-      left: -2px;
-      top:  calc(50% - 2px);
-      height: 4px;
-      width: 4px;
-      background-color: $color-main-3;
-      border-radius: 2px;
+      @include pseudo-element(calc(50% - 2px), -2px);
     }
   }
 }
@@ -92,21 +95,12 @@
 }
 
 .dropDownMenuButton {
-  padding: 0;
   background-color: $color-main-1;
-  border: 0;
   cursor: pointer;
   &:hover {
     color: $color-main-3;
     &::before {
-      content: '';
-      position: absolute;
-      left: calc(50% - 2px);
-      top: 28px;
-      height: 4px;
-      width: 4px;
-      background-color: $color-main-3;
-      border-radius: 2px;
+      @include pseudo-element(28px, calc(50% - 2px));
     }
   }
 }
