@@ -2,21 +2,21 @@
 @import '../abstracts/variables/fonts.scss';
 
 .header {
-  border-bottom: 1px solid $color-complementary-1;
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 9;
   width: 100%;
   background-color: $color-main-1;
-  z-index: 9;
+  border-bottom: 1px solid $color-complementary-1;
 }
 
 .container {
   display: flex;
-  padding: 20px 140px;
   box-sizing: border-box;
   max-width: 1440px;
   margin: auto;
+  padding: 20px 140px;
 }
 
 .logo {
@@ -25,11 +25,11 @@
 }
 
 .navigation {
-  margin-left: 63px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
+  margin-left: 63px;
   font-style: normal;
   font-weight: 400;
   font-size: $font-size-main-text-l;
@@ -44,45 +44,45 @@
 
 .navigationAuth {
   display: flex;
-  gap: 30px;
   align-items: center;
+  gap: 30px;
 }
 
 .navigationLink {
-  color: $color-main-text-2;
-  padding: 0 10px;
   position: relative;
+  padding: 0 10px;
+  color: $color-main-text-2;
   &:hover {
     color: $color-main-3;
     &::before {
       content: '';
       position: absolute;
-      width: 4px;
-      height: 4px;
-      border-radius: 2px;
-      background-color: $color-main-3;
       left: calc(50% - 2px);
       top: 28px;
+      height: 4px;
+      width: 4px;
+      background-color: $color-main-3;
+      border-radius: 2px;
     }
   }
 }
 
 .dropDownMenuNavigationLink {
-  color: $color-main-text-2;
+  position: relative;
   padding-left: 10px;
   font-size: $font-size-main-text;
-  position: relative;
+  color: $color-main-text-2;
   &:hover {
     color: $color-main-3;
     &::before {
       content: '';
       position: absolute;
-      width: 4px;
-      height: 4px;
-      border-radius: 2px;
-      background-color: $color-main-3;
       left: -2px;
       top:  calc(50% - 2px);
+      height: 4px;
+      width: 4px;
+      background-color: $color-main-3;
+      border-radius: 2px;
     }
   }
 }
@@ -92,21 +92,21 @@
 }
 
 .dropDownMenuButton {
-  border: 0;
   padding: 0;
   background-color: $color-main-1;
+  border: 0;
   cursor: pointer;
   &:hover {
     color: $color-main-3;
     &::before {
       content: '';
       position: absolute;
-      width: 4px;
-      height: 4px;
-      border-radius: 2px;
-      background-color: $color-main-3;
       left: calc(50% - 2px);
       top: 28px;
+      height: 4px;
+      width: 4px;
+      background-color: $color-main-3;
+      border-radius: 2px;
     }
   }
 }
@@ -116,28 +116,28 @@
 }
 
 .dropDownMenuContainer {
-  background-color: $color-main-1;
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  min-width: 202px;
-  box-sizing: border-box;
-  border: 1px solid $color-complementary-1;
-  border-radius: 0 0 20px 20px;
-  padding: 0;
   top: 20px;
   left: -10px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-width: 202px;
+  padding: 0;
   gap: 0;
+  background-color: $color-main-1;
+  border: 1px solid $color-complementary-1;
+  border-radius: 0 0 20px 20px;
   visibility: hidden;
   opacity: 0;
   transition: all .5s ease;
 }
 
 .dropDownMenuContainerActive {
-  min-width: 234px;
-  padding: 16px;
   top: 60px;
   left: -26px;
+  min-width: 234px;
+  padding: 16px;
   gap: 14px;
   visibility: visible;
   opacity: 1;
