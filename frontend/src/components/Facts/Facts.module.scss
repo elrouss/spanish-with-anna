@@ -10,8 +10,7 @@
 .list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  max-width: 1160px;
-  padding: 0;
+  max-width: $wrapper-main-desktop;
   margin: 0 auto;
 
   list-style: none;
@@ -36,7 +35,6 @@
 .counter {
   display: flex;
   align-items: center;
-  margin: 0;
 
   @include renderFont(
     var(--font-manrope),
@@ -50,7 +48,6 @@
 .description {
   display: flex;
   align-items: center;
-  margin: 0;
 
   inline-size: min-content;
 
