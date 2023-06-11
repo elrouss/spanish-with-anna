@@ -3,8 +3,8 @@
 .container {
   display: flex;
   justify-content: space-between;
-  max-width: 1160px;
-  margin: 70px auto 0;
+  max-width: $wrapper-main-desktop;
+  margin: calc(70px + 98px) auto 0;
 }
 
 .content {
@@ -13,7 +13,6 @@
 }
 
 .subtitle {
-  display: block;
   width: fit-content;
   padding: 6px 21px;
   @include renderFont(
@@ -21,7 +20,6 @@
     400,
     $font-size-main-text-s,
     $font-line-height-main-text-s,
-    $color-main-text-1
   );
 
   border: 1px solid $color-accent-promo;
