@@ -25,7 +25,7 @@ function InfoCard({ title, description, image, link }) {
 InfoCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.element.isRequired,
   link: PropTypes.string.isRequired,
 };
 
