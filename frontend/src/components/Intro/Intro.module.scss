@@ -16,10 +16,8 @@
   width: fit-content;
   padding: 6px 21px;
   @include renderFont(
-    var(--font-manrope),
-    400,
-    $font-size-main-text-s,
-    $font-line-height-main-text-s,
+    $size: $font-size-main-text-s,
+    $line-height: $font-line-height-main-text-s,
   );
 
   border: 1px solid $color-accent-promo;
