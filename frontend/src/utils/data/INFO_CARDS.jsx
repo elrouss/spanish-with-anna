@@ -1,4 +1,4 @@
-const infoCards = [
+const INFO_CARDS = [
   {
     _id: '0001',
     title: 'Занятия в группах',
@@ -25,4 +25,4 @@ const infoCards = [
   },
 ];
 
-export default infoCards;
+export default INFO_CARDS;
