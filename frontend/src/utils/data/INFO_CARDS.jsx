@@ -1,10 +1,14 @@
+import image0001 from '../../assets/images/online-courses-info-1.jpg';
+import image0002 from '../../assets/images/online-courses-info-2.jpg';
+import image0003 from '../../assets/images/online-courses-info-3.jpg';
+
 const INFO_CARDS = [
   {
     _id: '0001',
     title: 'Занятия в группах',
     description: `Интерактивные занятия
 в мини-группах до 4-х человек`,
-    image: '@/assets/images/online-courses-info-1.jpg',
+    image: image0001,
     link: '#',
   },
   {
@@ -12,7 +16,7 @@ const INFO_CARDS = [
     title: 'Самостоятельное обучение',
     description: `Совершенствуйте свой испанский
 в удобном для вас темпе`,
-    image: '@/assets/images/online-courses-info-2.jpg',
+    image: image0002,
     link: '#',
   },
   {
@@ -20,7 +24,7 @@ const INFO_CARDS = [
     title: 'Персональное обучение',
     description: `Индивидуальные онлайн-уроки,
 менторство, консультации`,
-    image: '@/assets/images/online-courses-info-3.jpg',
+    image: image0003,
     link: '#',
   },
 ];
