@@ -37,11 +37,8 @@
   align-items: center;
 
   @include renderFont(
-    var(--font-manrope),
-    400,
-    $font-size-heading-accent,
-    $font-line-height-heading-accent-s,
-    $color-main-text-1
+    $size: $font-size-heading-accent,
+    $line-height: $font-line-height-heading-accent-s,
   );
 }
 
