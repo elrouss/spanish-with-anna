@@ -28,7 +28,7 @@ function Intro() {
           и&nbsp;результативно овладеть языком, независимо от&nbsp;ваших целей,
           возраста и&nbsp;первоначального уровня.
         </p>
-        <Button classSelector={styles.button} href="#">
+        <Button classSelector={styles.button} href="#info">
           Начать учиться
         </Button>
       </div>
