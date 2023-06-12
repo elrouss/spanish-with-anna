@@ -1,5 +1,5 @@
 import styles from './Facts.module.scss';
-import { FACTS } from '../../utils/data/facts';
+import FACTS from '../../utils/data/FACTS';
 import Fact from './Fact';
 
 function Facts() {

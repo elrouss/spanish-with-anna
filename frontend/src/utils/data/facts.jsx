@@ -1,4 +1,4 @@
-export const FACTS = [
+const FACTS = [
   {
     _id: '0001',
     counter: '10+',
@@ -16,4 +16,4 @@ export const FACTS = [
   },
 ];
 
-export const TEMP = 'temp'; // TODO: Удалить, когда появтся больше чем одна константа
+export default FACTS;
