@@ -6,10 +6,18 @@ import styles from './Info.module.scss';
 function InfoCard({ title, description, image, link }) {
   return (
     <div className={styles.card}>
-      <Image className={styles.cardImage} src={image} width={0} height={0} />
+      <Image
+        className={styles.cardImage}
+        src={image}
+        width={100}
+        height={80}
+        alt={`Изображение ${title}`}
+      />
       <h3 className={styles.cardTitle}>{title}</h3>
       <p className={styles.cardDescription}>{description}</p>
-      <Button classSelector={styles.cardButton} href={link} />
+      <Button classSelector={styles.cardButton} href={link}>
+        Подробнее
+      </Button>
     </div>
   );
 }
