@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Intro from '../components/Intro/Intro';
 import { manrope, raleway } from '@/assets/fonts/fonts';
+import Header from '../components/Header/Header';
+import Facts from '@/components/Facts/Facts';
 
 export default function Home() {
   return (
@@ -11,9 +13,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Header />
       <main className={`${manrope.variable} ${raleway.variable}`}>
         <h1>Here will be something soon</h1>
         <Intro />
+        <Facts />
       </main>
     </>
   );
