@@ -59,6 +59,12 @@
 
   border-radius: 100%;
   overflow: hidden;
+
+  transition: $animation-transition-common;
+}
+
+.iconSvg {
+  fill: #6F99A1;
 }
 
 .email {

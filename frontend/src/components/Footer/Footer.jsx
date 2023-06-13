@@ -35,7 +35,7 @@ function Footer() {
                   href="https://www.youtube.com/@anna_spanish"
                   className={styles.iconLink}
                 >
-                  <IconYoutube alt="ютуб-канал" />
+                  <IconYoutube alt="ютуб-канал" styles={styles.iconLink} />
                 </Link>
               </li>
               <li className={styles.icon}>
