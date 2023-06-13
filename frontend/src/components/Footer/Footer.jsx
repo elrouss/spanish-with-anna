@@ -32,17 +32,20 @@ function Footer() {
             <ul className={styles.listIcon}>
               <li className={styles.icon}>
                 <Link
+                  target="_blank"
                   href="https://www.youtube.com/@anna_spanish"
                   className={styles.iconLink}
+                  aria-label="иконка, ведущий на ютуб канал"
                 >
                   <IconYoutube alt="ютуб-канал" styles={styles.iconLink} />
                 </Link>
               </li>
               <li className={styles.icon}>
                 <Link
+                  target="_blank"
                   href="https://t.me/AnnaBelyaeva_spb"
                   className={styles.iconLink}
-                  aria-label="иконка, ведущий на тееграм аккаунт"
+                  aria-label="иконка, ведущий на телеграм аккаунт"
                 >
                   <IconTelegram alt="телеграм-канал" />
                 </Link>
