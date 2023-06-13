@@ -1,0 +1,70 @@
+@import '../../styles/index.scss';
+
+.section {
+  position: relative;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 100px;
+  max-width: $wrapper-main-desktop;
+  margin: 0 auto;
+  padding: 150px 0;
+}
+
+.heading {
+  @include renderFont(
+    $family: var(--font-raleway),
+    $weight: 600,
+    $size: $font-size-heading,
+    $line-height: $font-line-height-heading,
+    $color: $color-main-text-2
+  );
+  text-transform: uppercase;
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(373px, auto));
+  column-gap: 20px;
+  row-gap: 60px;
+  width: 100%;
+}
+
+.benefit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  text-align: center;
+  width: 100%;
+
+  &:nth-child(3) > div > img {
+    padding-left: 16px;
+  }
+
+  &:last-child > div > img {
+    padding-left: 10px;
+  }
+}
+
+.decorative1 {
+  position: absolute;
+  top: 329px;
+  left: 0;
+
+  background: url(../../../public/assets/icons/tile-1.svg) center no-repeat;
+  width: 90px;
+  height: 169px;
+}
+
+.decorative2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  background: url(../../../public/assets/icons/tile-2.svg) center no-repeat;
+  width: 80px;
+  height: 48px;
+}
