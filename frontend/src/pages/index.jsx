@@ -17,7 +17,6 @@ export default function Home() {
 
       <Header />
       <main className={`${manrope.variable} ${raleway.variable}`}>
-        <h1>Here will be something soon</h1>
         <Intro />
         <Facts />
         <Info />
