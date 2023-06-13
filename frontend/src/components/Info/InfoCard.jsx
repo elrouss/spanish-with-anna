@@ -5,7 +5,9 @@ import styles from './Info.module.scss';
 
 function InfoCard({ title, description, image, link }) {
   const descriptions = description.map((d) => (
-    <p className={styles.cardDescription}>{d}</p>
+    <p className={styles.cardDescription} key={description.indexOf(d)}>
+      {d}
+    </p>
   ));
   return (
     <div className={styles.card}>
@@ -28,7 +30,7 @@ function InfoCard({ title, description, image, link }) {
 
 InfoCard.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.array.isRequired,
   image: PropTypes.object.isRequired,
   link: PropTypes.string.isRequired,
 };
