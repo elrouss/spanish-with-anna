@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { manrope, raleway } from '@/assets/fonts/fonts';
 
+import Reviews from '@/components/Reviews/Reviews';
+
 export default function Home() {
   return (
     <>
@@ -11,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${manrope.variable} ${raleway.variable}`}>
-        <h1>Here will be something soon</h1>
+        <Reviews />
       </main>
     </>
   );

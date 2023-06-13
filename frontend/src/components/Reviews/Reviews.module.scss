@@ -1,0 +1,26 @@
+@import '../../styles/index.scss';
+
+.wrapper {
+  max-width: $wrapper-main-desktop;
+  margin: 0 auto;
+  padding: 154px 0 75px;
+}
+
+.heading {
+  @include renderFont(
+    $family: var(--font-raleway),
+    $weight: 600,
+    $size: $font-size-heading,
+    $line-height: $font-line-height-heading,
+    $color: $color-main-text-2
+  );
+}
+
+.slider {
+  padding-top: 100px;
+}
+
+.slide {
+  width: 450px;
+  height: 320px;
+}
