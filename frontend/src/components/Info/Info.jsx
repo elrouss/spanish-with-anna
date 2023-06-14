@@ -4,9 +4,9 @@ import INFO_CARDS from '@/utils/data/INFO_CARDS';
 
 function Info() {
   const infoCards = INFO_CARDS.map((infoCard) => (
-    <li className={styles.infoCardItem} key={infoCard._id}>
+    <li className={styles.infoCardItem} key={`infoListItem-${infoCard._id}`}>
       <InfoCard
-        key={infoCard._id}
+        key={`infoCard-${infoCard._id}`}
         title={infoCard.title}
         description={infoCard.description}
         image={infoCard.image}
