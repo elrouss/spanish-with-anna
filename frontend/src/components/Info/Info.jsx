@@ -6,6 +6,7 @@ function Info() {
   const infoCards = INFO_CARDS.map((infoCard) => (
     <li className={styles.infoCardItem} key={infoCard._id}>
       <InfoCard
+        key={infoCard._id}
         title={infoCard.title}
         description={infoCard.description}
         image={infoCard.image}

@@ -4,34 +4,28 @@ import Button from '../Button/Button';
 import styles from './Info.module.scss';
 
 function InfoCard({ title, description, image, link }) {
-  const descriptions = description.map((d) => (
-    <p className={styles.cardDescription} key={description.indexOf(d)}>
-      {d}
-    </p>
-  ));
   return (
-    <div className={styles.card}>
+    <article className={styles.card}>
       <Image
         className={styles.cardImage}
         src={image}
         width={373}
         height={167}
-        style={{ objectFit: 'cover' }}
-        alt={`Изображение ${title}`}
+        alt={title}
       />
       <h3 className={styles.cardTitle}>{title}</h3>
-      {descriptions}
+      <p className={styles.cardDescription}>{description}</p>
       <Button classSelector={styles.button} href={link}>
         Подробнее
       </Button>
-    </div>
+    </article>
   );
 }
 
 InfoCard.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.array.isRequired,
-  image: PropTypes.object.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
 };
 
