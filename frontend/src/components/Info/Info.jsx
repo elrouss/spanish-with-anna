@@ -15,7 +15,7 @@ function Info() {
     </li>
   ));
   return (
-    <section className={styles.info}>
+    <section className={styles.info} id="info">
       <h2 className={styles.title}>Информация по онлайн-курсам</h2>
       <ul className={styles.list}>{infoCards}</ul>
       <div className={styles.decoration} />
