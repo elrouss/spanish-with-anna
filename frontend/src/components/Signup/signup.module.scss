@@ -1,0 +1,76 @@
+@import '../../styles/abstracts/variables/colors.scss';
+@import '../../styles/abstracts/variables/fonts.scss';
+@import '../../styles/abstracts/mixins.scss';
+
+.signup {
+  width: 100%;
+  background-color: $color-main-2;
+}
+
+.mainContainer {
+  display: flex;
+  gap: 128px;
+  max-width: 1440px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 150px 140px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.subContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 80px 0 29px;
+  &>span {
+    margin: 8px  0 144px;
+  }
+}
+
+.image {
+  transform: translate(-27px, 23px);
+}
+
+.title {
+  @include renderFont(
+    $family: var(--font-raleway),
+    $weight: 600,
+    $size: $font-size-heading,
+    $line-height: $font-line-height-heading,
+    $color: $color-main-text-2
+  );
+  text-transform: uppercase;
+}
+
+.text {
+  @include renderFont(
+    $size: $font-size-main-text,
+    $line-height: 1.42,
+    $color: $color-main-text-1
+  );
+}
+
+.selectedText {
+  padding: 2px 16px 5px;
+  margin-right: 6px;
+  background-color: $color-accent-promo;
+  border-radius: 50px;
+}
+
+.list {
+  list-style-type: disc;
+  margin-top: 20px;
+  padding-left: 26px;
+  &>li:first-child {
+    margin-bottom: 22px;
+  }
+}
+
+.button {
+  width: fit-content;
+}
+

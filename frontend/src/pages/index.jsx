@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Intro from '../components/Intro/Intro';
 import { manrope, raleway } from '@/assets/fonts/fonts';
 import Header from '../components/Header/Header';
+import Signup from '../components/Signup/Signup';
 import Facts from '@/components/Facts/Facts';
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
         <h1>Here will be something soon</h1>
         <Intro />
         <Facts />
+        <Signup />
       </main>
     </>
   );
