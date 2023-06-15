@@ -39,6 +39,7 @@ function Intro() {
         height={609}
         src={introImageMain}
         alt="Фото Анны"
+        priority
       />
     </section>
   );
