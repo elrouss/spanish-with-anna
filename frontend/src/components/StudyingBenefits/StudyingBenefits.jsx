@@ -1,4 +1,4 @@
-import StudyingBenefit from '../StudyingBenefit/StudyingBenefit';
+import StudyingBenefit from './StudyingBenefit/StudyingBenefit';
 
 import data from '@/utils/data/studyingBenefits';
 
@@ -25,8 +25,8 @@ function StudyingBenefits() {
           ))}
         </ul>
       </div>
-      <div className={styles.decorative1} />
-      <div className={styles.decorative2} />
+      <div className={styles.decorativeTileLeft} />
+      <div className={styles.decorativeTileRight} />
     </section>
   );
 }

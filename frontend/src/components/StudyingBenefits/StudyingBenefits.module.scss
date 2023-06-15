@@ -39,17 +39,9 @@
   row-gap: 10px;
   text-align: center;
   width: 100%;
-
-  &:nth-child(3) > div > img {
-    padding-left: 16px;
-  }
-
-  &:last-child > div > img {
-    padding-left: 10px;
-  }
 }
 
-.decorative1 {
+.decorativeTileLeft {
   position: absolute;
   top: 329px;
   left: 0;
@@ -59,7 +51,7 @@
   height: 169px;
 }
 
-.decorative2 {
+.decorativeTileRight {
   position: absolute;
   right: 0;
   bottom: 0;

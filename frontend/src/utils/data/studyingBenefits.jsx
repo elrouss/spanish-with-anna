@@ -23,8 +23,8 @@ const data = [
     text: 'Рассказываю о\u00A0традициях и\u00A0особенностях не\u00A0только Испании, но\u00A0и\u00A0стран Латинской Америки',
     image: '/assets/icons/maracas.svg',
     alt: 'Маракасы',
-    width: 57,
-    height: 68,
+    width: 71,
+    height: 67,
   },
   {
     _id: 4,
@@ -50,7 +50,7 @@ const data = [
     text: 'Создаю атмосферу комфорта, чтобы вы\u00A0получили удовольствие от\u00A0учебного процесса',
     image: '/assets/icons/smiling-face.svg',
     alt: 'Смайлик',
-    width: 53,
+    width: 63,
     height: 33,
   },
 ];
