@@ -62,7 +62,7 @@
 }
 
 .list {
-  list-style-type: disc;
+  list-style: url(../../../public/assets/icons/Ellipse.svg);
   margin-top: 20px;
   padding-left: 26px;
   &>li:first-child {
