@@ -2,24 +2,33 @@
 @import '../../styles/abstracts/variables/fonts.scss';
 @import '../../styles/abstracts/mixins.scss';
 
+
+
+@mixin absolute-element($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+
 .signup {
+  position: relative;
   width: 100%;
   background-color: $color-main-2;
 }
 
 .mainContainer {
+  max-width: 1440px;
   display: flex;
   gap: 128px;
-  max-width: 1440px;
-  box-sizing: border-box;
   margin: 0 auto;
   padding: 150px 140px;
+  box-sizing: border-box;
 }
 
 .container {
+  width: 400px;
   display: flex;
   flex-direction: column;
-  width: 400px;
 }
 
 .subContainer {
@@ -62,15 +71,50 @@
 }
 
 .list {
-  list-style: url(../../../public/assets/icons/Ellipse.svg);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
   margin-top: 20px;
   padding-left: 26px;
-  &>li:first-child {
-    margin-bottom: 22px;
-  }
+  list-style: url(../../../public/assets/icons/Ellipse.svg);
 }
 
 .button {
   width: fit-content;
+}
+
+.bonus {
+  @include absolute-element(calc(50% - 91px),  calc(50% - 141px));
+  z-index: 2;
+}
+
+.iconText {
+  width: 211px;
+  border-radius: 40px;
+  padding: 16px 22px 13px;
+  @include renderFont(
+    $weight: 500,
+    $size: $font-size-main-text-l,
+    $line-height: 1.38,
+    $color: $color-main-text-1
+  );
+  text-transform: uppercase;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(30, 95, 108, 0.1);
+}
+
+.iconGift {
+  @include absolute-element(-41px,168px);
+  height: 53px;
+  width: 53px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-accent-promo;
+  border-radius: 50%;
+}
+
+.arrow {
+  @include absolute-element(24px, calc(100% + 6px));
 }
 
