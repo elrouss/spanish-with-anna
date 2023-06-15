@@ -1,0 +1,146 @@
+@import '../../styles/abstracts/variables/colors.scss';
+@import '../../styles/abstracts/variables/fonts.scss';
+@import '../../styles/abstracts/mixins.scss';
+
+%pseudo-element-default {
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 4px;
+  background-color: $color-main-3;
+  border-radius: 2px;
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+%pseudo-hover {
+  &:hover {
+    color: $color-main-3;
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin pseudo-element($top, $left) {
+  @extend %pseudo-element-default;
+  top: $top;
+  left: $left;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  background-color: $color-main-1;
+  border-bottom: 1px solid $color-complementary-1;
+}
+
+.container {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: auto;
+  padding: 20px 140px;
+}
+
+.logo {
+  height: 58px;
+  width: 50px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin-left: 63px;
+  @include renderFont(
+    $size: $font-size-main-text-l,
+    $line-height: 1.38,
+    $color: $color-main-text-2
+  );
+}
+
+.navigationMenu {
+  display: flex;
+  gap: 80px;
+}
+
+.navigationAuth {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navigationLink {
+  position: relative;
+  padding: 0 10px;
+  color: $color-main-text-2;
+  transition: all .3s ease;
+  &::before {
+    @include pseudo-element(28px, calc(50% - 2px));
+  }
+  @extend %pseudo-hover;
+}
+
+.dropDownMenuNavigationLink {
+  position: relative;
+  padding-left: 10px;
+  font-size: $font-size-main-text;
+  color: $color-main-text-2;
+  transition: all .3s ease;
+  &::before {
+    @include pseudo-element(calc(50% - 2px), -2px);
+  }
+  @extend %pseudo-hover;
+}
+
+.dropDownMenu {
+  position: relative;
+}
+
+.dropDownMenuButton {
+  background-color: $color-main-1;
+  cursor: pointer;
+  transition: all .3s ease;
+  &::before {
+    @include pseudo-element(28px, calc(50% - 2px));
+  }
+  @extend %pseudo-hover;
+}
+
+.navigationText {
+  margin-right: 10px;
+}
+
+.dropDownMenuContainer {
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-width: 202px;
+  padding: 0;
+  gap: 0;
+  background-color: $color-main-1;
+  border: 1px solid $color-complementary-1;
+  border-radius: 0 0 20px 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.dropDownMenuContainerActive {
+  top: 60px;
+  left: -26px;
+  min-width: 234px;
+  padding: 16px;
+  gap: 14px;
+  visibility: visible;
+  opacity: 1;
+}
+
