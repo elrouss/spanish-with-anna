@@ -1,0 +1,14 @@
+
+.iconFill {
+  fill: #fff;
+
+  transition: $animation-transition-common;
+}
+
+.icon:hover .iconFill {
+  fill: #6F99A1;
+}
+
+.icon:active .iconFill {
+  fill: #1E5F6C;
+}
