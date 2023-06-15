@@ -4,6 +4,7 @@ import { manrope, raleway } from '@/assets/fonts/fonts';
 import Header from '../components/Header/Header';
 import Facts from '@/components/Facts/Facts';
 import Info from '@/components/Info/Info';
+import StudyingBenefits from '@/components/StudyingBenefits/StudyingBenefits';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Intro />
         <Facts />
         <Info />
+        <StudyingBenefits />
       </main>
     </>
   );
