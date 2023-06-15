@@ -3,6 +3,7 @@ import Intro from '../components/Intro/Intro';
 import { manrope, raleway } from '@/assets/fonts/fonts';
 import Header from '../components/Header/Header';
 import Facts from '@/components/Facts/Facts';
+import Info from '@/components/Info/Info';
 import StudyingBenefits from '@/components/StudyingBenefits/StudyingBenefits';
 
 export default function Home() {
@@ -17,9 +18,9 @@ export default function Home() {
 
       <Header />
       <main className={`${manrope.variable} ${raleway.variable}`}>
-        <h1>Here will be something soon</h1>
         <Intro />
         <Facts />
+        <Info />
         <StudyingBenefits />
       </main>
     </>
