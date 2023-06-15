@@ -9,47 +9,55 @@
 .wrapper {
   max-width: $wrapper-main-desktop;
   margin: 0 auto;
-  padding: 130px 0 50px;
+  padding: 131px 0 52px;
 }
 
 .content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  row-gap: 113px;
   width: 100%;
-  min-height: 100px;
-  margin: 0 0 111px;
+
+  @include renderFont(
+    $size: $font-size-main-text-l,
+    $line-height: calc(2.2rem / $font-size-main-text-l * 100%),
+    $color: $color-secondary-1
+  );
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
 }
 
 .logoLink {
   align-self: flex-start;
 }
 
-.copyright {
-  @include renderFont(
-    $size: $font-size-main-text-s,
-    $line-height: $font-line-height-main-text-s,
-    $color: $color-secondary-4,
-  )
+.listLinksLeft {
+  width: 12.07%;
+}
+
+.listLinksCenter {
+  width: 21.6%;
 }
 
 .contacts {
-  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  row-gap: 13px;
+  width: 17.1%;
 }
 
-.listIcon {
+.listIcons {
   display: flex;
-  align-items: center;
-  margin: 0 0 9px;
+  column-gap: 9px;
 }
 
 .icon {
-  margin: 0 11px 0 0;
   width: 33px;
   height: 32px;
-
-  &:last-child {
-    margin: 0;
-  }
 }
 
 .iconLink {
@@ -64,13 +72,27 @@
 }
 
 .iconSvg {
-  fill: #6F99A1;
+  fill: $color-secondary-2;
 }
 
 .email {
+  color: inherit;
+
+  transition: $animation-transition-common;
+
+  &:hover {
+    color: $color-main-3;
+  }
+
+  &:active {
+    color: $color-secondary-2;
+  }
+}
+
+.copyright {
   @include renderFont(
     $size: $font-size-main-text-s,
-    $line-height: $font-line-height-main-text-s,
-    $color: $color-secondary-4,
-  )
+    $line-height: calc(1.6rem / $font-size-main-text-s * 100%),
+    $color: inherit
+  );
 }

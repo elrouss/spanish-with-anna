@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
-import styles from './footerLink.module.scss';
+import styles from './FooterLink.module.scss';
 
 function FooterLink({ children, href }) {
   return (
