@@ -12,7 +12,7 @@ const reviews = [
     image: '/review-larisa.jpg',
   },
 
-  // Below start reviews for test
+  // Below are reviews for test
   {
     _id: 3,
     name: 'Наталья',
