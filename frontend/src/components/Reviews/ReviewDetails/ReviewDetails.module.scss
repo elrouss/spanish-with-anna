@@ -4,10 +4,11 @@
   filter: drop-shadow(0 4px 17px rgba(30, 95, 108, 0.12));
 }
 
-.review {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
+.modal {
+  position: relative;
+
+  width: 657px;
+  min-height: 409px;
 
   border-radius: 30px;
   background-color: $color-main-1;
@@ -18,8 +19,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 26px;
-  padding: 40.5px 36px;
+  row-gap: 28px;
+  padding: 50px 47px 83px 37px;
   box-sizing: border-box;
 
   @extend %shadow-effect;
@@ -51,23 +52,18 @@
 }
 
 .paragraph {
-  display: -webkit-box;
-  max-width: 378px;
-  height: 81px;
-
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-
   @include renderFont();
-
-  cursor: default;
 }
 
-.more {
-  margin-top: 10px;
+.closeButton {
+  position: absolute;
+  top: 26px;
+  right: 26px;
 
-  @include renderFont($weight: 700, $color: $color-main-3);
+  background: url(../../../../public/assets/icons/close-icon.svg) center
+    no-repeat;
+  width: 14px;
+  height: 14px;
 
   background-color: transparent;
   border: none;

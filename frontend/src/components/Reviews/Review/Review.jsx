@@ -3,7 +3,9 @@ import Image from 'next/image';
 
 import styles from './Review.module.scss';
 
-function Review({ name, text, image }) {
+function Review({ name, text, image, onModalOpen }) {
+  const currentReview = { name, text, image };
+
   return (
     <article className={styles.review}>
       <div className={styles.wrapper}>
@@ -23,6 +25,7 @@ function Review({ name, text, image }) {
             className={styles.more}
             type="button"
             aria-label="Прочитать отзыв целиком"
+            onClick={() => onModalOpen(currentReview)}
           >
             Читать полностью
           </button>
@@ -36,6 +39,7 @@ Review.propTypes = {
   name: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  onModalOpen: PropTypes.func.isRequired,
 };
 
 export default Review;
