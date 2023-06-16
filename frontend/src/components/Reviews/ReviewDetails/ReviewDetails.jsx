@@ -16,7 +16,7 @@ function ReviewDetails({ currentReview: { name, text, image }, onModalClose }) {
             src={image}
             alt={`Ученик Анны - ${name}`}
           />
-          <h3 className={styles.name}>{name}</h3>
+          <h2 className={styles.name}>{name}</h2>
         </div>
         <p className={styles.paragraph}>{text}</p>
       </div>
