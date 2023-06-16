@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -13,7 +13,21 @@ import 'swiper/scss';
 import 'swiper/scss/pagination';
 
 function Reviews() {
+  const [randomReviews, setRandomReviews] = useState([]);
   const swiperRef = useRef();
+
+  useEffect(() => {
+    const copy = [...reviews];
+    const MAX_NUMBER = 10;
+    // Fisher–Yates shuffle
+    for (let i = 0; i < reviews.length; i += 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+
+    setRandomReviews(copy.slice(0, MAX_NUMBER));
+  }, []);
 
   return (
     <section>
@@ -38,7 +52,7 @@ function Reviews() {
                 swiperRef.current = swiper;
               }}
             >
-              {reviews.map(({ _id, name, text, image }) => (
+              {randomReviews.map(({ _id, name, text, image }) => (
                 <SwiperSlide key={`slide-${_id}`}>
                   <Review
                     key={`review-${_id}`}
