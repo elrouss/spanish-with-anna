@@ -17,6 +17,7 @@ function Reviews() {
   const [randomReviews, setRandomReviews] = useState([]);
   const [currentReview, setCurrentReview] = useState({});
   const [isModalOpened, setIsModalOpened] = useState(false);
+
   const swiperRef = useRef();
 
   useEffect(() => {
@@ -63,6 +64,7 @@ function Reviews() {
                 spaceBetween={65}
                 pagination={{
                   bulletActiveClass: styles.carouselBulletActive,
+                  clickable: true,
                 }}
                 speed={600}
                 loop
