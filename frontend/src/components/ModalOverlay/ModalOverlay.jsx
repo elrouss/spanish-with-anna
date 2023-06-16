@@ -16,6 +16,14 @@ function ModalOverlay({ children, id, isModalOpened, onModalClose }) {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    const { body } = document;
+
+    return isModalOpened
+      ? body.classList.add('page-no-scroll')
+      : body.classList.remove('page-no-scroll');
+  }, [isModalOpened]);
+
   useCloseModal(id, isModalOpened, onModalClose);
 
   return mounted && modalRef.current
