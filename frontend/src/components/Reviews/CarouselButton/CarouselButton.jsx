@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, memo } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './CarouselButton.module.scss';
@@ -29,4 +29,4 @@ CarouselButton.propTypes = {
   direction: PropTypes.string.isRequired,
 };
 
-export default CarouselButton;
+export default memo(CarouselButton);

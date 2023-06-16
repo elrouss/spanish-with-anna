@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useCallback, useRef, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
 
@@ -15,7 +15,11 @@ import styles from './Reviews.module.scss';
 
 function Reviews() {
   const [randomReviews, setRandomReviews] = useState([]);
-  const [currentReview, setCurrentReview] = useState({});
+  const [currentReview, setCurrentReview] = useState({
+    name: '',
+    text: '',
+    image: '',
+  });
   const [isModalOpened, setIsModalOpened] = useState(false);
 
   const swiperRef = useRef();
@@ -23,6 +27,7 @@ function Reviews() {
   useEffect(() => {
     const copy = [...reviews];
     const MAX_NUMBER = 10; // the number should be even on desktop
+
     // Fisher–Yates shuffle
     for (let i = 0; i < reviews.length; i += 1) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -33,18 +38,26 @@ function Reviews() {
     setRandomReviews(copy.slice(0, MAX_NUMBER));
   }, []);
 
-  const handleModalOpen = ({ name, text, image }) => {
+  const handleModalOpen = useCallback(({ name, text, image }) => {
     setIsModalOpened(true);
 
     setCurrentReview({ name, text, image });
-  };
+  }, []);
 
   const handleModalClose = () => {
     setIsModalOpened(false);
 
     // The speed of clearing object is the same
     // as the animation of modal's closing
-    setTimeout(() => setCurrentReview({}), 300);
+    setTimeout(
+      () =>
+        setCurrentReview({
+          name: '',
+          text: '',
+          image: '',
+        }),
+      300
+    );
   };
 
   return (

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 
@@ -16,6 +17,7 @@ function Review({ name, text, image, onModalOpen }) {
             height={72}
             src={image}
             alt={`Ученик Анны - ${name}`}
+            priority
           />
           <h3 className={styles.name}>{name}</h3>
         </div>
@@ -42,4 +44,4 @@ Review.propTypes = {
   onModalOpen: PropTypes.func.isRequired,
 };
 
-export default Review;
+export default memo(Review);

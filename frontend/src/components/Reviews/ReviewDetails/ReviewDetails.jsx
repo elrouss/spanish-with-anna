@@ -9,13 +9,15 @@ function ReviewDetails({ currentReview: { name, text, image }, onModalClose }) {
     <div className={styles.modal}>
       <div className={styles.wrapper}>
         <div className={styles.person}>
-          <Image
-            className={styles.avatar}
-            width={72}
-            height={72}
-            src={image}
-            alt={`Ученик Анны - ${name}`}
-          />
+          {image && (
+            <Image
+              className={styles.avatar}
+              width={72}
+              height={72}
+              src={image}
+              alt={`Ученик Анны - ${name}`}
+            />
+          )}
           <h2 className={styles.name}>{name}</h2>
         </div>
         <p className={styles.paragraph}>{text}</p>
