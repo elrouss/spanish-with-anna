@@ -65,12 +65,19 @@ function Reviews() {
       <section>
         <div className={styles.wrapper}>
           <h2 className={styles.heading}>Отзывы учеников</h2>
-          <div className={styles.carouselContainer}>
+          <div
+            className={styles.carouselContainer}
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="10 отзывов о курсах Анны"
+          >
             <CarouselButton ref={swiperRef} direction="previous" />
             {/* Additional wrapper below for drop-shadow effect without cut-off */}
             <div className={styles.swiperWrapper}>
               <Swiper
                 className={styles.carousel}
+                aria-atomic={false}
+                aria-live="polite"
                 modules={[Pagination]}
                 slidesPerGroup={2}
                 slidesPerView={2}
@@ -85,13 +92,18 @@ function Reviews() {
                   swiperRef.current = swiper;
                 }}
               >
-                {randomReviews.map(({ _id, name, text, image }) => (
-                  <SwiperSlide key={`slide-${_id}`}>
+                {randomReviews.map(({ _id, name, text, image }, i) => (
+                  <SwiperSlide
+                    key={`slide-${_id}`}
+                    role="tabpanel"
+                    aria-labelledby={`Slide ${i + 1}`}
+                  >
                     <Review
                       key={`review-${_id}`}
                       name={name}
                       text={text}
                       image={image}
+                      slideNum={i}
                       onModalOpen={handleModalOpen}
                     />
                   </SwiperSlide>
