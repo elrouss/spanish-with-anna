@@ -8,7 +8,7 @@ import styles from './ModalOverlay.module.scss';
 
 function ModalOverlay({ children, id, isModalOpened, onModalClose }) {
   const modalRef = useRef(null);
-  const [mounted, setMounted] = useState(false);
+  const [ismounted, setMounted] = useState(false);
 
   useEffect(() => {
     modalRef.current = document.querySelector('#modals');
@@ -26,7 +26,7 @@ function ModalOverlay({ children, id, isModalOpened, onModalClose }) {
 
   useCloseModal(id, isModalOpened, onModalClose);
 
-  return mounted && modalRef.current
+  return ismounted && modalRef.current
     ? createPortal(
         <div
           className={`${styles.overlay}${
