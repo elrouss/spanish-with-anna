@@ -14,7 +14,7 @@ export default function Signup() {
           width={594}
           height={493}
           src={imageRegistration}
-          alt="Анна предлагает зарегистрироваться"
+          alt="Анна предлагает зарегистрироваться на курс"
         />
         <div className={styles.container}>
           <h2 className={styles.title}>как записаться на курс</h2>
