@@ -6,6 +6,7 @@ import Header from '../components/Header/Header';
 import Facts from '@/components/Facts/Facts';
 import Info from '@/components/Info/Info';
 import StudyingBenefits from '@/components/StudyingBenefits/StudyingBenefits';
+import Reviews from '@/components/Reviews/Reviews';
 import Footer from '@/components/Footer/Footer';
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
         <Facts />
         <Info />
         <StudyingBenefits />
+        <Reviews />
       </main>
       <Footer />
     </>
