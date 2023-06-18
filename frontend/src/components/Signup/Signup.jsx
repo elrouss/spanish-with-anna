@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import imageRegistration from '../../assets/images/intro-image-course-registration.png';
-import styles from './signup.module.scss';
+import styles from './Signup.module.scss';
 import Button from '../Button/Button';
 import IconArrowRegistration from '../../assets/icons/arrow-registration';
 import IconGift from '../../assets/icons/gift';
@@ -37,7 +37,7 @@ export default function Signup() {
               <li className={styles.text}>
                 интересные онлайн-ресурсы (испанские новостные
                 и&nbsp;развлекательные YouTube каналы, фильмы, подкасты, юмор,
-                сайты для изучения песен).
+                сайты для изучения песен)
               </li>
             </ul>
           </div>
@@ -57,6 +57,7 @@ export default function Signup() {
           <IconArrowRegistration />
         </div>
       </div>
+      <div className={styles.decorativeTileRight} />
     </section>
   );
 }

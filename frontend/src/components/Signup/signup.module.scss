@@ -116,3 +116,14 @@
   @include absolute-element(24px, calc(100% + 6px));
 }
 
+.decorativeTileRight {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  background: url(../../../public/assets/icons/tile-3.svg) center no-repeat;
+  width: 114px;
+  height: 145px;
+
+  transform: translateY(73px);
+}
