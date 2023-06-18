@@ -72,5 +72,14 @@
   background-color: transparent;
   border: none;
 
+  transition: $animation-transition-common;
   cursor: pointer;
+
+  &:hover {
+    color: $color-secondary-2;
+  }
+
+  &:active {
+    color: $color-complementary-7;
+  }
 }
