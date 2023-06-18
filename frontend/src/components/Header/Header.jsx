@@ -31,6 +31,7 @@ export default function Header() {
 
   return (
     <header className={`${styles.header} ${manrope.className}`}>
+      <div className={styles.overlay} />
       <div className={styles.container}>
         <Link
           className={styles.logo}
