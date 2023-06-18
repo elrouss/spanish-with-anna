@@ -1,0 +1,62 @@
+@import '../../styles/index.scss';
+
+.wrapper {
+  max-width: $wrapper-main-desktop;
+  margin: 0 auto;
+  padding: 154px 0 75px;
+}
+
+.heading {
+  @include renderFont(
+    $family: var(--font-raleway),
+    $weight: 600,
+    $size: $font-size-heading,
+    $line-height: $font-line-height-heading,
+    $color: $color-main-text-2
+  );
+  text-transform: uppercase;
+}
+
+.carouselContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carousel {
+  width: 79.4%;
+  padding: 100px 0 76px !important;
+
+  // SCSS variables don't work here,
+  // because styles are imported later than swiper
+  --swiper-pagination-bullet-horizontal-gap: 8.85px;
+  --swiper-pagination-bullet-width: 15px;
+  --swiper-pagination-bullet-height: 15px;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-inactive-color: #fff; // $color-main-1
+  --swiper-pagination-bullet-inactive-opacity: 1;
+
+  & > div:last-child > * {
+    box-sizing: border-box;
+    border: 1px solid $color-secondary-1;
+  }
+}
+
+.carouselBulletActive {
+  background-color: $color-main-3 !important;
+  border: none !important;
+}
+
+.swiperWrapper {
+  width: calc(100% - 163px); // more width for the shadows on the edges
+  margin: 0 -25px; // put the div in its original position
+  padding: 0 25px; // space for the shadows
+
+  overflow: hidden; // hide the overflow
+
+  > div {
+    width: 96.8%;
+
+    overflow: visible;
+  }
+}
