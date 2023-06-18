@@ -1,0 +1,45 @@
+@import '../../styles/index.scss';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: $wrapper-main-desktop;
+  margin: calc(70px + 98px) auto 0;
+}
+
+.content {
+  max-width: 425px;
+  padding-top: 16px;
+}
+
+.subtitle {
+  width: fit-content;
+  padding: 6px 21px;
+  @include renderFont(
+    $size: $font-size-main-text-s,
+    $line-height: $font-line-height-main-text-s,
+  );
+
+  border: 1px solid $color-accent-promo;
+  border-radius: 40px;
+}
+
+.headingImage {
+  margin-top: 10px;
+}
+
+.description {
+  margin: 35px 0 40px;
+  @include renderFont();
+}
+
+.button {
+  display: block;
+  width: fit-content;
+  min-width: 120px;
+  text-align: center;
+}
+
+.photo {
+  margin-right: -54px;
+}

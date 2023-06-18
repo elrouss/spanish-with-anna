@@ -3,8 +3,14 @@ import PropTypes from 'prop-types';
 // eslint-disable-next-line import/extensions
 import '@/styles/globals.scss';
 
-function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+import { manrope, raleway } from '@/assets/fonts/fonts';
+
+export default function App({ Component, pageProps }) {
+  return (
+    <div className={`${manrope.variable} ${raleway.variable}`}>
+      <Component {...pageProps} />
+    </div>
+  );
 }
 
 App.propTypes = {
