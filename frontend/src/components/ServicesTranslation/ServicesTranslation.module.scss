@@ -3,22 +3,18 @@
 .servicesTranslation {
   background-color: $color-main-3;
   color: $color-main-1;
-}
-
-.containerOuter {
-  max-width: 1440px;
   margin: 0 auto;
 }
 
-.containerInner {
-  display: grid;
-  grid-template-columns: 53.8% auto;
-  max-width: $wrapper-main-desktop;
+.container {
+  display: flex;
+  justify-content: space-between;
   margin-left: 140px;
 }
 
 .info {
   position: relative;
+  width: 48%;
   padding: 130px 0;
 }
 
@@ -38,6 +34,7 @@
 
 .description {
   margin-bottom: 39px;
+  padding-right: 25px;
   max-width: 570px;
 
   @include renderFont();
@@ -60,6 +57,14 @@
     box-shadow: inset 1px 4px 4px #B3B3B3;
     color: $color-additional-3;
   }
+}
+
+.translationImage {
+  width: 52%;
+  background-image: url('../../../public/assets/images/translation-book.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .decorativeTile {
