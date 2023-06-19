@@ -5,16 +5,21 @@
   color: $color-main-1;
 }
 
-.container {
-  position: relative;
-  max-width: $wrapper-main-desktop;
+.containerOuter {
+  max-width: 1440px;
   margin: 0 auto;
+}
+
+.containerInner {
+  display: grid;
+  grid-template-columns: 53.8% auto;
+  max-width: $wrapper-main-desktop;
+  margin-left: 140px;
 }
 
 .info {
   position: relative;
   padding: 130px 0;
-  max-width: 570px;
 }
 
 .title {
@@ -33,6 +38,7 @@
 
 .description {
   margin-bottom: 39px;
+  max-width: 570px;
 
   @include renderFont();
 
@@ -56,15 +62,9 @@
   }
 }
 
-.translationImage {
-  position: absolute;
-  top: 0;
-  right: -140px;
-}
-
 .decorativeTile {
   position: absolute;
-  right: -54px;
+  right: 0;
   bottom: 0;
 
   background: url(../../../public/assets/icons/tile-4.svg) center no-repeat;
