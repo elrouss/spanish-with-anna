@@ -1,0 +1,25 @@
+@import '../../styles/index.scss';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+
+  transition: $animation-transition-common;
+}
+
+.opened {
+  opacity: 1;
+  visibility: visible;
+}

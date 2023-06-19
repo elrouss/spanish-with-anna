@@ -1,7 +1,7 @@
 import { Manrope, Raleway } from 'next/font/google';
 
 export const manrope = Manrope({
-  weight: ['400', '600'],
+  weight: ['400', '600', '700],
   style: 'normal',
   subsets: ['cyrillic', 'latin'],
   fallback: ['Arial', 'Helvetica', 'sans-serif'],
