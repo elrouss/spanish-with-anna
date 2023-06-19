@@ -1,0 +1,62 @@
+@import '../../styles/index.scss';
+
+.servicesTranslation {
+  background-color: $color-main-3;
+  color: $color-main-1;
+}
+
+.container {
+  position: relative;
+  max-width: $wrapper-main-desktop;
+  margin: 0 auto;
+}
+
+.info {
+  position: relative;
+  padding: 130px 0;
+  max-width: 570px;
+}
+
+.title {
+  margin: 40px 0;
+
+  @include renderFont(
+    $family: var(--font-raleway),
+    $weight: 600,
+    $size: $font-size-heading,
+    $line-height: $font-line-height-subheading,
+    $color: $color-main-1
+  );
+
+  text-transform: uppercase;
+}
+
+.description {
+  margin-bottom: 39px;
+
+  @include renderFont();
+
+  color: $color-main-1;
+}
+
+.button {
+  width: fit-content;
+  background-color: $color-main-1;
+  color: $color-main-text-2;
+}
+
+.translationImage {
+  position: absolute;
+  top: 0;
+  right: -140px;
+}
+
+.decorativeTile {
+  position: absolute;
+  right: -54px;
+  bottom: 0;
+
+  background: url(../../../public/assets/icons/tile-4.svg) center no-repeat;
+  width: 119px;
+  height: 79px;
+}
