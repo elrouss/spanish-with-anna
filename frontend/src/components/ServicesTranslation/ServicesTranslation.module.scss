@@ -54,7 +54,7 @@
 
   &:active {
     background-color: $color-additional-2;
-    box-shadow: inset 1px 4px 4px #B3B3B3;
+    box-shadow: inset 1px 4px 4px $color-additional-8;
     color: $color-additional-3;
   }
 }
