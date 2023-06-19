@@ -1,0 +1,86 @@
+@import '../../styles/index.scss';
+
+.section {
+  background-color: $color-main-4;
+}
+
+.wrapper {
+  max-width: $wrapper-main-desktop;
+  margin: 0 auto;
+  padding: 27px 0 11px;
+}
+
+.background {
+  position: relative;
+  left: 133px;
+
+  display: inline-block;
+
+  background: url(../../../public/assets/images/city.svg) center no-repeat;
+  width: 806px;
+  height: 204px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  max-width: 136px;
+  padding: 15px 0 9px 24px;
+}
+
+.textAccent {
+  font-weight: 600;
+}
+
+.billet1,
+.billet2,
+.billet3 {
+  position: absolute;
+
+  @include renderFont(
+    $size: $font-size-main-text-s,
+    $line-height: $font-line-height-main-text-s,
+    $color: $color-main-text-2
+  );
+}
+
+.billet1 {
+  top: 43px;
+  left: -53px;
+
+  background: url(../../../public/assets/icons/billet-1.svg) center no-repeat;
+  width: 140px;
+  height: 58px;
+
+  & > .text {
+    padding-left: 21px;
+  }
+}
+
+.billet2 {
+  top: 1px;
+  right: 193px;
+
+  background: url(../../../public/assets/icons/billet-2.svg) center no-repeat;
+  width: 183px;
+  height: 59px;
+
+  & > .text {
+    padding-top: 14px;
+    padding-left: 21px;
+  }
+}
+
+.billet3 {
+  right: -141px;
+  bottom: 55px;
+
+  background: url(../../../public/assets/icons/billet-3.svg) center no-repeat;
+  width: 161px;
+  height: 57px;
+
+  & > .text {
+    padding-top: 14px;
+    padding-left: 25px;
+  }
+}

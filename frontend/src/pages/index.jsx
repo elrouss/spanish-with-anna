@@ -1,12 +1,13 @@
 import Head from 'next/head';
-import Intro from '../components/Intro/Intro';
 import { manrope, raleway } from '@/assets/fonts/fonts';
 
 import Header from '../components/Header/Header';
-import Signup from '../components/Signup/Signup';
+import Intro from '../components/Intro/Intro';
 import Facts from '@/components/Facts/Facts';
 import Info from '@/components/Info/Info';
 import StudyingBenefits from '@/components/StudyingBenefits/StudyingBenefits';
+import DecorativeBackground from '@/components/DecorativeBackground/DecorativeBackground';
+import Signup from '../components/Signup/Signup';
 import Reviews from '@/components/Reviews/Reviews';
 import ServicesTranslation from '@/components/ServicesTranslation/ServicesTranslation';
 import Footer from '@/components/Footer/Footer';
@@ -27,6 +28,7 @@ export default function Home() {
         <Facts />
         <Info />
         <StudyingBenefits />
+        <DecorativeBackground />
         <Signup />
         <Reviews />
         <ServicesTranslation />
