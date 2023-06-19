@@ -43,6 +43,17 @@
   width: fit-content;
   background-color: $color-main-1;
   color: $color-main-text-2;
+
+  &:hover {
+    background-color: $color-additional-1;
+    box-shadow: inset 2px 7px 4px $color-main-1;
+  }
+
+  &:active {
+    background-color: $color-additional-2;
+    box-shadow: inset 1px 4px 4px #B3B3B3;
+    color: $color-additional-3;
+  }
 }
 
 .translationImage {
