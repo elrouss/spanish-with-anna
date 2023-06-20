@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import styles from './header.module.scss';
+import styles from './Header.module.scss';
 import IconLogo from '../../assets/icons/logo';
 import IconArrowDown from '../../assets/icons/arrow-down';
 import Button from '../Button/Button';
