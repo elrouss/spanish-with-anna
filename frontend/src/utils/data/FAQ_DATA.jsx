@@ -3,49 +3,49 @@ const FAQ_DATA = [
     _id: 1,
     title: 'Какие курсы мне подойдут?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias, earum sit hic repellat omnis aspernatur delectus perspiciatis voluptatibus laudantium exercitationem suscipit adipisci ipsum maxime, amet, autem dolores error itaque iste! Sit impedit nisi alias delectus ullam repudiandae, dignissimos pariatur porro incidunt fuga, provident quos laborum dolore, omnis sint! Molestias fugit quos quas dolorum ratione obcaecati, distinctio repudiandae voluptatum cupiditate autem. Iure quod cum ad vel deserunt at magni, ullam, dolorum sunt atque sit, doloremque deleniti sed expedita suscipit tenetur laboriosam rerum. Eaque possimus culpa dicta asperiores eligendi corrupti, veniam repellendus.',
+      'Вам удобно заниматься лично с\u00A0преподавателем по\u00A0зуму и\u00A0сразу разбирать все вопросы? Тогда будем разбираться вместе на\u00A0индивидуальных занятиях или в\u00A0мини-группе. Вы\u00A0предпочитаете разбирать теоретическую часть в\u00A0удобном вам графике, в\u00A0спокойном режиме, а\u00A0потом получать обратную связь от\u00A0преподавателя? Тогда вам подойдут курсы для самостоятельного обучения. В\u00A0этих курсах я\u00A0собрала всю самую необходимую информацию в\u00A0четкой и\u00A0понятной форме. Вам откроется доступ к\u00A0лекциям, а\u00A0также вы\u00A0получите интересные задания для практики. После того, как вы\u00A0прослушаете теорию и\u00A0сделаете все задания, мы\u00A0с\u00A0вами созвонимся в\u00A0зуме, чтобы отработать все ваши новые знания в\u00A0устной речи.',
   },
   {
     _id: 2,
     title: 'На какой уровень рассчитаны курсы?',
     answer:
-      'Курсы для самостоятельного обучения имеют отметку, для какого уровня они лучше всего подойдут. Для записи на занятия в группах просто укажите ваш уровень в заявке. Я подберу для вас наиболее подходящую языковую группу. Если вы сомневаетесь в своем уровне, просто напишите мне, заполнив форму “задать вопрос”.',
+      'Курсы для самостоятельного обучения имеют отметку, для какого уровня они лучше всего подойдут. Для записи на\u00A0занятия в\u00A0группах просто укажите ваш уровень в\u00A0заявке. Я\u00A0подберу для вас наиболее подходящую языковую группу. Если вы\u00A0сомневаетесь в\u00A0своем уровне, просто напишите мне, заполнив форму \u00ABзадать вопрос\u00BB.',
   },
   {
     _id: 3,
     title: 'Какова продолжительность курса?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias, earum sit hic repellat omnis aspernatur delectus perspiciatis voluptatibus laudantium exercitationem suscipit adipisci ipsum maxime, amet, autem dolores error itaque iste! Sit impedit nisi alias delectus ullam repudiandae, dignissimos pariatur porro incidunt fuga, provident quos laborum dolore, omnis sint! Molestias fugit quos quas dolorum ratione obcaecati, distinctio repudiandae voluptatum cupiditate autem. Iure quod cum ad vel deserunt at magni, ullam, dolorum sunt atque sit, doloremque deleniti sed expedita suscipit tenetur laboriosam rerum. Eaque possimus culpa dicta asperiores eligendi corrupti, veniam repellendus.',
+      'Доступ к\u00A0курсу для самостоятельного обучения открывается вам на\u00A0полгода. Вы\u00A0можете пройти весь курс как за\u00A0пару недель, так и\u00A0за\u00A06 месяцев, в\u00A0зависимости от\u00A0вашей занятости и\u00A0темпов обучения. Длительность групповых курсов составляет два-три месяца.',
   },
   {
     _id: 4,
     title: 'Что, если я не нашел лекций по нужной мне теме?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias, earum sit hic repellat omnis aspernatur delectus perspiciatis voluptatibus laudantium exercitationem suscipit adipisci ipsum maxime, amet, autem dolores error itaque iste! Sit impedit nisi alias delectus ullam repudiandae, dignissimos pariatur porro incidunt fuga, provident quos laborum dolore, omnis sint! Molestias fugit quos quas dolorum ratione obcaecati, distinctio repudiandae voluptatum cupiditate autem. Iure quod cum ad vel deserunt at magni, ullam, dolorum sunt atque sit, doloremque deleniti sed expedita suscipit tenetur laboriosam rerum. Eaque possimus culpa dicta asperiores eligendi corrupti, veniam repellendus.',
+      'Со\u00A0временем будут появляться новые лекции, но\u00A0если вы\u00A0не\u00A0нашли курса по\u00A0интересующей вас теме, вы\u00A0всегда можете оставить заявку на\u00A0индивидуальное занятие. Возможно, вам хватит нескольких уроков, чтобы разобраться в\u00A0вашем вопросе.',
   },
   {
     _id: 5,
     title: 'Почему я могу доверять Анне?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias, earum sit hic repellat omnis aspernatur delectus perspiciatis voluptatibus laudantium exercitationem suscipit adipisci ipsum maxime, amet, autem dolores error itaque iste! Sit impedit nisi alias delectus ullam repudiandae, dignissimos pariatur porro incidunt fuga, provident quos laborum dolore, omnis sint! Molestias fugit quos quas dolorum ratione obcaecati, distinctio repudiandae voluptatum cupiditate autem. Iure quod cum ad vel deserunt at magni, ullam, dolorum sunt atque sit, doloremque deleniti sed expedita suscipit tenetur laboriosam rerum. Eaque possimus culpa dicta asperiores eligendi corrupti, veniam repellendus.',
+      'Моя практика в\u00A0качестве преподавателя и\u00A0переводчика подтверждена дипломами и\u00A0отзывами учеников. С\u00A0моей помощью, десятки студентов смогли подготовиться к\u00A0важным экзаменам, жизни за\u00A0рубежом или к\u00A0поступлению в\u00A0престижные учебные заведения.',
   },
   {
     _id: 6,
     title: 'Чем эти курсы отличаются от других?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias, earum sit hic repellat omnis aspernatur delectus perspiciatis voluptatibus laudantium exercitationem suscipit adipisci ipsum maxime, amet, autem dolores error itaque iste! Sit impedit nisi alias delectus ullam repudiandae, dignissimos pariatur porro incidunt fuga, provident quos laborum dolore, omnis sint! Molestias fugit quos quas dolorum ratione obcaecati, distinctio repudiandae voluptatum cupiditate autem. Iure quod cum ad vel deserunt at magni, ullam, dolorum sunt atque sit, doloremque deleniti sed expedita suscipit tenetur laboriosam rerum. Eaque possimus culpa dicta asperiores eligendi corrupti, veniam repellendus.',
+      'Я\u00A0стараюсь совмещать классический подход к\u00A0преподаванию с\u00A0современными методиками. Придерживаюсь правила: информация для ученика должна быть хорошо структурирована и\u00A0интересно проиллюстрирована. А\u00A0также за\u00A0годы работы я\u00A0поняла, на\u00A0чем чаще всего спотыкаются студенты, и\u00A0в\u00A0своих курсах особое внимание я\u00A0уделяю именно таким проблемным темам.',
   },
   {
     _id: 7,
     title: 'Сколько времени нужно, чтобы освоить язык?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias, earum sit hic repellat omnis aspernatur delectus perspiciatis voluptatibus laudantium exercitationem suscipit adipisci ipsum maxime, amet, autem dolores error itaque iste! Sit impedit nisi alias delectus ullam repudiandae, dignissimos pariatur porro incidunt fuga, provident quos laborum dolore, omnis sint! Molestias fugit quos quas dolorum ratione obcaecati, distinctio repudiandae voluptatum cupiditate autem. Iure quod cum ad vel deserunt at magni, ullam, dolorum sunt atque sit, doloremque deleniti sed expedita suscipit tenetur laboriosam rerum. Eaque possimus culpa dicta asperiores eligendi corrupti, veniam repellendus.',
+      'Здесь всё индивидуально. Чем больше времени вы\u00A0сможете уделять языку, тем быстрее вы\u00A0заговорите. В\u00A0среднем, для того, чтобы без страха использовать испанский в\u00A0путешествиях, нужно около года. Чтобы разговаривать с\u00A0носителем практически на\u00A0любые темы\u00A0&mdash; понадобится около двух\u00A0лет. Если\u00A0же вы\u00A0можете уделить языку всего пару месяцев\u00A0&mdash; не\u00A0беда! За\u00A0это время вы\u00A0точно научитесь базовым фразам для знакомства и\u00A0формулам вежливости, а\u00A0также сумеете рассказать немного о\u00A0себе и\u00A0о\u00A0своих интересах.',
   },
   {
     _id: 8,
     title: 'Есть ли курсы по подготовке к экзамену DELE?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias, earum sit hic repellat omnis aspernatur delectus perspiciatis voluptatibus laudantium exercitationem suscipit adipisci ipsum maxime, amet, autem dolores error itaque iste! Sit impedit nisi alias delectus ullam repudiandae, dignissimos pariatur porro incidunt fuga, provident quos laborum dolore, omnis sint! Molestias fugit quos quas dolorum ratione obcaecati, distinctio repudiandae voluptatum cupiditate autem. Iure quod cum ad vel deserunt at magni, ullam, dolorum sunt atque sit, doloremque deleniti sed expedita suscipit tenetur laboriosam rerum. Eaque possimus culpa dicta asperiores eligendi corrupti, veniam repellendus.',
+      'Я\u00A0с\u00A0удовольствием помогу вам подготовиться к\u00A0экзамену DELE в\u00A0рамках индивидуальных занятий. Мы\u00A0обсудим все тонкости и\u00A0нюансы формата экзамена, определим ваши сильные и\u00A0слабые стороны и\u00A0будем практиковаться, пока не\u00A0достигнем блестящих результатов.',
   },
 ];
 

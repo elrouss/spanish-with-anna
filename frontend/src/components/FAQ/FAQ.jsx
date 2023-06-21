@@ -1,6 +1,6 @@
 import styles from './FAQ.module.scss';
 import FAQ_DATA from '@/utils/data/FAQ_DATA';
-import Question from './Question';
+import Question from './Question/Question';
 
 function FAQ() {
   const questions = FAQ_DATA.map((q) => (

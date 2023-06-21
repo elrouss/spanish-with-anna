@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import iconArrowDown from '../../../public/assets/icons/arrow-down.svg';
-import styles from './FAQ.module.scss';
+import iconArrowDown from '../../../../public/assets/icons/arrow-down.svg';
+import styles from './Question.module.scss';
 
 function Question({ title, answer }) {
   const [isAnswerVisible, setIsAnswerVisible] = useState(false);
@@ -10,27 +10,38 @@ function Question({ title, answer }) {
   function toggleAnswerVisibility() {
     setIsAnswerVisible(!isAnswerVisible);
   }
+
+  function handleKeyDown(evt) {
+    if (evt.key === 'Enter') {
+      toggleAnswerVisibility();
+    }
+  }
+
   return (
     <>
-      <button
+      <div
         className={`${styles.accordionItemHead} ${
-          isAnswerVisible && styles.accordionItemHead_active
+          isAnswerVisible ? styles.accordionItemHead_active : ''
         }`}
-        type="button"
+        tabIndex={0}
+        role="button"
         onClick={toggleAnswerVisibility}
+        onKeyDown={handleKeyDown}
       >
         <h3 className={styles.accordionItemTitle}>{title}</h3>
         <Image
-          className={`${styles.arrowDown} ${isAnswerVisible && styles.arrowUp}`}
+          className={`${styles.arrowDown} ${
+            isAnswerVisible ? styles.arrowUp : ''
+          }`}
           src={iconArrowDown}
           width={23}
           height={13}
           alt="Показать ответ"
         />
-      </button>
+      </div>
       <div
         className={`${styles.accordionItemContent} ${
-          isAnswerVisible && styles.accordionItemContent_active
+          isAnswerVisible ? styles.accordionItemContent_active : ''
         }`}
       >
         {answer}
