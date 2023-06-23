@@ -7,7 +7,7 @@
 .wrapper {
   max-width: $wrapper-main-desktop;
   margin: 0 auto;
-  padding: 27px 0 11px;
+  padding: 28px 0 11px;
 }
 
 .background {
@@ -37,7 +37,7 @@
 .billet3 {
   position: absolute;
 
-  @include renderFont(
+  @include render-font(
     $size: $font-size-main-text-s,
     $line-height: $font-line-height-main-text-s,
     $color: $color-main-text-2

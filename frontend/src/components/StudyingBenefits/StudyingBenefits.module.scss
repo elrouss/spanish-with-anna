@@ -10,11 +10,11 @@
   row-gap: 100px;
   max-width: $wrapper-main-desktop;
   margin: 0 auto;
-  padding: 150px 0;
+  padding: 105px 0 150px;
 }
 
 .heading {
-  @include renderFont(
+  @include render-font(
     $family: var(--font-raleway),
     $weight: 600,
     $size: $font-size-heading,
@@ -43,7 +43,7 @@
 
 .decorativeTileLeft {
   position: absolute;
-  top: 329px;
+  top: 284px;
   left: 0;
 
   background: url(../../../public/assets/icons/tile-1.svg) center no-repeat;

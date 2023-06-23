@@ -48,11 +48,11 @@
 }
 
 .name {
-  @include renderFont($color: $color-complementary-3);
+  @include render-font($color: $color-complementary-3);
 }
 
 .paragraph {
-  @include renderFont();
+  @include render-font();
 }
 
 .closeButton {

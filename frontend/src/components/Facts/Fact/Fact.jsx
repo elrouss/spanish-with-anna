@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import styles from './Facts.module.scss';
+import styles from './Fact.module.scss';
 
 function Fact({ counter, description }) {
   return (

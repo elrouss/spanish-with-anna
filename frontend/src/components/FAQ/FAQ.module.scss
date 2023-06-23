@@ -7,11 +7,11 @@
 .container {
   max-width: $wrapper-main-desktop;
   margin: 0 auto 181px;
-  padding-top: 75px;
+  padding-top: 70px;
 }
 
 .title {
-  @include renderFont(
+  @include render-font(
     $family: var(--font-raleway),
     $weight: 600,
     $size: $font-size-heading,
@@ -24,7 +24,7 @@
 
 .accordion {
   max-width: 765px;
-  margin: 135px auto 110px;
+  margin: 135px auto 75px;
 }
 
 .accordionItem:not(:last-of-type) {
@@ -42,7 +42,8 @@
 
   background-color: $color-main-3;
   border-radius: 70px;
-  background-image: url('../../../public/assets/icons/tile-5.svg'), url('../../../public/assets/icons/tile-6.svg');
+  background-image: url('../../../public/assets/icons/tile-5.svg'),
+    url('../../../public/assets/icons/tile-6.svg');
   background-repeat: no-repeat, no-repeat;
   background-position: left bottom, right top;
 }
@@ -50,7 +51,7 @@
 .tip {
   max-width: 223px;
 
-  @include renderFont();
+  @include render-font();
 
   text-align: center;
   color: $color-main-1;
@@ -62,12 +63,12 @@
   bottom: -32px;
   padding: 19px 40px;
   transform: translateX(-50%);
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 
-  @include renderFont(
+  @include render-font(
     $size: $font-size-main-text-l,
     $line-height: $font-line-height-main-text-l,
-    $color: $color-main-text-1,
+    $color: $color-main-text-1
   );
 
   border-radius: 50px;
@@ -104,8 +105,8 @@
 .decorationTileLeft {
   position: absolute;
   left: 0;
-  top: 142px;
-  width: 101px;
+  top: 214px;
+  width: 100px;
   height: 298.74px;
 
   background-color: transparent;

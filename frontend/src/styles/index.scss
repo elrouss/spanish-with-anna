@@ -2,9 +2,10 @@
 @import './abstracts/variables/colors.scss';
 @import './abstracts/variables/media-queries.scss';
 @import './abstracts/variables/wrappers.scss';
+@import './abstracts/variables/z-index.scss';
 @import './abstracts/variables/animations.scss';
 @import './abstracts/placeholders.scss';
 @import './abstracts/mixins.scss';
 
 @import './components/buttons.scss';
-@import './components/icons.scss'
+@import './components/icons.scss';

@@ -47,7 +47,7 @@
 }
 
 .name {
-  @include renderFont($color: $color-complementary-3);
+  @include render-font($color: $color-complementary-3);
 }
 
 .paragraph {
@@ -59,7 +59,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 
-  @include renderFont();
+  @include render-font();
 
   cursor: default;
 }
@@ -67,7 +67,7 @@
 .more {
   margin-top: 10px;
 
-  @include renderFont($weight: 700, $color: $color-main-3);
+  @include render-font($weight: 700, $color: $color-main-3);
 
   background-color: transparent;
   border: none;

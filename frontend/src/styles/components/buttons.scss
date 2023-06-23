@@ -2,7 +2,7 @@
 .button {
   @extend %button-default;
 
-  @include renderFont(
+  @include render-font(
     $size: $font-size-main-text-l,
     $line-height: $font-line-height-main-text-l,
     $color: $color-main-1
@@ -13,14 +13,14 @@
 
   &:hover {
     background-color: $color-additional-5;
-    @include renderButtonBoxShadow();
+    @include render-button-box-shadow();
   }
 
   &:active {
     color: $color-complementary-8;
 
     background-color: $color-main-3;
-    @include renderButtonBoxShadow($color: $color-complementary-7);
+    @include render-button-box-shadow($color: $color-complementary-7);
   }
 
   &_size_xl {
@@ -35,7 +35,7 @@
 .button-promo {
   @extend %button-default;
 
-  @include renderFont(
+  @include render-font(
     $size: $font-size-main-text-l,
     $line-height: $font-line-height-main-text-l
   );
@@ -44,7 +44,7 @@
 
   &:hover {
     background-color: $color-accent-promo-additional-4;
-    @include renderButtonBoxShadow(
+    @include render-button-box-shadow(
       $height: 8px,
       $radius: 8px,
       $color: $color-accent-promo-additional-2
@@ -55,7 +55,7 @@
     color: $color-additional-3;
 
     background-color: $color-accent-promo;
-    @include renderButtonBoxShadow(
+    @include render-button-box-shadow(
       $width: 1px,
       $height: 5px,
       $radius: 5px,
@@ -68,7 +68,7 @@
 .button-additional {
   @extend %button-default;
 
-  @include renderFont(
+  @include render-font(
     $size: $font-size-main-text-l,
     $line-height: $font-line-height-main-text-l,
     $color: $color-main-text-2
@@ -78,7 +78,7 @@
 
   &:hover {
     background-color: $color-additional-1;
-    @include renderButtonBoxShadow(
+    @include render-button-box-shadow(
       $height: 7px,
       $radius: 4px,
       $color: $color-main-1
@@ -89,7 +89,7 @@
     color: $color-additional-3;
 
     background-color: $color-additional-2;
-    @include renderButtonBoxShadow(
+    @include render-button-box-shadow(
       $width: 1px,
       $height: 4px,
       $radius: 4px,

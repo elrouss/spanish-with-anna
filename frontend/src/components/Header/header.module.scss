@@ -1,6 +1,4 @@
-@import '../../styles/abstracts/variables/colors.scss';
-@import '../../styles/abstracts/variables/fonts.scss';
-@import '../../styles/abstracts/mixins.scss';
+@import '../../styles/index.scss';
 
 %pseudo-element-default {
   content: '';
@@ -10,7 +8,7 @@
   background-color: $color-main-3;
   border-radius: 2px;
   opacity: 0;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 %pseudo-hover {
@@ -32,7 +30,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9;
+  z-index: $z-index-header;
   width: 100%;
 }
 
@@ -41,8 +39,8 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 100px;
-  z-index: -1;
+  height: 97px;
+  z-index: $z-index-below-content-default;
   background-color: $color-main-1;
   border-bottom: 1px solid $color-complementary-1;
 }
@@ -65,8 +63,8 @@
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
-  margin-left: 63px;
-  @include renderFont(
+  margin-left: 73px;
+  @include render-font(
     $size: $font-size-main-text-l,
     $line-height: 1.38,
     $color: $color-main-text-2
@@ -75,20 +73,20 @@
 
 .navigationMenu {
   display: flex;
-  gap: 80px;
+  gap: 97px;
+  margin-bottom: 4px;
 }
 
 .navigationAuth {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 42px;
 }
 
 .navigationLink {
   position: relative;
-  padding: 0 10px;
   color: $color-main-text-2;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   &::before {
     @include pseudo-element(28px, calc(50% - 2px));
   }
@@ -100,7 +98,7 @@
   padding-left: 10px;
   font-size: $font-size-main-text;
   color: $color-main-text-2;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   &::before {
     @include pseudo-element(calc(50% - 2px), -2px);
   }
@@ -114,7 +112,7 @@
 .dropDownMenuButton {
   background-color: $color-main-1;
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   &::before {
     @include pseudo-element(28px, calc(50% - 2px));
   }
@@ -122,14 +120,14 @@
 }
 
 .navigationText {
-  margin-right: 10px;
+  margin-right: 21px;
 }
 
 .dropDownMenuContainer {
   position: absolute;
   top: -10px;
   left: -10px;
-  z-index: -2;
+  z-index: $z-index-drop-down;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -140,7 +138,7 @@
   border: 1px solid $color-complementary-1;
   border-radius: 0 0 20px 20px;
   visibility: hidden;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .dropDownMenuContainerActive {
@@ -151,4 +149,3 @@
   gap: 14px;
   visibility: visible;
 }
-

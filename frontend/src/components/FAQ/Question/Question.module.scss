@@ -7,12 +7,11 @@
   margin: 35px 0;
   padding: 0;
   width: 100%;
-  z-index: 1000;
 
   background-color: transparent;
   cursor: pointer;
 
-  @include renderFont(
+  @include render-font(
     $family: var(--font-raleway),
     $weight: 600,
     $size: $font-size-subheading,
@@ -21,14 +20,14 @@
   );
 
   text-transform: uppercase;
-  transition: opacity .2s linear;
+  transition: opacity 0.2s linear;
 
   &:hover {
-    opacity: .7;
+    opacity: 0.7;
   }
 
   &:active {
-    opacity: .5;
+    opacity: 0.5;
   }
 
   &_active {
@@ -41,12 +40,12 @@
 }
 
 .arrowDown {
-  transition: all .3s ease-in;
+  transition: all 0.3s ease-in;
   margin-right: 7px;
 }
 
 .arrowUp {
-  transition: all .3s ease-in;
+  transition: all 0.3s ease-in;
   transform: rotate(540deg);
 }
 
@@ -54,9 +53,9 @@
   overflow: hidden;
   height: 0;
   max-width: 668px;
-  transition: all .4s linear;
+  transition: all 0.4s linear;
 
-  @include renderFont();
+  @include render-font();
 
   &_active {
     height: auto;

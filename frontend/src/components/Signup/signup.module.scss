@@ -1,6 +1,4 @@
-@import '../../styles/abstracts/variables/colors.scss';
-@import '../../styles/abstracts/variables/fonts.scss';
-@import '../../styles/abstracts/mixins.scss';
+@import '../../styles/index.scss';
 
 @mixin absolute-element($top, $left) {
   position: absolute;
@@ -34,7 +32,7 @@
   flex-direction: column;
   margin: 80px 0 29px;
   & > span {
-    margin: 8px  0 144px;
+    margin: 8px 0 144px;
   }
 }
 
@@ -43,7 +41,7 @@
 }
 
 .title {
-  @include renderFont(
+  @include render-font(
     $family: var(--font-raleway),
     $weight: 600,
     $size: $font-size-heading,
@@ -54,7 +52,7 @@
 }
 
 .text {
-  @include renderFont(
+  @include render-font(
     $size: $font-size-main-text,
     $line-height: 1.42,
     $color: $color-main-text-1
@@ -82,15 +80,15 @@
 }
 
 .bonus {
-  @include absolute-element(calc(50% - 91px),  calc(50% - 141px));
-  z-index: 2;
+  @include absolute-element(calc(50% - 91px), calc(50% - 141px));
+  z-index: $z-index-upper-content-default;
 }
 
 .iconText {
   width: 211px;
   border-radius: 40px;
   padding: 16px 22px 13px;
-  @include renderFont(
+  @include render-font(
     $weight: 500,
     $size: $font-size-main-text-l,
     $line-height: 1.38,
@@ -102,7 +100,7 @@
 }
 
 .iconGift {
-  @include absolute-element(-41px,168px);
+  @include absolute-element(-41px, 168px);
   height: 53px;
   width: 53px;
   display: flex;

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import PropTypes from 'prop-types';
-import Button from '../Button/Button';
-import styles from './Info.module.scss';
+import Button from '../../Button/Button';
+import styles from './InfoCard.module.scss';
 
 function InfoCard({ title, description, image, link }) {
   return (

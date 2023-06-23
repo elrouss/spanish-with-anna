@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { manrope, raleway } from '@/assets/fonts/fonts';
 
 import Header from '../components/Header/Header';
 import Intro from '../components/Intro/Intro';
@@ -24,7 +23,7 @@ export default function Home() {
       </Head>
 
       <Header />
-      <main className={`${manrope.variable} ${raleway.variable}`}>
+      <main>
         <Intro />
         <Facts />
         <Info />
