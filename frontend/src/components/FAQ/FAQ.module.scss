@@ -1,0 +1,115 @@
+@import '../../styles/index.scss';
+
+.faq {
+  position: relative;
+}
+
+.container {
+  max-width: $wrapper-main-desktop;
+  margin: 0 auto 181px;
+  padding-top: 75px;
+}
+
+.title {
+  @include renderFont(
+    $family: var(--font-raleway),
+    $weight: 600,
+    $size: $font-size-heading,
+    $line-height: $font-line-height-heading,
+    $color: $color-main-text-2
+  );
+
+  text-transform: uppercase;
+}
+
+.accordion {
+  max-width: 765px;
+  margin: 135px auto 110px;
+}
+
+.accordionItem:not(:last-of-type) {
+  border-bottom: 1px solid $color-complementary-2;
+}
+
+.ask {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 766px;
+  min-height: 150px;
+  margin: 0 auto;
+
+  background-color: $color-main-3;
+  border-radius: 70px;
+  background-image: url('../../../public/assets/icons/tile-5.svg'), url('../../../public/assets/icons/tile-6.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left bottom, right top;
+}
+
+.tip {
+  max-width: 223px;
+
+  @include renderFont();
+
+  text-align: center;
+  color: $color-main-1;
+}
+
+.askButton {
+  position: absolute;
+  left: 50%;
+  bottom: -32px;
+  padding: 19px 40px;
+  transform: translateX(-50%);
+  transition: all .2s linear;
+
+  @include renderFont(
+    $size: $font-size-main-text-l,
+    $line-height: $font-line-height-main-text-l,
+    $color: $color-main-text-1,
+  );
+
+  border-radius: 50px;
+  background-color: $color-accent-promo;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-accent-promo-additional-4;
+    box-shadow: inset 2px 8px 8px $color-accent-promo-additional-6;
+  }
+
+  &:active {
+    background: $color-accent-promo-additional-5;
+    box-shadow: inset 1px 5px 5px rgba(0, 0, 0, 0.16);
+  }
+}
+
+.decorationQuestionIcon {
+  position: absolute;
+  left: 50%;
+  top: calc(-68px / 2);
+  transform: translateX(-50%);
+  width: 68px;
+  height: 68px;
+
+  background-color: $color-main-1;
+  background-image: url('../../../public/assets/icons/question.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  border-radius: 50%;
+}
+
+.decorationTileLeft {
+  position: absolute;
+  left: 0;
+  top: 142px;
+  width: 101px;
+  height: 298.74px;
+
+  background-color: transparent;
+  background-image: url('../../../public/assets/icons/tile-7.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
