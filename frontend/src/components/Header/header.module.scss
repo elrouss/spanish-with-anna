@@ -20,6 +20,12 @@
       opacity: 1;
     }
   }
+  &:active {
+    color: $color-complementary-7;
+    &::before {
+      background-color: $color-complementary-7;
+    }
+  }
 }
 
 @mixin pseudo-element($top, $left) {
