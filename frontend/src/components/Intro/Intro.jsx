@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Button from '../Button/Button';
 import styles from './Intro.module.scss';
 import headingLogo from '../../assets/images/intro-heading.svg';
 import introImageMain from '../../assets/images/intro-image-main.png';
