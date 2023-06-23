@@ -93,11 +93,7 @@ function Reviews() {
                 }}
               >
                 {randomReviews.map(({ _id, name, text, image }, i) => (
-                  <SwiperSlide
-                    key={`slide-${_id}`}
-                    role="tabpanel"
-                    aria-labelledby={`Slide ${i + 1}`}
-                  >
+                  <SwiperSlide key={`slide-${_id}`} role="tabpanel">
                     <Review
                       key={`review-${_id}`}
                       name={name}
