@@ -20,14 +20,14 @@
   );
 
   text-transform: uppercase;
-  transition: opacity 0.2s linear;
+  transition: all 0.3s ease;
 
   &:hover {
-    opacity: 0.7;
+    color: $color-main-3;
   }
 
   &:active {
-    opacity: 0.5;
+    color: $color-complementary-7;
   }
 
   &_active {

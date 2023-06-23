@@ -7,7 +7,7 @@ import IconGift from '../../assets/icons/gift';
 
 export default function Signup() {
   return (
-    <section className={styles.signup}>
+    <section className={styles.signup} id="signup">
       <div className={styles.mainContainer}>
         <Image
           className={styles.image}
