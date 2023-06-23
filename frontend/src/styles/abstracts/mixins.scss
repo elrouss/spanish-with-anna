@@ -1,4 +1,4 @@
-@mixin renderFont(
+@mixin render-font(
   $family: var(--font-manrope),
   $weight: 400,
   $size: $font-size-main-text,
@@ -12,7 +12,7 @@
   color: $color;
 }
 
-@mixin renderButtonBoxShadow(
+@mixin render-button-box-shadow(
   $width: 2px,
   $height: 5px,
   $radius: 6px,

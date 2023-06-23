@@ -1,5 +1,5 @@
 import styles from './Info.module.scss';
-import InfoCard from './InfoCard';
+import InfoCard from './InfoCard/InfoCard';
 import INFO_CARDS from '@/utils/data/INFO_CARDS';
 
 function Info() {
@@ -15,10 +15,14 @@ function Info() {
     </li>
   ));
   return (
-    <section className={styles.info} id="info">
-      <h2 className={styles.title}>Информация по онлайн-курсам</h2>
-      <ul className={styles.list}>{infoCards}</ul>
-      <div className={styles.decoration} />
+    <section id="info">
+      <div className={styles.wrapper}>
+        <h2 className={styles.title}>Информация по онлайн-курсам</h2>
+        <div className={styles.content}>
+          <ul className={styles.list}>{infoCards}</ul>
+          <div className={styles.decoration} />
+        </div>
+      </div>
     </section>
   );
 }

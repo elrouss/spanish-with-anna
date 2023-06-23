@@ -16,9 +16,9 @@
   display: flex;
   flex-direction: column;
   row-gap: 113px;
-  width: 100%;
+  width: 98.4%;
 
-  @include renderFont(
+  @include render-font(
     $size: $font-size-main-text-l,
     $line-height: calc(2.2rem / $font-size-main-text-l * 100%),
     $color: $color-secondary-1
@@ -47,7 +47,7 @@
   flex-direction: column;
   justify-content: flex-end;
   row-gap: 13px;
-  width: 17.1%;
+  width: 15.7%;
 }
 
 .listIcons {
@@ -90,7 +90,7 @@
 }
 
 .copyright {
-  @include renderFont(
+  @include render-font(
     $size: $font-size-main-text-s,
     $line-height: calc(1.6rem / $font-size-main-text-s * 100%),
     $color: inherit

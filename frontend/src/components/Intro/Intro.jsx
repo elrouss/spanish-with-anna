@@ -28,17 +28,17 @@ function Intro() {
           и&nbsp;результативно овладеть языком, независимо от&nbsp;ваших целей,
           возраста и&nbsp;первоначального уровня.
         </p>
-        <Button classSelector={styles.button} href="#info">
+        <a className={styles.button} href="#info">
           Начать учиться
-        </Button>
+        </a>
       </div>
       <Image
         className={styles.photo}
         lang="es"
         width={626}
-        height={609}
+        height={605}
         src={introImageMain}
-        alt="Фото Анны"
+        alt="Улыбающаяся Анна с учебником испанского языка в руках на фоне Севильи и фразамии на испанском языке"
         priority
       />
     </section>

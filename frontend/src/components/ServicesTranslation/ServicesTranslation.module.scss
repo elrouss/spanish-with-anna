@@ -21,7 +21,7 @@
 .title {
   margin: 40px 0;
 
-  @include renderFont(
+  @include render-font(
     $family: var(--font-raleway),
     $weight: 600,
     $size: $font-size-heading,
@@ -37,7 +37,7 @@
   padding-right: 25px;
   max-width: 570px;
 
-  @include renderFont();
+  @include render-font();
 
   color: $color-main-1;
 }

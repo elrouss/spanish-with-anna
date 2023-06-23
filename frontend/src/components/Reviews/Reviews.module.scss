@@ -3,11 +3,11 @@
 .wrapper {
   max-width: $wrapper-main-desktop;
   margin: 0 auto;
-  padding: 150px 0 75px;
+  padding: 150px 0 70px;
 }
 
 .heading {
-  @include renderFont(
+  @include render-font(
     $family: var(--font-raleway),
     $weight: 600,
     $size: $font-size-heading,

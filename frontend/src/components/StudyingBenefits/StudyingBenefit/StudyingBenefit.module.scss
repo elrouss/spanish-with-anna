@@ -15,7 +15,7 @@
 .heading {
   max-width: 174px;
 
-  @include renderFont(
+  @include render-font(
     $family: var(--font-raleway),
     $weight: 600,
     $size: $font-size-subheading,
@@ -28,7 +28,7 @@
 .text {
   max-width: 250px;
 
-  @include renderFont();
+  @include render-font();
 }
 
 .imageContainer {

@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { manrope, raleway } from '@/assets/fonts/fonts';
 
 import Header from '../components/Header/Header';
 import Intro from '../components/Intro/Intro';
@@ -9,6 +8,7 @@ import StudyingBenefits from '@/components/StudyingBenefits/StudyingBenefits';
 import DecorativeBackground from '@/components/DecorativeBackground/DecorativeBackground';
 import Signup from '../components/Signup/Signup';
 import Reviews from '@/components/Reviews/Reviews';
+import FAQ from '@/components/FAQ/FAQ';
 import ServicesTranslation from '@/components/ServicesTranslation/ServicesTranslation';
 import Footer from '@/components/Footer/Footer';
 
@@ -23,7 +23,7 @@ export default function Home() {
       </Head>
 
       <Header />
-      <main className={`${manrope.variable} ${raleway.variable}`}>
+      <main>
         <Intro />
         <Facts />
         <Info />
@@ -31,6 +31,7 @@ export default function Home() {
         <DecorativeBackground />
         <Signup />
         <Reviews />
+        <FAQ />
         <ServicesTranslation />
       </main>
       <Footer />

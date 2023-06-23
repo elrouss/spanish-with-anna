@@ -31,22 +31,3 @@
     border: none;
   }
 }
-
-.counter {
-  display: flex;
-  align-items: center;
-
-  @include renderFont(
-    $size: $font-size-heading-accent,
-    $line-height: $font-line-height-heading-accent-s,
-  );
-}
-
-.description {
-  display: flex;
-  align-items: center;
-
-  inline-size: min-content;
-
-  @include renderFont();
-}

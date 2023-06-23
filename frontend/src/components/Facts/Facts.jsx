@@ -1,6 +1,6 @@
 import styles from './Facts.module.scss';
 import FACTS from '../../utils/data/FACTS';
-import Fact from './Fact';
+import Fact from './Fact/Fact';
 
 function Facts() {
   const facts = FACTS.map((fact) => (

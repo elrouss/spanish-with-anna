@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   max-width: $wrapper-main-desktop;
-  margin: calc(70px + 98px) auto 0;
+  margin: 151px auto 0;
 }
 
 .content {
@@ -15,9 +15,9 @@
 .subtitle {
   width: fit-content;
   padding: 6px 21px;
-  @include renderFont(
+  @include render-font(
     $size: $font-size-main-text-s,
-    $line-height: $font-line-height-main-text-s,
+    $line-height: $font-line-height-main-text-s
   );
 
   border: 1px solid $color-accent-promo;
@@ -30,7 +30,7 @@
 
 .description {
   margin: 35px 0 40px;
-  @include renderFont();
+  @include render-font();
 }
 
 .button {

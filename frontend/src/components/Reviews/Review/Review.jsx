@@ -26,7 +26,7 @@ function Review({ name, text, image, slideNum, onModalOpen }) {
           <button
             className={styles.more}
             type="button"
-            aria-labelledby={`Слайд ${slideNum + 1}`}
+            aria-label={`Слайд ${slideNum + 1}`}
             aria-haspopup
             onClick={() => onModalOpen(currentReview)}
           >
