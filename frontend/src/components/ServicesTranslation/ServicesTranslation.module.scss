@@ -1,0 +1,78 @@
+@import '../../styles/index.scss';
+
+.servicesTranslation {
+  background-color: $color-main-3;
+  color: $color-main-1;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 140px;
+}
+
+.info {
+  position: relative;
+  width: 48%;
+  padding: 130px 0;
+}
+
+.title {
+  margin: 40px 0;
+
+  @include render-font(
+    $family: var(--font-raleway),
+    $weight: 600,
+    $size: $font-size-heading,
+    $line-height: $font-line-height-subheading,
+    $color: $color-main-1
+  );
+
+  text-transform: uppercase;
+}
+
+.description {
+  margin-bottom: 39px;
+  padding-right: 25px;
+  max-width: 570px;
+
+  @include render-font();
+
+  color: $color-main-1;
+}
+
+.button {
+  width: fit-content;
+  background-color: $color-main-1;
+  color: $color-main-text-2;
+
+  &:hover {
+    background-color: $color-additional-1;
+    box-shadow: inset 2px 7px 4px $color-main-1;
+  }
+
+  &:active {
+    background-color: $color-additional-2;
+    box-shadow: inset 1px 4px 4px $color-additional-8;
+    color: $color-additional-3;
+  }
+}
+
+.translationImage {
+  width: 52%;
+  background-image: url('../../../public/assets/images/translation-book.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.decorativeTile {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  background: url(../../../public/assets/icons/tile-4.svg) center no-repeat;
+  width: 119px;
+  height: 79px;
+}

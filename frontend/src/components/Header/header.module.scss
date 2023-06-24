@@ -1,0 +1,157 @@
+@import '../../styles/index.scss';
+
+%pseudo-element-default {
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 4px;
+  background-color: $color-main-3;
+  border-radius: 2px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+%pseudo-hover {
+  &:hover {
+    color: $color-main-3;
+    &::before {
+      opacity: 1;
+    }
+  }
+  &:active {
+    color: $color-complementary-7;
+    &::before {
+      background-color: $color-complementary-7;
+    }
+  }
+}
+
+@mixin pseudo-element($top, $left) {
+  @extend %pseudo-element-default;
+  top: $top;
+  left: $left;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-index-header;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 97px;
+  z-index: $z-index-below-content-default;
+  background-color: $color-main-1;
+  border-bottom: 1px solid $color-complementary-1;
+}
+
+.container {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: auto;
+  padding: 20px 140px;
+}
+
+.logo {
+  height: 58px;
+  width: 50px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin-left: 73px;
+  @include render-font(
+    $size: $font-size-main-text-l,
+    $line-height: 1.38,
+    $color: $color-main-text-2
+  );
+}
+
+.navigationMenu {
+  display: flex;
+  gap: 97px;
+  margin-bottom: 4px;
+}
+
+.navigationAuth {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.navigationLink {
+  position: relative;
+  color: $color-main-text-2;
+  transition: all 0.3s ease;
+  &::before {
+    @include pseudo-element(28px, calc(50% - 2px));
+  }
+  @extend %pseudo-hover;
+}
+
+.dropDownMenuNavigationLink {
+  position: relative;
+  padding-left: 10px;
+  font-size: $font-size-main-text;
+  color: $color-main-text-2;
+  transition: all 0.3s ease;
+  &::before {
+    @include pseudo-element(calc(50% - 2px), -2px);
+  }
+  @extend %pseudo-hover;
+}
+
+.dropDownMenu {
+  position: relative;
+}
+
+.dropDownMenuButton {
+  background-color: $color-main-1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &::before {
+    @include pseudo-element(28px, calc(50% - 2px));
+  }
+  @extend %pseudo-hover;
+}
+
+.navigationText {
+  margin-right: 21px;
+}
+
+.dropDownMenuContainer {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  z-index: $z-index-drop-down;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-width: 202px;
+  padding: 0;
+  gap: 0;
+  background-color: $color-main-1;
+  border: 1px solid $color-complementary-1;
+  border-radius: 0 0 20px 20px;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.dropDownMenuContainerActive {
+  top: 60px;
+  left: -26px;
+  min-width: 234px;
+  padding: 16px;
+  gap: 14px;
+  visibility: visible;
+}

@@ -1,0 +1,98 @@
+@import '../../styles/index.scss';
+
+.footer {
+  width: 100%;
+
+  background-color: $color-main-5;
+}
+
+.wrapper {
+  max-width: $wrapper-main-desktop;
+  margin: 0 auto;
+  padding: 131px 0 52px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 113px;
+  width: 98.4%;
+
+  @include render-font(
+    $size: $font-size-main-text-l,
+    $line-height: calc(2.2rem / $font-size-main-text-l * 100%),
+    $color: $color-secondary-1
+  );
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logoLink {
+  align-self: flex-start;
+}
+
+.listLinksLeft {
+  width: 12.07%;
+}
+
+.listLinksCenter {
+  width: 21.6%;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  row-gap: 13px;
+  width: 15.7%;
+}
+
+.listIcons {
+  display: flex;
+  column-gap: 9px;
+}
+
+.icon {
+  width: 33px;
+  height: 32px;
+}
+
+.iconLink {
+  display: inline-block;
+  width: 33px;
+  height: 32px;
+
+  border-radius: 100%;
+  overflow: hidden;
+
+  transition: $animation-transition-common;
+}
+
+.iconSvg {
+  fill: $color-secondary-2;
+}
+
+.email {
+  color: inherit;
+
+  transition: $animation-transition-common;
+
+  &:hover {
+    color: $color-main-3;
+  }
+
+  &:active {
+    color: $color-secondary-2;
+  }
+}
+
+.copyright {
+  @include render-font(
+    $size: $font-size-main-text-s,
+    $line-height: calc(1.6rem / $font-size-main-text-s * 100%),
+    $color: inherit
+  );
+}

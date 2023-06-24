@@ -1,5 +1,16 @@
 import Head from 'next/head';
-import { poppins } from '@/assets/fonts/fonts';
+
+import Header from '../components/Header/Header';
+import Intro from '../components/Intro/Intro';
+import Facts from '@/components/Facts/Facts';
+import Info from '@/components/Info/Info';
+import StudyingBenefits from '@/components/StudyingBenefits/StudyingBenefits';
+import DecorativeBackground from '@/components/DecorativeBackground/DecorativeBackground';
+import Signup from '../components/Signup/Signup';
+import Reviews from '@/components/Reviews/Reviews';
+import FAQ from '@/components/FAQ/FAQ';
+import ServicesTranslation from '@/components/ServicesTranslation/ServicesTranslation';
+import Footer from '@/components/Footer/Footer';
 
 export default function Home() {
   return (
@@ -10,9 +21,20 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${poppins.className}`}>
-        <p>Here will be something soon</p>
+
+      <Header />
+      <main>
+        <Intro />
+        <Facts />
+        <Info />
+        <StudyingBenefits />
+        <DecorativeBackground />
+        <Signup />
+        <Reviews />
+        <FAQ />
+        <ServicesTranslation />
       </main>
+      <Footer />
     </>
   );
 }
