@@ -93,11 +93,14 @@
       <td align="center" valign="top" width="14.28%"><img src="https://github.com/elrouss/spanish-with-anna/assets/108838349/2f0351ee-7b5a-465d-95ee-69fb3a7a015a" width="100px;" alt="Кристина Колабышева"/><br /><a href="https://www.behance.net/kristina_kolabysheva"><sub><b>Кристина Колабышева</b></sub></a><br/><sub>UI/UX Designer</sub><br />🎨</td>
     </tr>
     <tr>
-    <td align="center" valign="top" width="14.28%"><img src="https://avatars1.githubusercontent.com/u/27347476?v=4?s=100" width="100px;" alt="Наталья"/><br /><a href="https://github.com/And0nata"><sub><b>Наталья</b></sub></a><br/><sub>Tester</sub><br />🐞</td>
-    <td align="center" valign="top" width="14.28%"><img src="https://github.com/elrouss/spanish-with-anna/assets/108838349/85cd42e5-5f43-41d0-bc9c-0951f5601ae6" width="100px" alt="Ксения Абдуллина"/><br /><a href="https://github.com/Abdullina517"><sub><b>Ксения Абдуллина</b></sub></a><br/><sub>Tester</sub><br />🐞</td>
-      <td align="center" valign="top" width="14.28%"><img src="https://avatars1.githubusercontent.com/u/27347476?v=4?s=100" width="100px;" alt="Анастасия"/><br /><a href="#"><sub><b>Анастасия</b></sub></a><br/><sub>Tester</sub><br />🐞</td>
+    <td align="center" valign="top" width="14.28%"><img src="https://github.com/elrouss/spanish-with-anna/assets/108838349/a6dbd08b-9055-462a-951e-5c54f1dbc61d" width="100px;" alt="Наталья Андреева"/><br /><a href="https://github.com/And0nata"><sub><b>Наталья Андреева</b></sub></a><br/><sub>Tester</sub><br />🐞</td>
+    <td align="center" valign="top" width="14.28%"><img src="https://github.com/elrouss/spanish-with-anna/assets/108838349/c3d8201f-ba32-4e3b-bce7-1948b4b86f2b" width="100px" alt="Ксения Абдуллина"/><br /><a href="https://github.com/Abdullina517"><sub><b>Ксения Абдуллина</b></sub></a><br/><sub>Tester</sub><br />🐞</td>
+      <td align="center" valign="top" width="14.28%"><img src="https://github.com/elrouss/spanish-with-anna/assets/108838349/999b5fa4-5af0-4335-9e00-ec89e1c63180" width="100px;" alt="Анастасия Пастернак"/><br /><a href="#"><sub><b>Анастасия Пастернак</b></sub></a><br/><sub>Tester</sub><br />🐞</td>
     </tr>
+
+
   </tbody>
+
 </table>
 
 <div align="right">(<a href="#summary">к оглавлению</a>)</div>
