@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 35px 0;
+  margin: 35px 0 20px;
   padding: 0;
   width: 100%;
 
@@ -30,9 +30,9 @@
     color: $color-complementary-7;
   }
 
-  &_active {
-    margin-bottom: 0;
-  }
+  // &_active {
+  //   margin-bottom: 0;
+  // }
 }
 
 .accordionItemTitle {
@@ -51,8 +51,8 @@
 
 .accordionItemContent {
   overflow: hidden;
-  max-height: 0;
-  margin-top: 20px;
+  visibility: hidden;
+  max-height: 15px;
   margin-right: 17px;
   padding-right: 80px;
   transition: all 0.4s ease-out;
@@ -60,10 +60,11 @@
   @include render-font();
 
   &_active {
-    max-height: 300px;
+    max-height: 200px;
     margin-bottom: 33px;
-    padding-right: 93px;
+    padding-right: 73px;
     overflow-y: scroll;
+    visibility: visible;
 
     &::-webkit-scrollbar {
       width: 4px;
