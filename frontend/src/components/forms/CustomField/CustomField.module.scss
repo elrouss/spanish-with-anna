@@ -1,0 +1,26 @@
+@import '../../../styles/index.scss';
+
+.input {
+  height: 60px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  @include render-font();
+  border: 1px solid $color-complementary-2;
+  border-radius: 40px;
+}
+
+.inputError {
+  border-color: $color-error;
+}
+
+.error {
+  min-height: $font-size-main-text-s;
+  padding-left: 20px;
+  margin-top: 2px;
+  @include render-font(
+    $size: $font-size-main-text-s,
+    $line-height: 1,
+    $color: $color-error,
+  );
+}
