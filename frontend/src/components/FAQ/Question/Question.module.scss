@@ -40,26 +40,47 @@
 }
 
 .arrowDown {
-  transition: all 0.3s ease-in;
+  transition: all 0.3s ease-out;
   margin-right: 7px;
 }
 
 .arrowUp {
-  transition: all 0.3s ease-in;
-  transform: rotate(540deg);
+  transition: all 0.3s ease-out;
+  transform: rotate(-180deg);
 }
 
 .accordionItemContent {
   overflow: hidden;
-  height: 0;
-  max-width: 668px;
-  transition: all 0.4s linear;
+  max-height: 0;
+  margin-top: 20px;
+  margin-right: 17px;
+  padding-right: 80px;
+  transition: all 0.4s ease-out;
 
   @include render-font();
 
   &_active {
-    height: auto;
+    max-height: 300px;
     margin-bottom: 33px;
-    padding-top: 20px;
+    padding-right: 93px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &:hover::-webkit-scrollbar-track {
+      background-color: $color-complementary-2;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-secondary-2;
+      border-radius: 0;
+      border: none;
+    }
   }
 }
