@@ -1,0 +1,64 @@
+@import '../../../styles/index.scss';
+
+.accordionItemHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 35px 0 20px;
+  padding: 0;
+  width: 100%;
+
+  background-color: transparent;
+  cursor: pointer;
+
+  @include render-font(
+    $family: var(--font-raleway),
+    $weight: 600,
+    $size: $font-size-subheading,
+    $line-height: $font-line-height-subheading,
+    $color: $color-main-text-2
+  );
+
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $color-main-3;
+  }
+
+  &:active {
+    color: $color-complementary-7;
+  }
+}
+
+.accordionItemTitle {
+  font: inherit;
+}
+
+.arrowDown {
+  transition: all 0.3s ease-out;
+  margin-right: 7px;
+}
+
+.arrowUp {
+  transition: all 0.3s ease-out;
+  transform: rotate(180deg);
+}
+
+.accordionItemContent {
+  overflow: hidden;
+  visibility: hidden;
+  max-height: 15px;
+  margin-right: 17px;
+  padding-right: 80px;
+  transition: all 0.4s ease-out;
+
+  @include render-font();
+
+  &_active {
+    max-height: 200px;
+    margin-bottom: 33px;
+    padding-right: 73px;
+    visibility: visible;
+  }
+}

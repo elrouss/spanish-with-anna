@@ -1,0 +1,20 @@
+@import '../../../styles/index.scss';
+
+.counter {
+  display: flex;
+  align-items: center;
+
+  @include render-font(
+    $size: $font-size-heading-accent,
+    $line-height: $font-line-height-heading-accent-s
+  );
+}
+
+.description {
+  display: flex;
+  align-items: center;
+
+  inline-size: min-content;
+
+  @include render-font();
+}

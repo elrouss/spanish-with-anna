@@ -1,0 +1,14 @@
+$font-size-heading-accent: 4rem;
+$font-size-heading: 2.6rem;
+$font-size-subheading: 2rem;
+$font-size-main-text-l: 1.6rem;
+$font-size-main-text: 1.4rem;
+$font-size-main-text-s: 1.2rem;
+
+$font-line-height-heading-accent: calc(6rem / $font-size-heading-accent * 100%); // TODO: Check usage / delete (?)
+$font-line-height-heading-accent-s: calc(4.9rem / $font-size-heading-accent * 100%);
+$font-line-height-heading: calc(3.1rem / $font-size-heading * 100%);
+$font-line-height-subheading: calc(2.3rem / $font-size-subheading * 100%);
+$font-line-height-main-text-l: calc(2.4rem / $font-size-main-text-l * 100%);
+$font-line-height-main-text: calc(2rem / $font-size-main-text * 100%);
+$font-line-height-main-text-s: calc(1.7rem / $font-size-main-text-s * 100%);
