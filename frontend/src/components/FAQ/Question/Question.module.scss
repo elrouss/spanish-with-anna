@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 35px 0;
+  margin: 35px 0 20px;
   padding: 0;
   width: 100%;
 
@@ -29,10 +29,6 @@
   &:active {
     color: $color-complementary-7;
   }
-
-  &_active {
-    margin-bottom: 0;
-  }
 }
 
 .accordionItemTitle {
@@ -40,26 +36,29 @@
 }
 
 .arrowDown {
-  transition: all 0.3s ease-in;
+  transition: all 0.3s ease-out;
   margin-right: 7px;
 }
 
 .arrowUp {
-  transition: all 0.3s ease-in;
-  transform: rotate(540deg);
+  transition: all 0.3s ease-out;
+  transform: rotate(180deg);
 }
 
 .accordionItemContent {
   overflow: hidden;
-  height: 0;
-  max-width: 668px;
-  transition: all 0.4s linear;
+  visibility: hidden;
+  max-height: 15px;
+  margin-right: 17px;
+  padding-right: 80px;
+  transition: all 0.4s ease-out;
 
   @include render-font();
 
   &_active {
-    height: auto;
-    margin-bottom: 35px;
-    padding-top: 20px;
+    max-height: 200px;
+    margin-bottom: 33px;
+    padding-right: 73px;
+    visibility: visible;
   }
 }
