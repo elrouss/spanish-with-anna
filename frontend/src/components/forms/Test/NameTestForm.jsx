@@ -7,7 +7,7 @@ import CustomField from '../CustomField/CustomField';
 function NameTestForm() {
   const formik = useFormik({
     initialValues: {
-      name: '',
+      email: '',
     },
 
     validationSchema: Yup.object(schemaNameTest(Yup)),
@@ -22,9 +22,9 @@ function NameTestForm() {
     <form onSubmit={formik.handleSubmit} className={styles.Formik} noValidate>
       <CustomField
         formik={formik}
-        name="name"
-        parentName="test-form"
-        placeholder="Имя"
+        name="email"
+        type="email"
+        placeholder="email"
       />
       <button
         type="submit"

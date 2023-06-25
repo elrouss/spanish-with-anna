@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styles from './CustomField.module.scss';
 
-function CustomField({ formik, name, parentName, placeholder }) {
+function CustomField({ formik, name, type, placeholder }) {
   const { errors, touched } = formik;
   return (
     <div>
@@ -9,15 +9,15 @@ function CustomField({ formik, name, parentName, placeholder }) {
         className={`${styles.input} ${
           errors[name] && touched[name] ? styles.inputError : ''
         }`}
-        type={name}
-        id={`${parentName}-${name}`}
+        id={name}
+        type={type}
         name={name}
         {...formik.getFieldProps({ name })}
         placeholder={placeholder}
       />
-      <div className={styles.error}>
+      <span className={styles.error}>
         {errors[name] && touched[name] ? errors[name] : ''}
-      </div>
+      </span>
     </div>
   );
 }
@@ -29,7 +29,7 @@ CustomField.propTypes = {
     touched: PropTypes.shape({}).isRequired,
   }).isRequired,
   name: PropTypes.string.isRequired,
-  parentName: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
 };
 
