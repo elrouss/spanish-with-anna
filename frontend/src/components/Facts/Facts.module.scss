@@ -26,6 +26,8 @@
   justify-content: center;
   gap: 12px;
   width: 100%;
+  margin-top: -2px;
+  padding-bottom: 2px;
 
   :nth-of-type(3n + 2) {
     border: none;

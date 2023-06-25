@@ -10,7 +10,9 @@ function Facts() {
   ));
   return (
     <section className={styles.facts} aria-label="Факты">
-      <ul className={styles.list}>{facts}</ul>
+      <div className={styles.container}>
+        <ul className={styles.list}>{facts}</ul>
+      </div>
     </section>
   );
 }
