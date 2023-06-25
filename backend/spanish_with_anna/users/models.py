@@ -17,10 +17,28 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     STUDENT = 'student'
     ADMIN = 'admin'
 
+    A0 = 'A0'
+    A1 = 'A1'
+    A2 = 'A2'
+    B1 = 'B1'
+    B2 = 'B2'
+    C1 = 'C1'
+    C2 = 'C2'
+
     ROLE_CHOICES = (
         (USER, 'Пользователь'),
         (STUDENT, 'Студент'),
         (ADMIN, 'Администратор')
+    )
+
+    LANGUAGE_LEVEL_CHOICES = (
+        (A0, 'Нулевой'),
+        (A1, 'Начальный'),
+        (A2, 'Базовый'),
+        (B1, 'Средний'),
+        (B2, 'Выше среднего'),
+        (C1, 'Продвинутый'),
+        (C2, 'Владение в совершенстве'),
     )
 
     name = models.CharField(
@@ -40,11 +58,22 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         blank=True,
         null=True,
     )
+    date_of_birth = models.DateField(
+        'Дата рождения',
+        blank=True,
+        null=True,
+    )
     role = models.CharField(
         'Роль пользователя',
         choices=ROLE_CHOICES,
         max_length=15,
         default=USER,
+    )
+    lang_level = models.CharField(
+        'Уровень владения языком',
+        max_length=2,
+        choices=LANGUAGE_LEVEL_CHOICES,
+        default=A0,
     )
     courses = models.ManyToManyField(
         Course,
