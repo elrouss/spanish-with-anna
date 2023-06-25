@@ -63,25 +63,6 @@
     max-height: 200px;
     margin-bottom: 33px;
     padding-right: 73px;
-    overflow-y: scroll;
     visibility: visible;
-
-    &::-webkit-scrollbar {
-      width: 4px;
-    }
-
-    &:hover::-webkit-scrollbar-track {
-      background-color: $color-complementary-2;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: $color-secondary-2;
-      border-radius: 0;
-      border: none;
-    }
   }
 }
