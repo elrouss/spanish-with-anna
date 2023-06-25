@@ -13,8 +13,8 @@
       <li><a href="#installation">Установка и запуск приложения в локальном репозитории</a></li>
       <li><a href="#establishing">Процесс создания</a></li>
       <li><a href="#functionality">Функционал</a></li>
-      <li><a href="#enhancement">Наша команда</a></li>
-      <li><a href="#enhancement">Статус проекта</a></li>
+      <li><a href="#team">Наша команда</a></li>
+      <li><a href="#progress">Статус проекта</a></li>
       <li><a href="#feedback">Обратная связь</a></li>
     </ol>
   </details>
@@ -31,6 +31,8 @@
 <br>
 **Backend:** *появится позже*
 
+<b>Техническое задание:</b> https://docs.google.com/document/d/1ewrKErNPRKoIIg7E7H9IAvaD_E07nrKHrV8pREKWmdA/edit#heading=h.cp9sw0ch9syr
+<br>
 <b>Макет:</b> https://www.figma.com/file/r3wbGorv7dpmWZiUJS8j09/Spanish-courses_Espanol-con-Anna_ORIGINAL?type=design&node-id=1200-405&mode=dev
 <br>
 
@@ -80,7 +82,7 @@
 
 <div align="right">(<a href="#summary">к оглавлению</a>)</div>
 
-<a name="enhancement"><h2>6. Наша команда</h2></a>
+<a name="team"><h2>6. Наша команда</h2></a>
 <table>
   <tbody>
     <tr>
@@ -95,18 +97,15 @@
     <tr>
     <td align="center" valign="top" width="14.28%"><img src="https://github.com/elrouss/spanish-with-anna/assets/108838349/a6dbd08b-9055-462a-951e-5c54f1dbc61d" width="100px;" alt="Наталья Андреева"/><br /><a href="https://github.com/And0nata"><sub><b>Наталья Андреева</b></sub></a><br/><sub>Tester</sub><br />🐞</td>
     <td align="center" valign="top" width="14.28%"><img src="https://github.com/elrouss/spanish-with-anna/assets/108838349/c3d8201f-ba32-4e3b-bce7-1948b4b86f2b" width="100px" alt="Ксения Абдуллина"/><br /><a href="https://github.com/Abdullina517"><sub><b>Ксения Абдуллина</b></sub></a><br/><sub>Tester</sub><br />🐞</td>
-      <td align="center" valign="top" width="14.28%"><img src="https://github.com/elrouss/spanish-with-anna/assets/108838349/999b5fa4-5af0-4335-9e00-ec89e1c63180" width="100px;" alt="Анастасия Пастернак"/><br /><a href="#"><sub><b>Анастасия Пастернак</b></sub></a><br/><sub>Tester</sub><br />🐞</td>
+      <td align="center" valign="top" width="14.28%"><img src="https://github.com/elrouss/spanish-with-anna/assets/108838349/999b5fa4-5af0-4335-9e00-ec89e1c63180" width="100px;" alt="Анастасия Пастернак"/><br /><a href="https://github.com/AnastasiaPasternak"><sub><b>Анастасия Пастернак</b></sub></a><br/><sub>Tester</sub><br />🐞</td>
     </tr>
-
-
   </tbody>
-
 </table>
 
 <div align="right">(<a href="#summary">к оглавлению</a>)</div>
 
 
-<a name="enhancement"><h2>7. Статус проекта</h2></a>
+<a name="progress"><h2>7. Статус проекта</h2></a>
 В разработке
 
 <div align="right">(<a href="#summary">к оглавлению</a>)</div>
