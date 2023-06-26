@@ -54,7 +54,6 @@ function CustomField({ formik, name, type, placeholder }) {
       <span className={styles.error}>
         {errors[name] && touched[name] ? errors[name] : ''}
       </span>
-      {/* <EyeOn iconClass={styles.icon} /> */}
     </div>
   );
 }

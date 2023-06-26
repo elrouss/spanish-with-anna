@@ -1,5 +1,5 @@
-import NameTestForm from '../../components/forms/Test/NameTestForm'
+import LoginForm from '../../components/forms/Login/LoginForm';
 
 export default function Signin() {
-  return <NameTestForm />;
+  return <LoginForm />;
 }
