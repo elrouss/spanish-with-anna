@@ -13,6 +13,7 @@ function NameTestForm() {
     validationSchema: Yup.object(schemaNameTest(Yup)),
 
     onSubmit: (values, { setSubmitting }) => {
+      console.log(formik);
       console.log(values);
       setSubmitting(false);
     },
