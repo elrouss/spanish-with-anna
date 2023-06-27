@@ -1,14 +1,15 @@
 import VALIDATION_MESSAGES from '../../../utils/validation-messages';
+import { EMAIL_REGEX } from '../../../utils/constants';
 
 const schemaEmail = (Yup) => ({
   email: Yup.string()
-    .matches(/[^@\s]+@[^@\s]+\.[^@\s]+/, VALIDATION_MESSAGES.user.email.invalid)
+    .matches(EMAIL_REGEX, VALIDATION_MESSAGES.user.email.invalid)
     .required(VALIDATION_MESSAGES.user.email.required),
 });
 
 const schemaPassword = (Yup) => ({
   password: Yup.string()
-    .min(8, VALIDATION_MESSAGES.user.password.tip)
+    .min(8, VALIDATION_MESSAGES.user.password.invalid)
     .required(VALIDATION_MESSAGES.user.password.required),
 });
 

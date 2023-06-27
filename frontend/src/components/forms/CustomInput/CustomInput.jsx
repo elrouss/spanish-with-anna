@@ -1,20 +1,14 @@
 import PropTypes from 'prop-types';
-import { useState, useEffect, useRef } from 'react';
-import styles from './CustomField.module.scss';
+import { useState, useRef } from 'react';
+import styles from './CustomInput.module.scss';
 import EyeOff from '../../../assets/icons/EyeOff';
 import EyeOn from '../../../assets/icons/EyeOn';
 
-function CustomField({ formik, name, type, placeholder }) {
+function CustomInput({ formik, name, type, placeholder }) {
   const { errors, touched } = formik;
-  const [isPassword, setIsPassword] = useState(false);
   const [isEyeOn, setIsEyeOn] = useState(false);
   const inputRef = useRef(null);
-
-  useEffect(() => {
-    if (type === 'password') {
-      setIsPassword(true);
-    }
-  }, []);
+  const isPassword = type === 'password';
 
   function handleEye() {
     inputRef.current.type = isEyeOn ? 'password' : 'text';
@@ -30,17 +24,17 @@ function CustomField({ formik, name, type, placeholder }) {
             errors[name] && touched[name] ? styles.inputError : ''
           }`}
           id={name}
+          ref={inputRef}
           type={type}
           name={name}
           {...formik.getFieldProps({ name })}
           placeholder={placeholder}
-          ref={inputRef}
         />
         {isPassword && (
           <button
             className={styles.buttonEye}
             type="button"
-            aria-label="Посмотреть пароль"
+            aria-label={isEyeOn ? 'Скрыть пароль' : 'Посмотреть пароль'}
             onClick={handleEye}
           >
             {isEyeOn ? (
@@ -58,7 +52,7 @@ function CustomField({ formik, name, type, placeholder }) {
   );
 }
 
-CustomField.propTypes = {
+CustomInput.propTypes = {
   formik: PropTypes.shape({
     getFieldProps: PropTypes.func.isRequired,
     errors: PropTypes.shape({}).isRequired,
@@ -69,4 +63,4 @@ CustomField.propTypes = {
   placeholder: PropTypes.string.isRequired,
 };
 
-export default CustomField;
+export default CustomInput;

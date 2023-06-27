@@ -2,7 +2,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import styles from './LoginForm.module.scss';
 import { schemaEmail, schemaPassword } from '../yapSchemas/yapSchemas';
-import CustomField from '../CustomField/CustomField';
+import CustomInput from '../CustomInput/CustomInput';
 
 function LoginForm() {
   const formikLogin = useFormik({
@@ -25,13 +25,13 @@ function LoginForm() {
       className={styles.form}
       noValidate
     >
-      <CustomField
+      <CustomInput
         formik={formikLogin}
         name="email"
         type="email"
         placeholder="email"
       />
-      <CustomField
+      <CustomInput
         formik={formikLogin}
         name="password"
         type="password"
