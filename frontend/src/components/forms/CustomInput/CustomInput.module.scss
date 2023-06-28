@@ -1,0 +1,52 @@
+@import '../../../styles/index.scss';
+
+.input {
+  height: 60px;
+  width: 100%;
+  padding:  20px 50px 20px 20px;
+  box-sizing: border-box;
+  @include render-font();
+  border: none;
+  outline: 1px solid $color-complementary-2;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+  &:focus {
+    outline-color: $color-main-text-1;
+    & ~ .buttonEye .icon {
+      stroke: $color-main-text-1;
+    }
+  }
+}
+
+.container {
+  position: relative;
+}
+
+.buttonEye {
+  position: absolute;
+  top: calc(50% - 12px);
+  right: 20px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.icon {
+  stroke: $color-complementary-2;
+  transition: all 0.3s ease;
+}
+
+.inputError {
+  outline-color: $color-error;
+}
+
+.error {
+  display: block;
+  min-height: $font-size-main-text-s;
+  padding-left: 20px;
+  margin-top: 2px;
+  @include render-font(
+    $size: $font-size-main-text-s,
+    $line-height: 1,
+    $color: $color-error,
+  );
+}
