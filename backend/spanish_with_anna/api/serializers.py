@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from users.models import Feedback
+from users.models import CustomUser, Feedback
 
 
 class CreateFeedbackSerializer(serializers.ModelSerializer):
@@ -57,3 +57,15 @@ class ReadFeedbackSerializer(serializers.ModelSerializer):
         Возвращает значение поля comment для объекта модели обратной связи.
         """
         return obj.comment
+
+
+class UserSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для работы с запросами о пользователях.
+    """
+
+    class Meta:
+        fields = (
+            'name', 'email', 'phone',
+        )
+        model = CustomUser
