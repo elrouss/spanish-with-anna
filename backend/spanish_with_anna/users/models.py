@@ -69,7 +69,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         max_length=15,
         default=USER,
     )
-    lang_level = models.CharField(
+    language_level = models.CharField(
         'Уровень владения языком',
         max_length=2,
         choices=LANGUAGE_LEVEL_CHOICES,
@@ -95,6 +95,10 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     date_joined = models.DateTimeField(
         'Дата регистрации',
         auto_now_add=True,
+    )
+    is_email_confirmed = models.BooleanField(
+        "Статус подтверждения email",
+        default=False,
     )
 
     objects = CustomUserManager()

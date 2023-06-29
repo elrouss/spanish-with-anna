@@ -1,7 +1,13 @@
+"""Views for 'api' application."""
+
 from rest_framework import viewsets
 from rest_framework.response import Response
 
-from api.serializers import CreateFeedbackSerializer, ReadFeedbackSerializer, UserSerializer
+from api.serializers import (
+    CreateFeedbackSerializer,
+    ReadFeedbackSerializer,
+    UserSerializer
+)
 from users.models import CustomUser, Feedback
 
 
