@@ -12,7 +12,6 @@ schema_view = get_schema_view(
         title="SpanishWithAnna API",
         default_version="v1",
         description="API of project",
-        license=openapi.License(name="BSD License"),
     ),
     public=True,
     permission_classes=(AllowAny,),
