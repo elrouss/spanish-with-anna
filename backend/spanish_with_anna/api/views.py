@@ -6,9 +6,8 @@ from rest_framework.response import Response
 from api.serializers import (
     CreateFeedbackSerializer,
     ReadFeedbackSerializer,
-    UserSerializer
 )
-from users.models import CustomUser, Feedback
+from users.models import Feedback
 
 
 class FeedBackViewSet(viewsets.ModelViewSet):
@@ -42,12 +41,3 @@ class FeedBackViewSet(viewsets.ModelViewSet):
         instance.save()
         serializer = self.get_serializer(instance)
         return Response(serializer.data)
-
-
-class UserViewSet(viewsets.ModelViewSet):
-    """
-    Вьюсет для работы с запросами о пользователях.
-    """
-
-    queryset = CustomUser.objects.all()
-    serializer_class = UserSerializer
