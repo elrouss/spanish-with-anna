@@ -2,6 +2,10 @@
 
 .section {
   position: relative;
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    overflow: hidden;
+  }
 }
 
 .wrapper {
@@ -11,6 +15,15 @@
   max-width: $wrapper-main-desktop;
   margin: 0 auto;
   padding: 105px 0 150px;
+
+  @media screen and (max-width: calc($media-desktop - 1px)) {
+    margin: 0 $margin-blocks-sides-formula-tablet;
+  }
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    padding: $padding-half-blocks-top-btm-tablet 0
+      $padding-full-blocks-top-btm-tablet;
+  }
 }
 
 .heading {
@@ -27,9 +40,15 @@
 .benefits {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(373px, auto));
+  justify-content: center;
   column-gap: 20px;
   row-gap: 60px;
   width: 100%;
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    grid-template-columns: repeat(auto-fill, minmax(auto, 314px));
+    row-gap: 70px;
+  }
 }
 
 .benefit {
@@ -49,6 +68,11 @@
   background: url(../../../public/assets/icons/tile-1.svg) center no-repeat;
   width: 90px;
   height: 169px;
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    top: 144px;
+    left: -42px;
+  }
 }
 
 .decorativeTileRight {
@@ -59,4 +83,8 @@
   background: url(../../../public/assets/icons/tile-2.svg) center no-repeat;
   width: 80px;
   height: 48px;
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    right: -9px;
+  }
 }
