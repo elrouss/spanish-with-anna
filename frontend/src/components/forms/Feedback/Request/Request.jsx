@@ -26,7 +26,7 @@ function Request({ isModalOpened, onModalClose }) {
       name: '',
       email: '',
       phone: '',
-      preferredCommunication: 'email',
+      preferredCommunication: 'phone',
       message: '',
       personalDataConsent: true,
     },
@@ -85,6 +85,7 @@ function Request({ isModalOpened, onModalClose }) {
           label="Телефон"
           name="preferredCommunication"
           value="phone"
+          checked
           formik={formik}
         />
         <CustomRadio
@@ -92,7 +93,6 @@ function Request({ isModalOpened, onModalClose }) {
           label="Email"
           name="preferredCommunication"
           value="email"
-          checked
           formik={formik}
         />
       </div>
