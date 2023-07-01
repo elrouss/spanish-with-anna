@@ -55,9 +55,8 @@
 
 <a name="installation"><h2>3. Установка и запуск приложения в локальном репозитории</h2></a>
 1. `git clone https://github.com/elrouss/spanish-with-anna.git` - клонировать репозиторий на свое устройство (HTTPS)
-2. `git fetch origin` - клонировать удаленные ветки
-3. `git checkout development` - перейти в ветку разработки
-4. `git pull -u origin development` - клонировать ветку
+2. `git checkout development` - перейти в ветку разработки
+3. `git pull -u origin development` - клонировать ветку
 5.  **frontend:**
 <br> 5. 1 `cd frontend` - перейти в папку frontend
 <br> 5. 2 `npm i` - установить зависимости (предварительно проверить наличие Node.js командой `node -v`, а также - NPM командой `npm -v`; в случае необходимости скачать и установить Node.js по этой <a href="https://nodejs.org/en/download">ссылке</a>)
