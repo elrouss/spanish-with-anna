@@ -1,0 +1,148 @@
+@import '../../../../styles/index.scss';
+
+@keyframes dotTyping {
+  0% {
+    box-shadow: 9994px 0 0 0 $color-main-1, 9999px 0 0 0 $color-main-1,
+      10004px 0 0 0 $color-main-1;
+  }
+  16.667% {
+    box-shadow: 9994px -3px 0 0 $color-main-1, 9999px 0 0 0 $color-main-1,
+      10004px 0 0 0 $color-main-1;
+  }
+  33.333% {
+    box-shadow: 9994px 0 0 0 $color-main-1, 9999px 0 0 0 $color-main-1,
+      10004px 0 0 0 $color-main-1;
+  }
+  50% {
+    box-shadow: 9994px 0 0 0 $color-main-1, 9999px -3px 0 0 $color-main-1,
+      10004px 0 0 0 $color-main-1;
+  }
+  66.667% {
+    box-shadow: 9994px 0 0 0 $color-main-1, 9999px 0 0 0 $color-main-1,
+      10004px 0 0 0 $color-main-1;
+  }
+  83.333% {
+    box-shadow: 9994px 0 0 0 $color-main-1, 9999px 0 0 0 $color-main-1,
+      10004px -3px 0 0 $color-main-1;
+  }
+  100% {
+    box-shadow: 9994px 0 0 0 $color-main-1, 9999px 0 0 0 $color-main-1,
+      10004px 0 0 0 $color-main-1;
+  }
+}
+
+.form,
+.content,
+.intro,
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro {
+  row-gap: 14px;
+}
+
+.heading {
+  @include render-font(
+    $family: var(--font-raleway),
+    $weight: 600,
+    $size: $font-size-heading,
+    $line-height: $font-line-height-heading,
+    $color: $color-main-text-2
+  );
+  text-transform: uppercase;
+}
+
+.subheading {
+  max-width: 340px;
+  text-align: center;
+}
+
+.subheadingSuccess {
+  max-width: 240px;
+  text-align: center;
+}
+
+.content {
+  padding-top: 70px;
+}
+
+.text {
+  row-gap: 14px;
+  padding: 78px 0 26px;
+}
+
+.form,
+.subheading,
+.subheadingSuccess {
+  @include render-font(
+    $size: $font-size-main-text,
+    $line-height: $font-line-height-main-text,
+    $color: $color-main-text-1
+  );
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  width: 100%;
+  margin-top: 31px;
+}
+
+.contact {
+  display: flex;
+  column-gap: 40px;
+  margin: 17px 14px 27px 0;
+}
+
+.personalData {
+  display: flex;
+  column-gap: 20px;
+
+  > div {
+    margin-top: 13px;
+  }
+}
+
+.consent {
+  max-width: 358px;
+  font-size: $font-size-main-text-s;
+  line-height: $font-line-height-main-text-s;
+  margin-top: 14px;
+  margin-right: 30px;
+}
+
+.accent {
+  color: $color-main-3;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  cursor: pointer;
+  transition: $animation-transition-common;
+
+  &:hover {
+    color: $color-secondary-2;
+  }
+
+  &:active {
+    color: $color-complementary-7;
+  }
+}
+
+.button {
+  width: 100%;
+  margin-top: 14px;
+}
+
+.dotTyping {
+  position: relative;
+  left: -9992px;
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: $color-main-1;
+  animation: dotTyping 1.2s infinite linear;
+}

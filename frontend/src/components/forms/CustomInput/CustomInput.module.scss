@@ -1,9 +1,13 @@
 @import '../../../styles/index.scss';
 
+.wrapper {
+  width: 100%;
+}
+
 .input {
   height: 60px;
   width: 100%;
-  padding:  20px 50px 20px 20px;
+  padding: 20px 50px 20px 20px;
   box-sizing: border-box;
   @include render-font();
   border: none;
@@ -47,6 +51,6 @@
   @include render-font(
     $size: $font-size-main-text-s,
     $line-height: 1,
-    $color: $color-error,
+    $color: $color-error
   );
 }

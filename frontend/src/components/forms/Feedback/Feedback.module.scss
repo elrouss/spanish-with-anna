@@ -1,0 +1,29 @@
+@import '../../../styles/index.scss';
+
+.modal {
+  position: relative;
+  width: 570px;
+  min-height: 760px;
+  background-color: $color-main-1;
+  border-radius: 50px;
+}
+
+.wrapper {
+  padding: 50px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 31px;
+  right: 31px;
+
+  background: url(../../../../public/assets/icons/close-icon.svg) center
+    no-repeat;
+  width: 14px;
+  height: 14px;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}

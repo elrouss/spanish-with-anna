@@ -17,7 +17,7 @@ function CustomInput({ formik, name, type, placeholder }) {
   }
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <div className={styles.container}>
         <input
           className={`${styles.input} ${
