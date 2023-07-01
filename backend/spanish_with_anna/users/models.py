@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
+from django.core.validators import RegexValidator
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -43,7 +44,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     name = models.CharField(
         'Имя пользователя',
-        max_length=64,
+        max_length=150,
+        validators=(RegexValidator("^[a-zA-Za-яА-ЯёЁ -_]+$"),),
     )
     email = models.EmailField(
         'Адрес e-mail',
@@ -143,18 +145,33 @@ class Feedback(models.Model):
     Модель для описания обратной связи.
     """
 
+    PHONE = 'phone'
+    EMAIL = 'email'
+
+    COMMUNICATION_CHOICES = (
+        (PHONE, 'Телефон'),
+        (EMAIL, 'Email'),
+    )
+
     name = models.CharField(
         'Имя',
         max_length=64,
+        validators=(RegexValidator("^[a-zA-Za-яА-ЯёЁ -_]+$"),),
     )
     email = models.EmailField(
         'Email',
-        max_length=256,
+        max_length=254,
     )
     phone = PhoneNumberField(
         'Телефон',
         blank=True,
         null=True,
+    )
+    preferred_communication = models.CharField(
+        'Предпочитаемый способ коммуникации',
+        max_length=15,
+        choices=COMMUNICATION_CHOICES,
+        default=PHONE,
     )
     message = models.TextField(
         'Сообщение',
@@ -175,8 +192,6 @@ class Feedback(models.Model):
     is_agree = models.BooleanField(
         'Согласие на обработку персональных данных',
         default=False,
-        blank=False,
-        null=False,
         )
     is_finished = models.BooleanField(
         'Обращение обратной связи закрыто',
@@ -188,6 +203,8 @@ class Feedback(models.Model):
         )
     comment = models.TextField(
         'Комментарий к обратной связи',
+        blank=True,
+        null=True,
     )
     time_update = models.DateTimeField(
         'Дата обновления',
@@ -197,19 +214,21 @@ class Feedback(models.Model):
     class Meta:
         verbose_name = 'Обратная связь'
         verbose_name_plural = 'Обратная связь'
-        ordering = ['-time_create',]
+        ordering = ('-time_create',)
 
     def str(self):
         return f'Вам письмо от {self.email}'
-
 
     def save(self, *args, **kwargs):
         """
         Переопределяет метод save() для создания/обновления объектов модели.
         """
+        if self.is_agree is False:
+            raise ValueError(
+                'Необходимо согласие на обработку персональных данных!'
+                )
         users_by_email = CustomUser.objects.filter(email=self.email)
         if users_by_email.count() > 0:
             self.user = users_by_email[0]
             super().save(*args, **kwargs)
-        else:
-            super().save(*args, **kwargs)
+        super().save(*args, **kwargs)

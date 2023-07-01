@@ -13,7 +13,15 @@ admin.site.site_title = 'Spanish With Anna Административный по
 
 @admin.register(Feedback)
 class AdminFeedback(admin.ModelAdmin):
-    list_display = ('name', 'email', 'phone', 'time_create', 'user', 'message')
+    list_display = (
+        'name',
+        'email',
+        'phone',
+        'preferred_communication',
+        'time_create',
+        'user',
+        'message'
+        )
     list_filter = ('email', 'time_create', 'user')
     search_fields = ('email', 'message')
 

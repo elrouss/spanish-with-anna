@@ -7,9 +7,16 @@ class CreateFeedbackSerializer(serializers.ModelSerializer):
     """
     Сериализатор для обработки запросов на создание обратной связи.
     """
+
     class Meta:
         fields = (
-            'name', 'email', 'phone', 'message', 'time_create', 'is_agree',
+            'name',
+            'email',
+            'phone',
+            'preferred_communication',
+            'message',
+            'time_create',
+            'is_agree',
         )
         model = Feedback
 
@@ -19,6 +26,7 @@ class ReadFeedbackSerializer(serializers.ModelSerializer):
     Сериализатор для обработки запросов
     на чтение и редактирование обратной связи.
     """
+
     is_finished = serializers.SerializerMethodField('get_is_finished')
     is_double = serializers.SerializerMethodField('get_is_double')
     comment = serializers.SerializerMethodField('get_comment')
@@ -29,6 +37,7 @@ class ReadFeedbackSerializer(serializers.ModelSerializer):
             'name',
             'email',
             'phone',
+            'preferred_communication',
             'message',
             'time_create',
             'user',
