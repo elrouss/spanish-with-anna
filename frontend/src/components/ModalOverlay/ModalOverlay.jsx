@@ -1,18 +1,10 @@
-import { useRef, useEffect } from 'react';
-import { createPortal } from 'react-dom';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-
 import useCloseModal from '@/hooks/useCloseModal';
-
+import WithPortal from '@/hocs/withPortal';
 import styles from './ModalOverlay.module.scss';
 
 function ModalOverlay({ children, id, isModalOpened, onModalClose }) {
-  const modalRef = useRef(null);
-
-  useEffect(() => {
-    modalRef.current = document.querySelector('#modals');
-  }, []);
-
   useEffect(() => {
     const { body } = document;
 
@@ -23,19 +15,18 @@ function ModalOverlay({ children, id, isModalOpened, onModalClose }) {
 
   useCloseModal(id, isModalOpened, onModalClose);
 
-  return modalRef.current
-    ? createPortal(
-        <div
-          className={`${styles.overlay}${
-            (isModalOpened && ` ${styles.opened}`) || ''
-          }`}
-          id={id}
-        >
-          {children}
-        </div>,
-        modalRef.current
-      )
-    : null;
+  return (
+    <WithPortal>
+      <div
+        className={`${styles.overlay}${
+          (isModalOpened && ` ${styles.opened}`) || ''
+        }`}
+        id={id}
+      >
+        {children}
+      </div>
+    </WithPortal>
+  );
 }
 
 ModalOverlay.propTypes = {

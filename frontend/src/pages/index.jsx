@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useState } from 'react';
+
 import Header from '../components/Header/Header';
 import Intro from '../components/Intro/Intro';
 import Facts from '@/components/Facts/Facts';
