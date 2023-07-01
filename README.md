@@ -55,23 +55,23 @@
 
 <a name="installation"><h2>3. Установка и запуск приложения в локальном репозитории</h2></a>
 1. `git clone https://github.com/elrouss/spanish-with-anna.git` - клонировать репозиторий на свое устройство (HTTPS)
-2. `git fetch origin` - клонировать удаленные ветки
-3. `git checkout development` - перейти в ветку разработки
-4. `git pull -u origin development` - клонировать ветку
-5.  **frontend:**
-<br> 5. 1 `cd frontend` - перейти в папку frontend
-<br> 5. 2 `npm i` - установить зависимости (предварительно проверить наличие Node.js командой `node -v`, а также - NPM командой `npm -v`; в случае необходимости скачать и установить Node.js по этой <a href="https://nodejs.org/en/download">ссылке</a>)
-<br> 5. 3 `npm run dev` - запустить приложение и открыть в любом браузере по адресу `http://localhost:3000/`
+2. `git checkout -b development origin/development` - перейти в ветку разработки
+3.  **frontend:**
+<br> 3. 1 `cd frontend` - перейти в папку frontend
+<br> 3. 2 `npm i` - установить зависимости (предварительно проверить наличие Node.js командой `node -v`, а также - NPM командой `npm -v`; в случае необходимости скачать и установить Node.js по этой <a href="https://nodejs.org/en/download">ссылке</a>)
+<br> 3. 3 `npm run dev` - запустить приложение и открыть в любом браузере по адресу `http://localhost:3000/`
 6. **backend**:
-<br> 6. 1 `cd backend` - перейти в папку backend
-<br> 6. 2 `python -V` - проверить наличие Python, а также - pip командой `pip -V`; в случае необходимости скачать и установить Python по этой <a href="https://www.python.org/downloads/release/python-3110/">ссылке</a>)
-<br> 6. 3 `python -m venv venv` создать виртуальное окружение
-<br> 6. 4 `source venv/Scripts/activate` активировать виртуальное окружение на Windows; `source venv/bin/activate` MacOS/Linux 
-<br> 6. 5 `pip install -r requirements.txt` установить зависимости
-<br> 6. 6 `cd spanish_with_anna` - перейти в папку spanish_with_anna
-<br> 6.7 `python manage.py makemigrations` - создать миграции
-<br> 6.8 `python manage.py migrate` - применить миграции
-<br> 6.9 `python manage.py runserver` - запустить приложение и открыть в любом браузере по адресу `http://127.0.0.1:8000/`
+<br> 4. 1 `cd backend` - перейти в папку backend
+<br> 4. 2 `python -V` - проверить наличие Python, а также - pip командой `pip -V`; в случае необходимости скачать и установить Python по этой <a href="https://www.python.org/downloads/release/python-3110/">ссылке</a>)
+<br> 4. 3 `python -m venv venv` создать виртуальное окружение
+<br> 4. 4 `source venv/Scripts/activate` активировать виртуальное окружение на Windows; `source venv/bin/activate` MacOS/Linux 
+<br> 4. 5 `pip install -r requirements.txt` установить зависимости
+<br> 4. 6 `cd spanish_with_anna` - перейти в папку spanish_with_anna
+<br> 4.7 в папке backend создайте файл `.env` по примеру `example.env`
+<br> 4.8 `python manage.py makemigrations` - создать миграции
+<br> 4.9 `python manage.py migrate` - применить миграции
+<br> 4.9 `python manage.py runserver` - запустить приложение и открыть в любом браузере по адресу `http://127.0.0.1:8000/`
+<br> 4.10 `http://127.0.0.1:8000/api/docs/` доступные эндпоинты
 
 <div align="right">(<a href="#summary">к оглавлению</a>)</div>
 
