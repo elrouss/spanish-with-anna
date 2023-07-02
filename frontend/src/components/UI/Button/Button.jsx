@@ -42,11 +42,12 @@ function Button({
 }
 
 Button.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.string,
   classSelector: PropTypes.oneOf([
     'button',
     'button-promo',
     'button-additional',
+    'button-close',
   ]),
   extraClassSelector: PropTypes.string,
   type: PropTypes.oneOf(['button', 'submit', 'reset', 'menu']),
@@ -60,6 +61,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  children: undefined,
   classSelector: 'button',
   extraClassSelector: undefined,
   type: 'button',

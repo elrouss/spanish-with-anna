@@ -10,20 +10,26 @@
 
 .wrapper {
   padding: 50px;
-}
 
-.closeButton {
-  position: absolute;
-  top: 31px;
-  right: 31px;
+  @include render-font(
+    $size: $font-size-main-text,
+    $line-height: $font-line-height-main-text,
+    $color: $color-main-text-1
+  );
 
-  background: url(../../../../public/assets/icons/close-icon.svg) center
-    no-repeat;
-  width: 14px;
-  height: 14px;
+  h3 {
+    @include render-font(
+      $family: var(--font-raleway),
+      $weight: 600,
+      $size: $font-size-heading,
+      $line-height: $font-line-height-heading,
+      $color: $color-main-text-2
+    );
+    text-transform: uppercase;
+  }
 
-  background-color: transparent;
-  border: none;
-
-  cursor: pointer;
+  button {
+    width: 100%;
+    margin-top: 14px;
+  }
 }

@@ -1,9 +1,7 @@
 @import '../../../../styles/index.scss';
 
 .form,
-.content,
-.intro,
-.text {
+.intro {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,44 +11,9 @@
   row-gap: 14px;
 }
 
-.heading {
-  @include render-font(
-    $family: var(--font-raleway),
-    $weight: 600,
-    $size: $font-size-heading,
-    $line-height: $font-line-height-heading,
-    $color: $color-main-text-2
-  );
-  text-transform: uppercase;
-}
-
 .subheading {
   max-width: 340px;
   text-align: center;
-}
-
-.subheadingSuccess {
-  max-width: 240px;
-  text-align: center;
-}
-
-.content {
-  padding-top: 70px;
-}
-
-.text {
-  row-gap: 14px;
-  padding: 78px 0 26px;
-}
-
-.form,
-.subheading,
-.subheadingSuccess {
-  @include render-font(
-    $size: $font-size-main-text,
-    $line-height: $font-line-height-main-text,
-    $color: $color-main-text-1
-  );
 }
 
 .inputs {
@@ -98,9 +61,4 @@
   &:active {
     color: $color-complementary-7;
   }
-}
-
-.button {
-  width: 100%;
-  margin-top: 14px;
 }

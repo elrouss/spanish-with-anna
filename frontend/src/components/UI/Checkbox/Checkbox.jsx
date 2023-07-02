@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import styles from './Checkbox.module.scss';
 
 function Checkbox({ id, name, value, formik, label = '', checked = false }) {
-  console.log(value)
-
   return (
     <div className={styles.checkbox}>
       <input

@@ -1,17 +1,29 @@
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Request from './Request/Request';
+import Success from './Success/Success';
+import Button from '@/components/UI/Button/Button';
 import styles from './Feedback.module.scss';
 
-function Feedback({ onModalClose, ...rest }) {
+function Feedback({ isModalOpened, onModalClose }) {
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  useEffect(() => {
+    if (isSuccess && !isModalOpened) setIsSuccess(false);
+  }, [isSuccess, isModalOpened]);
+
   return (
     <div className={styles.modal}>
       <div className={styles.wrapper}>
-        <Request onModalClose={onModalClose} {...rest} />
+        {!isSuccess ? (
+          <Request onSuccess={setIsSuccess} />
+        ) : (
+          <Success onModalClose={onModalClose} />
+        )}
       </div>
-      <button
-        className={styles.closeButton}
-        type="button"
-        aria-label="Закрыть модальное окно с обратной связью"
+      <Button
+        classSelector="button-close"
+        ariaLabel="Закрыть модальное окно с обратной связью"
         onClick={onModalClose}
       />
     </div>
@@ -19,6 +31,7 @@ function Feedback({ onModalClose, ...rest }) {
 }
 
 Feedback.propTypes = {
+  isModalOpened: PropTypes.bool.isRequired,
   onModalClose: PropTypes.func.isRequired,
 };
 

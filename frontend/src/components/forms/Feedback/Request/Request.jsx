@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
-import Image from 'next/image';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import {
@@ -14,13 +13,11 @@ import {
 import CustomInput from '../../CustomInput/CustomInput';
 import Radio from '@/components/UI/Radio/Radio';
 import Textarea from '@/components/UI/Textarea/Textarea';
-import Checkbox from '../../../UI/Checkbox/Checkbox';
+import Checkbox from '@/components/UI/Checkbox/Checkbox';
 import Button from '@/components/UI/Button/Button';
-import imageSuccess from '../../../../../public/assets/images/feedback-success.svg';
 import styles from './Request.module.scss';
 
-function Request({ isModalOpened, onModalClose }) {
-  const [isSuccess, setIsSuccess] = useState(false);
+function Request({ onSuccess }) {
   const [isLoading, setIsLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
@@ -41,19 +38,15 @@ function Request({ isModalOpened, onModalClose }) {
       .shape(schemaPersonalDataConsent(Yup)),
 
     onSubmit: (values, { resetForm }) => {
-      setIsSuccess(true);
+      onSuccess(true);
       resetForm();
     },
   });
 
-  useEffect(() => {
-    if (isSuccess && !isModalOpened) setIsSuccess(false);
-  }, [isSuccess, isModalOpened]);
-
-  return !isSuccess ? (
+  return (
     <form className={styles.form} noValidate onSubmit={formik.handleSubmit}>
       <div className={styles.intro}>
-        <h3 className={styles.heading}>Обратная связь</h3>
+        <h3>Обратная связь</h3>
         <p className={styles.subheading}>
           Оставьте свои контактные данные, и я помогу вам подобрать подходящий
           формат изучения языка
@@ -116,7 +109,6 @@ function Request({ isModalOpened, onModalClose }) {
         </p>
       </div>
       <Button
-        extraClassSelector={styles.button}
         type="submit"
         disabled={
           !formik.isValid ||
@@ -130,31 +122,11 @@ function Request({ isModalOpened, onModalClose }) {
         Отправить
       </Button>
     </form>
-  ) : (
-    <div className={styles.content}>
-      <Image
-        width={306}
-        height={327}
-        src={imageSuccess}
-        alt="Успешная авторизация"
-        priority
-      />
-      <div className={styles.text}>
-        <h3 className={styles.heading}>Заявка принята</h3>
-        <p className={styles.subheadingSuccess}>
-          Я скоро свяжусь с вами, чтобы ответить на ваши вопросы
-        </p>
-      </div>
-      <Button extraClassSelector={styles.button} onClick={onModalClose}>
-        Хорошо, я понял(а)
-      </Button>
-    </div>
   );
 }
 
 Request.propTypes = {
-  isModalOpened: PropTypes.bool.isRequired,
-  onModalClose: PropTypes.func.isRequired,
+  onSuccess: PropTypes.func.isRequired,
 };
 
 export default Request;
