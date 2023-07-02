@@ -15,6 +15,7 @@ import CustomInput from '../../CustomInput/CustomInput';
 import CustomRadio from '../../CustomRadio/CustomRadio';
 import CustomTextarea from '../../CustomTextarea/CustomTextarea';
 import CustomCheckbox from '../../CustomCheckbox/CustomCheckbox';
+import Button from '@/components/UI/Button/Button';
 import imageSuccess from '../../../../../public/assets/images/feedback-success.svg';
 import styles from './Request.module.scss';
 
@@ -114,8 +115,8 @@ function Request({ isModalOpened, onModalClose }) {
           <span className={styles.accent}> политики конфиденциальности</span>
         </p>
       </div>
-      <button
-        className={`button ${styles.button}`}
+      <Button
+        extraClassSelector={styles.button}
         type="submit"
         disabled={
           !formik.isValid ||
@@ -123,15 +124,11 @@ function Request({ isModalOpened, onModalClose }) {
           (!Object.keys(formik.touched).length &&
             formik.touched.constructor === Object)
         }
+        isLoading={isLoading}
+        isLoadingText="Отправляется"
       >
-        {!isLoading ? (
-          'Отправить'
-        ) : (
-          <span>
-            Отправляется <span className={styles.dotTyping} />
-          </span>
-        )}
-      </button>
+        Отправить
+      </Button>
     </form>
   ) : (
     <div className={styles.content}>
