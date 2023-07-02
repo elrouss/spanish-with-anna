@@ -24,6 +24,7 @@ function Button({
       className={`${styles[classSelector]}${
         extraClassSelector ? ` ${extraClassSelector}` : ''
       }`}
+      // eslint-disable-next-line react/button-has-type
       type={type}
       aria-label={ariaLabel}
       disabled={disabled}
@@ -46,7 +47,7 @@ Button.propTypes = {
     'button',
     'button-promo',
     'button-additional',
-  ]).isRequired,
+  ]),
   extraClassSelector: PropTypes.string,
   type: PropTypes.oneOf(['button', 'submit', 'reset', 'menu']),
   ariaLabel: PropTypes.string,
@@ -59,6 +60,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  classSelector: 'button',
   extraClassSelector: undefined,
   type: 'button',
   ariaLabel: undefined,

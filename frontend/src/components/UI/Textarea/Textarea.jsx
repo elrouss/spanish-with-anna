@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import styles from './CustomTextarea.module.scss';
+import styles from './Textarea.module.scss';
 
-function CustomTextarea({
+function Textarea({
   id,
   name,
   form,
@@ -24,7 +24,7 @@ function CustomTextarea({
   );
 }
 
-CustomTextarea.propTypes = {
+Textarea.propTypes = {
   formik: PropTypes.shape({
     getFieldProps: PropTypes.func.isRequired,
     errors: PropTypes.shape({}).isRequired,
@@ -38,11 +38,11 @@ CustomTextarea.propTypes = {
   disabled: PropTypes.bool,
 };
 
-CustomTextarea.defaultProps = {
+Textarea.defaultProps = {
   placeholder: undefined,
   autocomplete: 'off',
   form: undefined,
   disabled: false,
 };
 
-export default CustomTextarea;
+export default Textarea;

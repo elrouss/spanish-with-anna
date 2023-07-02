@@ -1,26 +1,28 @@
 import PropTypes from 'prop-types';
-import styles from './CustomRadio.module.scss';
+import styles from './Checkbox.module.scss';
 
-function CustomRadio({ id, name, value, formik, label = '', checked = false }) {
+function Checkbox({ id, name, value, formik, label = '', checked = false }) {
+  console.log(value)
+
   return (
-    <div className={styles.radio}>
+    <div className={styles.checkbox}>
       <input
         className={styles.input}
         id={id}
+        type="checkbox"
         name={name}
-        type="radio"
+        {...formik.getFieldProps({ name })}
         value={value}
         defaultChecked={checked}
-        onChange={formik.getFieldProps({ name }).onChange}
       />
       <label className={styles.label} htmlFor={id}>
-        {label && label}
+        {label}
       </label>
     </div>
   );
 }
 
-CustomRadio.propTypes = {
+Checkbox.propTypes = {
   formik: PropTypes.shape({
     getFieldProps: PropTypes.func.isRequired,
     errors: PropTypes.shape({}).isRequired,
@@ -28,14 +30,15 @@ CustomRadio.propTypes = {
   }).isRequired,
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   label: PropTypes.string,
   checked: PropTypes.bool,
 };
 
-CustomRadio.defaultProps = {
+Checkbox.defaultProps = {
+  value: undefined,
   label: '',
   checked: false,
 };
 
-export default CustomRadio;
+export default Checkbox;

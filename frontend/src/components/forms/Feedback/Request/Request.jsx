@@ -12,9 +12,9 @@ import {
   schemaPersonalDataConsent,
 } from '../../../../utils/validation/yupSchemas';
 import CustomInput from '../../CustomInput/CustomInput';
-import CustomRadio from '../../CustomRadio/CustomRadio';
-import CustomTextarea from '../../CustomTextarea/CustomTextarea';
-import CustomCheckbox from '../../CustomCheckbox/CustomCheckbox';
+import Radio from '@/components/UI/Radio/Radio';
+import Textarea from '@/components/UI/Textarea/Textarea';
+import Checkbox from '../../../UI/Checkbox/Checkbox';
 import Button from '@/components/UI/Button/Button';
 import imageSuccess from '../../../../../public/assets/images/feedback-success.svg';
 import styles from './Request.module.scss';
@@ -81,7 +81,7 @@ function Request({ isModalOpened, onModalClose }) {
       </div>
       <div className={styles.contact}>
         <span>Предпочитаемый вид связи</span>
-        <CustomRadio
+        <Radio
           id="feedback-phone"
           label="Телефон"
           name="preferredCommunication"
@@ -89,7 +89,7 @@ function Request({ isModalOpened, onModalClose }) {
           checked
           formik={formik}
         />
-        <CustomRadio
+        <Radio
           id="feedback-email"
           label="Email"
           name="preferredCommunication"
@@ -97,14 +97,14 @@ function Request({ isModalOpened, onModalClose }) {
           formik={formik}
         />
       </div>
-      <CustomTextarea
+      <Textarea
         id="feedback-message"
         name="message"
         placeholder="Напишите свой вопрос или комментарий"
         formik={formik}
       />
       <div className={styles.personalData}>
-        <CustomCheckbox
+        <Checkbox
           id="feedback-personal-data-consent"
           name="personalDataConsent"
           checked
@@ -145,13 +145,9 @@ function Request({ isModalOpened, onModalClose }) {
           Я скоро свяжусь с вами, чтобы ответить на ваши вопросы
         </p>
       </div>
-      <button
-        className={`button ${styles.button}`}
-        type="button"
-        onClick={onModalClose}
-      >
+      <Button extraClassSelector={styles.button} onClick={onModalClose}>
         Хорошо, я понял(а)
-      </button>
+      </Button>
     </div>
   );
 }
