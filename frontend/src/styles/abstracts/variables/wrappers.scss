@@ -1,2 +1,10 @@
 $wrapper-main-desktop: 1160px;
 $wrapper-main-tablet: 648px;
+
+$margin-blocks-sides-tablet: 60px;
+$padding-full-blocks-top-btm-tablet: 130px;
+$padding-half-blocks-top-btm-tablet: 85px;
+
+$margin-blocks-sides-formula-tablet: calc(
+  $margin-blocks-sides-tablet / $media-tablet * 100%
+);
