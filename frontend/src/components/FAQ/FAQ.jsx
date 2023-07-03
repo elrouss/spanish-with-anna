@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import styles from './FAQ.module.scss';
 import FAQ_DATA from '@/utils/data/FAQ_DATA';
 import Question from './Question/Question';
 
-function FAQ() {
+function FAQ({ onModalOpen }) {
   const questions = FAQ_DATA.map((q) => (
     <li className={styles.accordionItem} key={`accordionItem-${q._id}`}>
       <Question title={q.title} answer={q.answer} key={`question-${q._id}`} />
@@ -18,7 +19,11 @@ function FAQ() {
           <p className={styles.tip}>
             Остались вопросы? Я&nbsp;с&nbsp;удовольствием на них отвечу.
           </p>
-          <button className={styles.askButton} type="button">
+          <button
+            className={styles.askButton}
+            type="button"
+            onClick={onModalOpen}
+          >
             Задать вопрос
           </button>
           <div className={styles.decorationQuestionIcon} />
@@ -28,5 +33,9 @@ function FAQ() {
     </section>
   );
 }
+
+FAQ.propTypes = {
+  onModalOpen: PropTypes.func.isRequired,
+};
 
 export default FAQ;

@@ -31,6 +31,10 @@ button {
   @extend %indents-reset;
 }
 
+button {
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
 }

@@ -1,7 +1,10 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import styles from './LoginForm.module.scss';
-import { schemaEmail, schemaPassword } from '../yapSchemas/yapSchemas';
+import {
+  schemaEmail,
+  schemaPassword,
+} from '../../../utils/validation/yupSchemas';
 import CustomInput from '../CustomInput/CustomInput';
 
 function LoginForm() {

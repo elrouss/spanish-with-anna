@@ -30,6 +30,22 @@
   justify-content: space-between;
 }
 
+.link {
+  margin-bottom: 16px;
+  color: inherit;
+  background-color: transparent;
+
+  transition: $animation-transition-common;
+
+  &:hover {
+    color: $color-main-3;
+  }
+
+  &:active {
+    color: $color-secondary-2;
+  }
+}
+
 .logoLink {
   align-self: flex-start;
 }
