@@ -62,8 +62,8 @@
 <br> 3. 3 `npm run dev` - запустить приложение и открыть в любом браузере по адресу `http://localhost:3000/`
 6. **backend**:
 <br> 4. 1 `cd backend` - перейти в папку backend
-<br> 4. 2 `python -V` - проверить наличие Python, а также - pip командой `pip -V`; в случае необходимости скачать и установить Python по этой <a href="https://www.python.org/downloads/release/python-3110/">ссылке</a>)
-<br> 4. 3 `python -m venv venv` создать виртуальное окружение
+<br> 4. 2 скачать и установить Python по этой <a href="https://www.python.org/downloads/release/python-3110/">ссылке</a>
+<br> 4. 3 `python -m venv venv` (для windows), `python3 -m venv venv` (для linux/macOS) - создать виртуальное окружение
 <br> 4. 4 `source venv/Scripts/activate` активировать виртуальное окружение на Windows; `source venv/bin/activate` MacOS/Linux 
 <br> 4. 5 `pip install -r requirements.txt` установить зависимости
 <br> 4. 6 `cd spanish_with_anna` - перейти в папку spanish_with_anna
