@@ -11,26 +11,34 @@ class CustomUserCreationForm(forms.ModelForm):
     """
 
     password = forms.CharField(
-        label='Пароль',
+        label="Пароль",
         widget=forms.PasswordInput,
     )
     password_confirmation = forms.CharField(
-        label='Подтверждение пароля',
+        label="Подтверждение пароля",
         widget=forms.PasswordInput,
     )
 
     class Meta:
         model = CustomUser
-        fields = ('email', 'name', 'role', 'phone',)
+        fields = (
+            "email",
+            "name",
+            "role",
+            "phone",
+        )
 
     def clean_password_confirmation(self):
         """
         Функция проверяет, что введенные пароли совпадают.
         """
-        password = self.cleaned_data.get('password')
-        password_confirmation = self.cleaned_data.get('password_confirmation')
-        if password and password_confirmation and (
-                password != password_confirmation):
+        password = self.cleaned_data.get("password")
+        password_confirmation = self.cleaned_data.get("password_confirmation")
+        if (
+            password
+            and password_confirmation
+            and (password != password_confirmation)
+        ):
             raise ValidationError("Указанные пароли нес совпадают.")
 
         return password_confirmation
@@ -40,7 +48,7 @@ class CustomUserCreationForm(forms.ModelForm):
         Функция создает пользователя и сохраняет пароль в хешированном виде.
         """
         user = super().save(commit=False)
-        user.set_password(self.cleaned_data['password'])
+        user.set_password(self.cleaned_data["password"])
         if commit:
             user.save()
 
@@ -52,13 +60,24 @@ class CustomUserChangeForm(forms.ModelForm):
     Форма для обновления пользователей. Включает все поля пользователя.
     """
 
-    password = ReadOnlyPasswordHashField(label=(" Пароль"), help_text=(
-        "Просмотреть пароль пользователя невозможно. Для изменения "
-        "пароля используйте <a href=\"../password/\">эту форму</a>."))
+    password = ReadOnlyPasswordHashField(
+        label=(" Пароль"),
+        help_text=(
+            "Просмотреть пароль пользователя невозможно. Для изменения "
+            'пароля используйте <a href="../password/">эту форму</a>.'
+        ),
+    )
 
     class Meta:
         model = CustomUser
         fields = (
-            'name', 'email', 'password', 'phone', 'role', 'courses',
-            'is_active', 'is_staff', 'is_superuser',
+            "name",
+            "email",
+            "password",
+            "phone",
+            "role",
+            "courses",
+            "is_active",
+            "is_staff",
+            "is_superuser",
         )

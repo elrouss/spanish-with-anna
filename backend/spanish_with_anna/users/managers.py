@@ -16,12 +16,10 @@ class CustomUserManager(BaseUserManager):
         Функция, создающая пользователя.
         """
         if not email:
-            raise ValueError('Не указан email.')
+            raise ValueError("Не указан email.")
 
         user = self.model(
-            email=self.normalize_email(email),
-            name=name,
-            **other_fields
+            email=self.normalize_email(email), name=name, **other_fields
         )
 
         user.set_password(password)

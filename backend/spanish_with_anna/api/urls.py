@@ -19,14 +19,14 @@ schema_view = get_schema_view(
 
 router = DefaultRouter()
 
-router.register('feedbacks', FeedBackViewSet, basename='feedback')
+router.register("feedbacks", FeedBackViewSet, basename="feedback")
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path("", include(router.urls)),
     re_path(
         r"docs/$",
-        schema_view.with_ui('swagger', cache_timeout=0),
-        name='schema-swagger-ui',
+        schema_view.with_ui("swagger", cache_timeout=0),
+        name="schema-swagger-ui",
     ),
     # path('auth/', include('djoser.urls')),
     # path('auth/', include('djoser.urls.jwt')),

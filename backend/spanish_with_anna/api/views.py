@@ -14,6 +14,7 @@ class FeedBackViewSet(viewsets.ModelViewSet):
     """
     Вьюсет для работы с обратной связью.
     """
+
     queryset = Feedback.objects.all()
     serializer_class = CreateFeedbackSerializer
 
@@ -22,7 +23,7 @@ class FeedBackViewSet(viewsets.ModelViewSet):
         Возвращает класс сериализатора для данного запроса
         на основании метода запроса.
         """
-        if self.request.method in ('GET', 'PATCH'):
+        if self.request.method in ("GET", "PATCH"):
             return ReadFeedbackSerializer
         return CreateFeedbackSerializer
 
@@ -33,11 +34,10 @@ class FeedBackViewSet(viewsets.ModelViewSet):
         """
         instance = self.get_object()
         instance.is_finished = request.data.get(
-            'is_finished',
-            instance.is_finished
-            )
-        instance.is_double = request.data.get('is_double', instance.is_double)
-        instance.comment = request.data.get('comment', instance.comment)
+            "is_finished", instance.is_finished
+        )
+        instance.is_double = request.data.get("is_double", instance.is_double)
+        instance.comment = request.data.get("comment", instance.comment)
         instance.save()
         serializer = self.get_serializer(instance)
         return Response(serializer.data)

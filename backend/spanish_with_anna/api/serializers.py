@@ -10,13 +10,13 @@ class CreateFeedbackSerializer(serializers.ModelSerializer):
 
     class Meta:
         fields = (
-            'name',
-            'email',
-            'phone',
-            'preferred_communication',
-            'message',
-            'time_create',
-            'is_agree',
+            "name",
+            "email",
+            "phone",
+            "preferred_communication",
+            "message",
+            "time_create",
+            "is_agree",
         )
         model = Feedback
 
@@ -27,25 +27,25 @@ class ReadFeedbackSerializer(serializers.ModelSerializer):
     на чтение и редактирование обратной связи.
     """
 
-    is_finished = serializers.SerializerMethodField('get_is_finished')
-    is_double = serializers.SerializerMethodField('get_is_double')
-    comment = serializers.SerializerMethodField('get_comment')
+    is_finished = serializers.SerializerMethodField("get_is_finished")
+    is_double = serializers.SerializerMethodField("get_is_double")
+    comment = serializers.SerializerMethodField("get_comment")
 
     class Meta:
         fields = (
-            'id',
-            'name',
-            'email',
-            'phone',
-            'preferred_communication',
-            'message',
-            'time_create',
-            'user',
-            'is_agree',
-            'comment',
-            'is_finished',
-            'is_double',
-            'time_update',
+            "id",
+            "name",
+            "email",
+            "phone",
+            "preferred_communication",
+            "message",
+            "time_create",
+            "user",
+            "is_agree",
+            "comment",
+            "is_finished",
+            "is_double",
+            "time_update",
         )
         model = Feedback
 
