@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { useState, useRef } from 'react';
-import styles from './CustomInput.module.scss';
+import styles from './Input.module.scss';
 import EyeOff from '../../../assets/icons/EyeOff';
 import EyeOn from '../../../assets/icons/EyeOn';
 
-function CustomInput({ formik, name, type, placeholder }) {
+function Input({ formik, name, type, placeholder }) {
   const { errors, touched } = formik;
   const [isEyeOn, setIsEyeOn] = useState(false);
   const inputRef = useRef(null);
@@ -52,7 +52,7 @@ function CustomInput({ formik, name, type, placeholder }) {
   );
 }
 
-CustomInput.propTypes = {
+Input.propTypes = {
   formik: PropTypes.shape({
     getFieldProps: PropTypes.func.isRequired,
     errors: PropTypes.shape({}).isRequired,
@@ -63,4 +63,4 @@ CustomInput.propTypes = {
   placeholder: PropTypes.string.isRequired,
 };
 
-export default CustomInput;
+export default Input;

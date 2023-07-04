@@ -4,8 +4,9 @@ import styles from './LoginForm.module.scss';
 import {
   schemaEmail,
   schemaPassword,
-} from '../../../utils/validation/yupSchemas';
-import CustomInput from '../CustomInput/CustomInput';
+} from '../../../../utils/validation/yupSchemas';
+import Input from '../../../UI/Input/Input';
+import Button from '../../../UI/Button/Button';
 
 function LoginForm() {
   const formikLogin = useFormik({
@@ -28,26 +29,24 @@ function LoginForm() {
       className={styles.form}
       noValidate
     >
-      <CustomInput
+      <Input
         formik={formikLogin}
         name="email"
         type="email"
-        placeholder="email"
+        placeholder="Электронная почта"
       />
-      <CustomInput
+      <Input
         formik={formikLogin}
         name="password"
         type="password"
-        placeholder="password"
+        placeholder="Пароль"
       />
-      <button
+      <Button
         type="submit"
-        className={`button ${
-          Object.keys(formikLogin.errors).length ? styles.buttonDisable : ''
-        }`}
+        disabled={Boolean(Object.keys(formikLogin.errors).length)}
       >
         Войти
-      </button>
+      </Button>
     </form>
   );
 }
