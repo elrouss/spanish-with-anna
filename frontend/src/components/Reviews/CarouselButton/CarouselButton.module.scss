@@ -1,0 +1,18 @@
+.button {
+  width: 24px;
+  height: 24px;
+  margin-top: 23px;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+.buttonPrev {
+  background-image: url(../../../../public/assets/icons/arrow-left.svg);
+}
+
+.buttonNext {
+  background-image: url(../../../../public/assets/icons/arrow-right.svg);
+}

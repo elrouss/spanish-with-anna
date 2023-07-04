@@ -1,0 +1,22 @@
+@mixin render-font(
+  $family: var(--font-manrope),
+  $weight: 400,
+  $size: $font-size-main-text,
+  $line-height: $font-line-height-main-text,
+  $color: $color-main-text-1
+) {
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin render-button-box-shadow(
+  $width: 2px,
+  $height: 5px,
+  $radius: 6px,
+  $color: $color-additional-6
+) {
+  box-shadow: inset $width $height $radius 0 $color;
+}

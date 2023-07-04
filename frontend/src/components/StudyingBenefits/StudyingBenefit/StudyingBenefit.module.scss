@@ -1,0 +1,42 @@
+@import '../../../styles/index.scss';
+
+.content,
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  row-gap: 18px;
+  width: 100%;
+}
+
+.heading {
+  max-width: 174px;
+
+  @include render-font(
+    $family: var(--font-raleway),
+    $weight: 600,
+    $size: $font-size-subheading,
+    $line-height: $font-line-height-subheading,
+    $color: $color-main-text-2
+  );
+  text-transform: uppercase;
+}
+
+.text {
+  max-width: 250px;
+
+  @include render-font();
+}
+
+.imageContainer {
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+}
+
+.image {
+  object-fit: cover;
+}

@@ -1,0 +1,45 @@
+@import 'normalize.css/normalize.css';
+@import './index.scss';
+
+html {
+  font-size: 10px;
+
+  scroll-behavior: smooth;
+}
+
+body {
+  // TODO: When importing fonts with Next.js, deletes the line below in CSS
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $color-main-text-1;
+
+  background: $color-main-1;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+a,
+button {
+  @extend %indents-reset;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+.page-no-scroll {
+  overflow: hidden;
+}

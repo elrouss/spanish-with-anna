@@ -1,0 +1,48 @@
+@import '../../styles/index.scss';
+
+.wrapper {
+  max-width: $wrapper-main-desktop;
+  margin: 0px auto;
+  padding: 150px 0 105px;
+}
+
+.content {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  @include render-font(
+    $family: var(--font-raleway),
+    $weight: 600,
+    $size: $font-size-heading,
+    $line-height: $font-line-height-heading,
+    $color: $color-main-text-2
+  );
+
+  text-transform: uppercase;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: space-between;
+
+  margin-top: 100px;
+}
+
+.decoration {
+  position: absolute;
+  bottom: -60px;
+  z-index: $z-index-below-content-default;
+
+  width: calc(100% + 100px);
+  height: 196px;
+
+  background-color: $color-main-2;
+  border-radius: 100px;
+}
