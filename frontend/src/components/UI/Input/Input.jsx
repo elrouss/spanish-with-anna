@@ -3,8 +3,9 @@ import { useState, useRef } from 'react';
 import styles from './Input.module.scss';
 import EyeOff from '../../../assets/icons/EyeOff';
 import EyeOn from '../../../assets/icons/EyeOn';
+import MicroTooltip from '../MicroTooltip/MicroTooltip';
 
-function Input({ formik, name, type, placeholder }) {
+function Input({ formik, name, type, placeholder, hintText = '' }) {
   const { errors, touched } = formik;
   const [isEyeOn, setIsEyeOn] = useState(false);
   const inputRef = useRef(null);
@@ -17,7 +18,7 @@ function Input({ formik, name, type, placeholder }) {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.container}>
         <input
           className={`${styles.input} ${
@@ -48,6 +49,11 @@ function Input({ formik, name, type, placeholder }) {
       <span className={styles.error}>
         {errors[name] && touched[name] ? errors[name] : ''}
       </span>
+      {hintText && (
+        <div className={styles.hint}>
+          <MicroTooltip text={hintText} />
+        </div>
+      )}
     </div>
   );
 }
@@ -61,6 +67,11 @@ Input.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
+  hintText: PropTypes.string,
+};
+
+Input.defaultProps = {
+  hintText: '',
 };
 
 export default Input;

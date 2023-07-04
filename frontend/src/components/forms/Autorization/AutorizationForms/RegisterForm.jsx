@@ -8,6 +8,7 @@ import {
 } from '../../../../utils/validation/yupSchemas';
 import Input from '../../../UI/Input/Input';
 import Button from '../../../UI/Button/Button';
+import { PASSWORD_HINT } from '../../../../utils/constants';
 
 function RegisterForm() {
   const formikRegister = useFormik({
@@ -50,6 +51,7 @@ function RegisterForm() {
         name="password"
         type="password"
         placeholder="Пароль"
+        hintText={PASSWORD_HINT}
       />
       <Button
         type="submit"
