@@ -19,17 +19,23 @@ export const schemaName = (Yup) => ({
     .required(VALIDATION_MESSAGES.user.name.required),
 });
 
-export const schemaPhone = (Yup) => ({
+export const schemaPhoneFeedback = (Yup) => ({
   phone: Yup.string()
     .matches(PHONE_REGEX, VALIDATION_MESSAGES.user.phone.invalid)
-    .required(VALIDATION_MESSAGES.user.phone.required),
+    .when('preferred_communication', {
+      is: 'phone',
+      then: () =>
+        Yup.string()
+          .matches(PHONE_REGEX, VALIDATION_MESSAGES.user.phone.invalid)
+          .required(VALIDATION_MESSAGES.user.phone.required),
+    }),
 });
 
 export const schemaPreferredCommunication = (Yup) => ({
   preferred_communication: Yup.string().required().oneOf(['email', 'phone']),
 });
 
-export const schemaFeedbackMessage = (Yup) => ({
+export const schemaMessageFeedback = (Yup) => ({
   message: Yup.string().required().min(1).max(1024),
 });
 

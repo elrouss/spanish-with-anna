@@ -5,17 +5,18 @@ import * as Yup from 'yup';
 import {
   schemaEmail,
   schemaName,
-  schemaPhone,
+  schemaPhoneFeedback,
   schemaPreferredCommunication,
-  schemaFeedbackMessage,
+  schemaMessageFeedback,
   schemaPersonalDataConsent,
 } from '../../../../utils/validation/yupSchemas';
+import { DOUBLE_SPACE } from '@/utils/constants';
 import CustomInput from '../../CustomInput/CustomInput';
 import Radio from '@/components/UI/Radio/Radio';
 import Textarea from '@/components/UI/Textarea/Textarea';
 import Checkbox from '@/components/UI/Checkbox/Checkbox';
 import Button from '@/components/UI/Button/Button';
-import sendFeedback from '@/utils/api/api';
+import { sendFeedback } from '@/utils/api/api';
 import styles from './Request.module.scss';
 
 function Request({ onSuccess }) {
@@ -25,7 +26,7 @@ function Request({ onSuccess }) {
       name: '',
       email: '',
       phone: '',
-      preferred_communication: 'phone',
+      preferred_communication: 'email',
       message: '',
       is_agree: true,
     },
@@ -33,13 +34,23 @@ function Request({ onSuccess }) {
     validationSchema: Yup.object()
       .shape(schemaName(Yup))
       .shape(schemaEmail(Yup))
-      .shape(schemaPhone(Yup))
+      .shape(schemaPhoneFeedback(Yup))
       .shape(schemaPreferredCommunication(Yup))
-      .shape(schemaFeedbackMessage(Yup))
+      .shape(schemaMessageFeedback(Yup))
       .shape(schemaPersonalDataConsent(Yup)),
 
     onSubmit: (values, { resetForm }) => {
-      sendFeedback(values, setIsLoading, onSuccess, resetForm);
+      const copyValues = { ...values };
+
+      Object.keys(copyValues).map((key) => {
+        if (typeof copyValues[key] === 'string') {
+          copyValues[key] = copyValues[key].trim().replace(DOUBLE_SPACE, ' ');
+        }
+
+        return copyValues;
+      });
+
+      sendFeedback(copyValues, setIsLoading, onSuccess, resetForm);
     },
   });
 
@@ -68,7 +79,7 @@ function Request({ onSuccess }) {
         <CustomInput
           name="phone"
           type="tel"
-          placeholder="Телефон *"
+          placeholder="Телефон"
           formik={formik}
         />
       </div>
@@ -79,7 +90,6 @@ function Request({ onSuccess }) {
           label="Телефон"
           name="preferred_communication"
           value="phone"
-          checked
           formik={formik}
         />
         <Radio
@@ -87,6 +97,7 @@ function Request({ onSuccess }) {
           label="Email"
           name="preferred_communication"
           value="email"
+          checked
           formik={formik}
         />
       </div>

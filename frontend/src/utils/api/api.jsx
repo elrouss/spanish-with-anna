@@ -1,13 +1,7 @@
 import URLS from './urls';
 
-export default async function sendFeedback(
-  data,
-  onLoad,
-  onSuccess,
-  onResetForm
-) {
+export async function sendFeedback(data, onLoad, onSuccess, onResetForm) {
   try {
-    // TODO: trim space etc.
     onLoad(true);
 
     const response = await fetch(`${URLS.base}${URLS.endpoints.feedback}`, {
