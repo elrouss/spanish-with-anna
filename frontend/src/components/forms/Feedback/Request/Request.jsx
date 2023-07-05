@@ -10,7 +10,7 @@ import {
   schemaMessageFeedback,
   schemaPersonalDataConsent,
 } from '../../../../utils/validation/yupSchemas';
-import { DOUBLE_SPACE } from '@/utils/constants';
+import { DOUBLE_SPACE_REGEX } from '@/utils/constants';
 import CustomInput from '../../CustomInput/CustomInput';
 import Radio from '@/components/UI/Radio/Radio';
 import Textarea from '@/components/UI/Textarea/Textarea';
@@ -44,7 +44,9 @@ function Request({ onSuccess }) {
 
       Object.keys(copyValues).map((key) => {
         if (typeof copyValues[key] === 'string') {
-          copyValues[key] = copyValues[key].trim().replace(DOUBLE_SPACE, ' ');
+          copyValues[key] = copyValues[key]
+            .trim()
+            .replace(DOUBLE_SPACE_REGEX, ' ');
         }
 
         return copyValues;
