@@ -12,8 +12,6 @@ export async function sendFeedback(data, onLoad, onSuccess, onResetForm) {
       body: JSON.stringify(data),
     });
 
-    console.log(response);
-
     if (response.ok) {
       onSuccess(true);
       onResetForm();
