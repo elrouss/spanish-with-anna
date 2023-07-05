@@ -12,7 +12,6 @@ djangorestframework==3.14.0
 djangorestframework-simplejwt==5.2.2
 djoser==2.2.0
 drf-yasg==1.21.6
-flake8==6.0.0
 idna==3.4
 inflection==0.5.1
 mccabe==0.7.0

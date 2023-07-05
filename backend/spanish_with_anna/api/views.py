@@ -1,6 +1,6 @@
 """Views for 'api' application."""
 
-from rest_framework import viewsets
+from rest_framework import permissions, viewsets
 from rest_framework.response import Response
 
 from api.serializers import (
@@ -17,6 +17,7 @@ class FeedBackViewSet(viewsets.ModelViewSet):
 
     queryset = Feedback.objects.all()
     serializer_class = CreateFeedbackSerializer
+    permission_classes = (permissions.AllowAny,)
 
     def get_serializer_class(self):
         """
