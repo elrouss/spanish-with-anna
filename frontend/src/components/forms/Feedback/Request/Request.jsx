@@ -15,6 +15,7 @@ import Radio from '@/components/UI/Radio/Radio';
 import Textarea from '@/components/UI/Textarea/Textarea';
 import Checkbox from '@/components/UI/Checkbox/Checkbox';
 import Button from '@/components/UI/Button/Button';
+import sendFeedback from '@/utils/api/api';
 import styles from './Request.module.scss';
 
 function Request({ onSuccess }) {
@@ -24,9 +25,9 @@ function Request({ onSuccess }) {
       name: '',
       email: '',
       phone: '',
-      preferredCommunication: 'phone',
+      preferred_communication: 'phone',
       message: '',
-      personalDataConsent: true,
+      is_agree: true,
     },
 
     validationSchema: Yup.object()
@@ -38,8 +39,7 @@ function Request({ onSuccess }) {
       .shape(schemaPersonalDataConsent(Yup)),
 
     onSubmit: (values, { resetForm }) => {
-      onSuccess(true);
-      resetForm();
+      sendFeedback(values, setIsLoading, onSuccess, resetForm);
     },
   });
 
@@ -77,7 +77,7 @@ function Request({ onSuccess }) {
         <Radio
           id="feedback-phone"
           label="Телефон"
-          name="preferredCommunication"
+          name="preferred_communication"
           value="phone"
           checked
           formik={formik}
@@ -85,7 +85,7 @@ function Request({ onSuccess }) {
         <Radio
           id="feedback-email"
           label="Email"
-          name="preferredCommunication"
+          name="preferred_communication"
           value="email"
           formik={formik}
         />
@@ -99,7 +99,7 @@ function Request({ onSuccess }) {
       <div className={styles.personalData}>
         <Checkbox
           id="feedback-personal-data-consent"
-          name="personalDataConsent"
+          name="is_agree"
           checked
           formik={formik}
         />

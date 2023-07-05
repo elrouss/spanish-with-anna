@@ -26,7 +26,7 @@ export const schemaPhone = (Yup) => ({
 });
 
 export const schemaPreferredCommunication = (Yup) => ({
-  preferredCommunication: Yup.string().required().oneOf(['email', 'phone']),
+  preferred_communication: Yup.string().required().oneOf(['email', 'phone']),
 });
 
 export const schemaFeedbackMessage = (Yup) => ({
@@ -34,5 +34,5 @@ export const schemaFeedbackMessage = (Yup) => ({
 });
 
 export const schemaPersonalDataConsent = (Yup) => ({
-  personalDataConsent: Yup.bool().required().oneOf([true]),
+  is_agree: Yup.bool().required().oneOf([true]),
 });
