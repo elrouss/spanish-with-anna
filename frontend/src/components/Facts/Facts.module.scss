@@ -20,7 +20,7 @@
     border-right: 1px solid $color-complementary-2;
   }
 
-  @media screen and (max-width: 1023px) {
+  @media screen and (max-width: calc($media-laptop - 1px)) {
     grid-template-columns: (minmax(172px, auto) minmax(210px, auto) minmax(236px, auto));
     justify-content: space-between;
     max-width: $wrapper-main-tablet;
@@ -39,7 +39,7 @@
     border: none;
   }
 
-  @media screen and (max-width: 1023px) {
+  @media screen and (max-width: calc($media-laptop - 1px)) {
     gap: 8px;
   }
 }
