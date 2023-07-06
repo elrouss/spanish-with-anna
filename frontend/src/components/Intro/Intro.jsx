@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import styles from './Intro.module.scss';
 import headingLogo from '../../assets/images/intro-heading.svg';
-// import introImageMain from '../../assets/images/intro-image-main.png';
 
 function Intro() {
   return (
@@ -32,15 +31,6 @@ function Intro() {
         </a>
       </div>
       <div className={styles.photo} />
-      {/* <Image
-        className={styles.photo}
-        lang="es"
-        width={626}
-        height={605}
-        src={introImageMain}
-        alt="Улыбающаяся Анна с учебником испанского языка в руках на фоне Севильи и фразамии на испанском языке"
-        priority
-      /> */}
     </section>
   );
 }
