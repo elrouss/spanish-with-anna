@@ -10,6 +10,10 @@
 .content {
   max-width: 425px;
   padding-top: 16px;
+
+  @media screen and (max-width: 1279px) {
+    padding-left: 60px;
+  }
 }
 
 .subtitle {
@@ -26,11 +30,21 @@
 
 .headingImage {
   margin-top: 10px;
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    width: 363px;
+    margin-top: 5px;
+  }
 }
 
 .description {
   margin: 35px 0 40px;
   @include render-font();
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    max-width: 283px;
+    margin-top: 93px;
+  }
 }
 
 .button {
@@ -38,8 +52,30 @@
   width: fit-content;
   min-width: 120px;
   text-align: center;
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    min-width: 145px;
+  }
 }
 
 .photo {
-  margin-right: -54px;
+  width: 630px;
+  height: 605px;
+  margin-right: -57px;
+  overflow: hidden;
+
+  background-image: url('../../../public/assets/images/intro-image-main.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    width: 503px;
+    height: 710px;
+    margin: 0;
+    margin-top: 56px;
+    margin-left: -155px;
+    background-image: url('../../../public/assets/images/into-image-main-2.png');
+    background-position: right;
+  }
 }

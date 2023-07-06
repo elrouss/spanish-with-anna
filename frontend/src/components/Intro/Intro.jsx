@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './Intro.module.scss';
 import headingLogo from '../../assets/images/intro-heading.svg';
-import introImageMain from '../../assets/images/intro-image-main.png';
+// import introImageMain from '../../assets/images/intro-image-main.png';
 
 function Intro() {
   return (
@@ -23,7 +23,7 @@ function Intro() {
         <p className={styles.description}>
           Меня зовут Анна, я&nbsp;преподаватель, дипломированный переводчик и
           сертифицированный гид по&nbsp;Санкт-Петербургу на&nbsp;испанском
-          языке. Я&nbsp;с радостью помогу вам максимально быстро
+          языке. Я&nbsp;с&nbsp;радостью помогу вам максимально быстро
           и&nbsp;результативно овладеть языком, независимо от&nbsp;ваших целей,
           возраста и&nbsp;первоначального уровня.
         </p>
@@ -31,7 +31,8 @@ function Intro() {
           Начать учиться
         </a>
       </div>
-      <Image
+      <div className={styles.photo} />
+      {/* <Image
         className={styles.photo}
         lang="es"
         width={626}
@@ -39,7 +40,7 @@ function Intro() {
         src={introImageMain}
         alt="Улыбающаяся Анна с учебником испанского языка в руках на фоне Севильи и фразамии на испанском языке"
         priority
-      />
+      /> */}
     </section>
   );
 }
