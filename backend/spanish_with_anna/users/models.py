@@ -14,7 +14,7 @@ USERNAME_MAX_CHAR = 150
 EMAIL_MAX_CHAR = 254
 ROLE_MAX_CHAR = 15
 LANGUAGE_LEVEL_MAX_CHAR = 2
-PREFFERED_COMMUNICATION_MAX_CHAR = 15
+PREFERRED_COMMUNICATION_MAX_CHAR = 15
 MESSAGE_MAX_CHAR = 1024
 
 
@@ -183,7 +183,7 @@ class Feedback(models.Model):
     )
     preferred_communication = models.CharField(
         "Предпочитаемый способ коммуникации",
-        max_length=PREFFERED_COMMUNICATION_MAX_CHAR,
+        max_length=PREFERRED_COMMUNICATION_MAX_CHAR,
         choices=COMMUNICATION_CHOICES,
         default=EMAIL,
     )
