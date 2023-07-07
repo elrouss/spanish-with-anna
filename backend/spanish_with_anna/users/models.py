@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
+from django.core.exceptions import ValidationError
 from django.core.validators import RegexValidator
 from django.db import models
 
@@ -8,6 +9,13 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 from courses.models import Course
 from users.managers import CustomUserManager
+
+USERNAME_MAX_CHAR = 150
+EMAIL_MAX_CHAR = 254
+ROLE_MAX_CHAR = 15
+LANGUAGE_LEVEL_MAX_CHAR = 2
+PREFERRED_COMMUNICATION_MAX_CHAR = 15
+MESSAGE_MAX_CHAR = 1024
 
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
@@ -45,12 +53,12 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     name = models.CharField(
         "Имя пользователя",
-        max_length=150,
+        max_length=USERNAME_MAX_CHAR,
         validators=(RegexValidator("^[a-zA-Za-яА-ЯёЁ -_]+$"),),
     )
     email = models.EmailField(
         "Адрес e-mail",
-        max_length=254,
+        max_length=EMAIL_MAX_CHAR,
         unique=True,
         error_messages={
             "unique": "Пользователь c указанным e-mail уже существует.",
@@ -74,12 +82,12 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     role = models.CharField(
         "Роль пользователя",
         choices=ROLE_CHOICES,
-        max_length=15,
+        max_length=ROLE_MAX_CHAR,
         default=USER,
     )
     language_level = models.CharField(
         "Уровень владения языком",
-        max_length=2,
+        max_length=LANGUAGE_LEVEL_MAX_CHAR,
         choices=LANGUAGE_LEVEL_CHOICES,
         default=A0,
     )
@@ -161,12 +169,12 @@ class Feedback(models.Model):
 
     name = models.CharField(
         "Имя",
-        max_length=150,
+        max_length=USERNAME_MAX_CHAR,
         validators=(RegexValidator("^[a-zA-Zа-яА-ЯёЁ -_]+$"),),
     )
     email = models.EmailField(
         "Email",
-        max_length=254,
+        max_length=EMAIL_MAX_CHAR,
     )
     phone = PhoneNumberField(
         "Телефон",
@@ -175,13 +183,13 @@ class Feedback(models.Model):
     )
     preferred_communication = models.CharField(
         "Предпочитаемый способ коммуникации",
-        max_length=15,
+        max_length=PREFERRED_COMMUNICATION_MAX_CHAR,
         choices=COMMUNICATION_CHOICES,
-        default=PHONE,
+        default=EMAIL,
     )
     message = models.TextField(
         "Сообщение",
-        max_length=1024,
+        max_length=MESSAGE_MAX_CHAR,
     )
     time_create = models.DateTimeField(
         "Дата создания",
@@ -190,7 +198,7 @@ class Feedback(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         verbose_name="Пользователь",
-        on_delete=models.SET_NULL,
+        on_delete=models.PROTECT,
         blank=True,
         null=True,
         related_name="feedbacks",
@@ -229,15 +237,26 @@ class Feedback(models.Model):
         """
         Переопределяет метод save() для создания/обновления объектов модели.
         """
-        if self.is_agree is False:
-            raise ValueError(
-                "Необходимо согласие на обработку персональных данных!"
-            )
+
         matching_users = CustomUser.objects.filter(
             models.Q(email=self.email) | models.Q(phone=self.phone)
         )
-        if matching_users.exists():
-            self.user = matching_users.first()
-        else:
-            self.user = None
+        self.user = matching_users.first() if matching_users.exists() else None
         super().save(*args, **kwargs)
+
+    def clean(self):
+        """
+        Переопределяет метод clean() для очищения данных и объектов,
+        связанных с текущим экземпляром класса.
+        """
+
+        super().clean()
+        if self.is_agree is False:
+            raise ValidationError(
+                "Необходимо согласие на обработку персональных данных!"
+            )
+        if self.preferred_communication == "phone" and not self.phone:
+            raise ValidationError(
+                "Если предпочитаемый вид связи - телефон,"
+                "поле 'Телефон' не должно быть пустым."
+            )
