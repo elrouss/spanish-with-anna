@@ -25,7 +25,7 @@
 
   @media screen and (max-width: calc($media-laptop - 1px)) {
     width: calc(100% - 60px);
-    margin-left: 60px;
+    margin-left: $margin-blocks-sides-formula-tablet;
   }
 }
 
