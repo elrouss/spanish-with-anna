@@ -3,11 +3,11 @@
 .header {
   position: absolute;
   top: 0;
-  max-width: 1440px;
   left: calc(50vw - 720px);
   right: 0;
   display: flex;
   height: 100px;
+  max-width: 1440px;
 }
 
 @media (max-width: 1440px) {
@@ -52,11 +52,11 @@
 
 .main {
   display: flex;
+  justify-content: flex-end;
+  gap: 170px;
   min-height: 100vh;
   margin-right: calc(50vw - 720px);
   padding-left: calc(50vw - 720px);
-  justify-content: flex-end;
-  gap: 170px;
   background-color: #F0F9FB;
 }
 
@@ -74,20 +74,20 @@
 }
 
 .formParaphernalia {
-  padding-top: 68px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 96px;
+  padding-top: 68px;
 }
 
 @media (max-width: 1023px) {
   .formParaphernalia {
-    visibility: hidden;
-    padding: 0;
-    width: 0;
     height: 0;
+    width: 0;
+    padding: 0;
+    visibility: hidden;
   }
 }
 
@@ -138,9 +138,9 @@
   flex-direction: column;
   align-items: center;
   padding: 100px 138px 50px 142px;
+  background-color: $color-main-1;
   border-bottom-left-radius: 50px;
   border-top-left-radius: 50px;
-  background-color: #fff;
 }
 
 @media (max-width: 1440px) {
@@ -151,8 +151,8 @@
 
 @media (max-width: 1023px) {
   .form {
-    padding: 100px 0 50px 0;
     width: 100%;
+    padding: 100px 0 50px 0;
     border-radius: 0;
   }
 }
@@ -170,8 +170,8 @@
 }
 
 .subheading {
-  margin: 16px 0 50px;
   max-width: 220px;
+  margin: 16px 0 50px;
   text-align: center;
   @include render-font(
     $size: $font-size-main-text,
@@ -180,9 +180,9 @@
 }
 
 .politics {
+  max-width: 380px;
   margin-top: auto;
   padding-top: 30px;
-  max-width: 380px;
   text-align: center;
   @include render-font(
     $size: $font-size-main-text-s,
@@ -208,11 +208,11 @@
 }
 
 .paraphernaliaExplanationInForm {
+  display: none;
+  width: 246px;
   margin-top: auto;
   margin-bottom: 50px;
   padding: 0 10px;
-  display: none;
-  width: 246px;
 }
 
 @media (max-width: 1023px) {

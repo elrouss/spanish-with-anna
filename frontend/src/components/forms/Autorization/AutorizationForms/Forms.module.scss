@@ -4,8 +4,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 380px;
   gap: 14px;
+  width: 380px;
   @include render-font(
     $size: $font-size-main-text,
     $line-height: 1.42,
