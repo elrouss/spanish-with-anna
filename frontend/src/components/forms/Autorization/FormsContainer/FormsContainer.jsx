@@ -41,7 +41,11 @@ export default function FormsContainer({
             alt={formParaphernaliaData.imageAlt}
             priority
           />
-          <p className={`${styles.paraphernaliaExplanation} ${styles[formParaphernaliaData.name]}`}>
+          <p
+            className={`${styles.paraphernaliaExplanation} ${
+              styles[formParaphernaliaData.name]
+            }`}
+          >
             {formParaphernaliaData.explanation}
           </p>
         </div>
@@ -61,6 +65,13 @@ export default function FormsContainer({
               политика конфиденциальности
             </Link>
           </p>
+          <p
+            className={`${styles.paraphernaliaExplanation} ${
+              styles[formParaphernaliaData.name]
+            } ${styles.paraphernaliaExplanationInForm}`}
+          >
+            {formParaphernaliaData.explanation}
+          </p>
         </div>
       </main>
     </>
@@ -78,6 +89,7 @@ FormsContainer.propTypes = {
     headerLinkExplanation: PropTypes.string.isRequired,
     headerLinkText: PropTypes.string.isRequired,
     headerLinkHref: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     headerLinkAriaLabel: PropTypes.string.isRequired,
     heading: PropTypes.string.isRequired,
     subheading: PropTypes.string.isRequired,

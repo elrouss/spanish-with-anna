@@ -3,21 +3,21 @@
 .header {
   position: absolute;
   top: 0;
-  left: 0;
+  max-width: 1440px;
+  left: calc(50vw - 720px);
   right: 0;
   display: flex;
   height: 100px;
 }
 
-@media (min-width: 1440px) {
+@media (max-width: 1440px) {
   .header {
-    left: calc(50vw - 720px);
+    left: 0;
   }
 }
 
 .headerContainer {
   display: flex;
-  max-width: 1440px;
   flex-grow: 1;
   justify-content: space-between;
   align-items: center;
@@ -27,6 +27,12 @@
     $line-height: 1.42,
     $color: $color-complementary-3
   );
+}
+
+@media (max-width: 1440px) {
+  .headerContainer {
+    padding: 0 calc((100vw - 768px)/(1440 - 768) * (134 - 60) + 60px) 0 calc((100vw - 768px)/(1440 - 768) * (140 - 60) + 60px);
+  }
 }
 
 .linkContainer {
@@ -47,16 +53,23 @@
 .main {
   display: flex;
   min-height: 100vh;
-  margin: 0;
+  margin-right: calc(50vw - 720px);
+  padding-left: calc(50vw - 720px);
   justify-content: flex-end;
   gap: 170px;
   background-color: #F0F9FB;
 }
 
-@media (min-width: 1440px) {
+@media (max-width: 1440px) {
   .main {
-    margin-right: calc(50vw - 720px);
-    padding-left: calc(50vw - 720px);
+    gap: calc((100vw - 1024px)/(1440 - 1024) * (170 - 70) + 70px);
+    margin: 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  .main {
+    gap: 0;
   }
 }
 
@@ -67,6 +80,15 @@
   align-items: center;
   justify-content: center;
   gap: 96px;
+}
+
+@media (max-width: 1023px) {
+  .formParaphernalia {
+    visibility: hidden;
+    padding: 0;
+    width: 0;
+    height: 0;
+  }
 }
 
 .paraphernaliaExplanation {
@@ -121,6 +143,20 @@
   background-color: #fff;
 }
 
+@media (max-width: 1440px) {
+  .form {
+    padding: 100px calc((100vw - 1024px)/(1440 - 1024) * (138 - 50) + 50px) 50px calc((100vw - 1024px)/(1440 - 1024) * (142 - 50) + 50px);
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  .form {
+    padding: 100px 0 50px 0;
+    width: 100%;
+  }
+}
+
 .heading {
   margin-top: 105px;
   @include render-font(
@@ -145,12 +181,19 @@
 
 .politics {
   margin-top: auto;
+  padding-top: 30px;
   max-width: 380px;
   text-align: center;
   @include render-font(
     $size: $font-size-main-text-s,
     $line-height: normal,
   );
+}
+
+@media (max-width: 1023px) {
+  .politics {
+    margin-top: 0;
+  }
 }
 
 .politicsLink {
@@ -161,5 +204,19 @@
     $weight: 600,
   );
   text-decoration-line: underline;
+}
+
+.paraphernaliaExplanationInForm {
+  margin-top: auto;
+  margin-bottom: 50px;
+  padding: 0 10px;
+  display: none;
+  width: 246px;
+}
+
+@media (max-width: 1023px) {
+  .paraphernaliaExplanationInForm {
+    display: block;
+  }
 }
 
