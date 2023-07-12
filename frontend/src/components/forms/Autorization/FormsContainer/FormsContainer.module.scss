@@ -1,0 +1,165 @@
+@import '../../../../styles/index.scss';
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  height: 100px;
+}
+
+@media (min-width: 1440px) {
+  .header {
+    left: calc(50vw - 720px);
+  }
+}
+
+.headerContainer {
+  display: flex;
+  max-width: 1440px;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 134px 0 140px;
+  @include render-font(
+    $size: $font-size-main-text,
+    $line-height: 1.42,
+    $color: $color-complementary-3
+  );
+}
+
+.linkContainer {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.headerLinkText {
+  @include render-font(
+    $size: $font-size-main-text,
+    $line-height: 1.42,
+    $color: $color-secondary-3,
+    $weight: 600,
+  );
+}
+
+.main {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  justify-content: flex-end;
+  gap: 170px;
+  background-color: #F0F9FB;
+}
+
+@media (min-width: 1440px) {
+  .main {
+    margin-right: calc(50vw - 720px);
+    padding-left: calc(50vw - 720px);
+  }
+}
+
+.formParaphernalia {
+  padding-top: 68px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 96px;
+}
+
+.paraphernaliaExplanation {
+  position: relative;
+  margin-right: 8px;
+  text-align: center;
+  @include render-font(
+    $size: $font-size-main-text,
+    $line-height: 1.42,
+    $color: $color-main-5,
+  );
+  &::before {
+    content: '';
+    position: absolute;
+    top: -44px;
+    left: -28px;
+    height: 57px;
+    width: 28px;
+    background-image: url('../../../../assets/images/quot-1.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -32px;
+    right: -28px;
+    height: 57px;
+    width: 28px;
+    background-image: url('../../../../assets/images/quot-2.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.signup {
+  max-width: 382px;
+}
+
+.signin {
+  max-width: 255px;
+  padding: 0 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 138px 50px 142px;
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 50px;
+  background-color: #fff;
+}
+
+.heading {
+  margin-top: 105px;
+  @include render-font(
+    $family: var(--font-raleway),
+    $size: $font-size-heading-medium,
+    $line-height: normal,
+    $color: $color-main-text-2,
+    $weight: 600,
+  );
+  text-transform: uppercase;
+}
+
+.subheading {
+  margin: 16px 0 50px;
+  max-width: 220px;
+  text-align: center;
+  @include render-font(
+    $size: $font-size-main-text,
+    $line-height: 1.42,
+  );
+}
+
+.politics {
+  margin-top: auto;
+  max-width: 380px;
+  text-align: center;
+  @include render-font(
+    $size: $font-size-main-text-s,
+    $line-height: normal,
+  );
+}
+
+.politicsLink {
+  @include render-font(
+    $size: $font-size-main-text-s,
+    $line-height: 1.42,
+    $color: $color-secondary-3,
+    $weight: 600,
+  );
+  text-decoration-line: underline;
+}
+
