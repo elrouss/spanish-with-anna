@@ -146,7 +146,6 @@
 @media (max-width: 1440px) {
   .form {
     padding: 100px calc((100vw - 1024px)/(1440 - 1024) * (138 - 50) + 50px) 50px calc((100vw - 1024px)/(1440 - 1024) * (142 - 50) + 50px);
-    border-radius: 0;
   }
 }
 
@@ -154,6 +153,7 @@
   .form {
     padding: 100px 0 50px 0;
     width: 100%;
+    border-radius: 0;
   }
 }
 
@@ -193,6 +193,7 @@
 @media (max-width: 1023px) {
   .politics {
     margin-top: 0;
+    margin-bottom: 50px;
   }
 }
 

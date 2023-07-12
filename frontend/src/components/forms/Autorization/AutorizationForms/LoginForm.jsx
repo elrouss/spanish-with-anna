@@ -15,6 +15,7 @@ function LoginForm() {
     initialValues: {
       email: '',
       password: '',
+      rememberMe: false,
     },
 
     validationSchema: Yup.object(schemaEmail(Yup))
