@@ -1,9 +1,11 @@
 $font-size-heading-accent: 4rem;
+$font-size-heading-medium: 3.2rem;
 $font-size-heading: 2.6rem;
 $font-size-subheading: 2rem;
 $font-size-main-text-l: 1.6rem;
 $font-size-main-text: 1.4rem;
 $font-size-main-text-s: 1.2rem;
+$font-size-hint-text: 1rem;
 
 $font-line-height-heading-accent: calc(6rem / $font-size-heading-accent * 100%); // TODO: Check usage / delete (?)
 $font-line-height-heading-accent-s: calc(4.9rem / $font-size-heading-accent * 100%);

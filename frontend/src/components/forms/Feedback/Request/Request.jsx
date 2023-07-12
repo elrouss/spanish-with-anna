@@ -10,7 +10,7 @@ import {
   schemaFeedbackMessage,
   schemaPersonalDataConsent,
 } from '../../../../utils/validation/yupSchemas';
-import CustomInput from '../../CustomInput/CustomInput';
+import Input from '../../../UI/Input/Input';
 import Radio from '@/components/UI/Radio/Radio';
 import Textarea from '@/components/UI/Textarea/Textarea';
 import Checkbox from '@/components/UI/Checkbox/Checkbox';
@@ -53,19 +53,19 @@ function Request({ onSuccess }) {
         </p>
       </div>
       <div className={styles.inputs}>
-        <CustomInput
+        <Input
           name="name"
           type="text"
           placeholder="Имя *"
           formik={formik}
         />
-        <CustomInput
+        <Input
           name="email"
           type="email"
           placeholder="Электронная почта *"
           formik={formik}
         />
-        <CustomInput
+        <Input
           name="phone"
           type="tel"
           placeholder="Телефон *"

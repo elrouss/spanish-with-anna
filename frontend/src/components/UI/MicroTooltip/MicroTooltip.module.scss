@@ -1,0 +1,37 @@
+@import '../../../styles/index.scss';
+
+.container {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  &:hover > .subcontainer {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.subcontainer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  padding-bottom: 26px;
+  visibility: hidden;
+  z-index: 10;
+  opacity: 0;
+  transition: $animation-transition-common;
+}
+
+.text {
+  width: 164px;
+  padding: 14px 17px;
+  @include render-font(
+    $size: $font-size-hint-text,
+    $line-height: normal,
+    $color: $color-main-1
+  );
+  border-radius: 20px;
+  box-shadow: 2px 5px 6px -4px rgba(0, 0, 0, 0.08);
+  background-color: $color-secondary-2;
+}
+

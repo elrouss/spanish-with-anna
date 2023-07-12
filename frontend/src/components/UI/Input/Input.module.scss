@@ -1,5 +1,9 @@
 @import '../../../styles/index.scss';
 
+.container {
+  position: relative;
+}
+
 .input {
   height: 60px;
   width: 100%;
@@ -49,4 +53,10 @@
     $line-height: 1,
     $color: $color-error
   );
+}
+
+.hint {
+  position: absolute;
+  right: -30px;
+  top: calc(50% - 20px);
 }
