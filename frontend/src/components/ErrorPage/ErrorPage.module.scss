@@ -8,11 +8,17 @@
   margin: 0 auto;
   padding: 250px 0 220px;
 
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   @media screen and (max-width: calc($media-desktop - 1px)) {
     margin: 0 $margin-blocks-sides-formula-tablet;
   }
 
-  @media screen and (max-width: calc($media-laptop - 1px)) {
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
     grid-template-columns: 1fr;
     row-gap: 40px;
     padding-top: 160px;
@@ -22,6 +28,12 @@
 
 .wrapperServer {
   padding-top: 218px;
+
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
+    row-gap: 0;
+    padding-top: 120px;
+    padding-bottom: 159px;
+  }
 }
 
 .info,
@@ -44,6 +56,12 @@
   row-gap: 20px;
 }
 
+.textServer {
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
+    row-gap: 16px;
+  }
+}
+
 .heading,
 .description {
   @include render-font();
@@ -53,6 +71,7 @@
   font-size: $font-size-heading-accent;
   color: $color-main-text-3;
   letter-spacing: 0.9px;
+  text-align: center;
 }
 
 .description {
@@ -62,6 +81,10 @@
 
 .descriptionServer {
   font-size: $font-size-main-text-l;
+
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
+    font-size: $font-size-main-text;
+  }
 }
 
 .button {

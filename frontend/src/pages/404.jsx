@@ -1,7 +1,5 @@
-import InternalServer from '@/components/ErrorPage/InternalServer/InternalServer';
+import NotFound from '@/components/ErrorPage/NotFound/NotFound';
 
-function InternalServerPage() {
-  return <InternalServer />;
+export default function NotFoundPage() {
+  return <NotFound />;
 }
-
-export default InternalServerPage;

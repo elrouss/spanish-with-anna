@@ -23,6 +23,10 @@ function ErrorPage({
     [styles.infoServer]: isServerComponent,
   });
 
+  const textContent = classNames(styles.text, {
+    [styles.textServer]: isServerComponent,
+  });
+
   const description = classNames(styles.description, {
     [styles.descriptionServer]: isServerComponent,
   });
@@ -42,7 +46,7 @@ function ErrorPage({
             />
           </div>
           <div className={infoContent}>
-            <div className={styles.text}>
+            <div className={textContent}>
               <h1 className={styles.heading}>{info.heading}</h1>
               <p className={description}>{info.text}</p>
             </div>
