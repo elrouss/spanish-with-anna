@@ -7,6 +7,17 @@
   max-width: $wrapper-main-desktop;
   margin: 0 auto;
   padding: 250px 0 220px;
+
+  @media screen and (max-width: calc($media-desktop - 1px)) {
+    margin: 0 $margin-blocks-sides-formula-tablet;
+  }
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+    padding-top: 160px;
+    padding-bottom: 159px;
+  }
 }
 
 .info,
