@@ -20,6 +20,10 @@
   }
 }
 
+.wrapperServer {
+  padding-top: 218px;
+}
+
 .info,
 .text {
   display: flex;
@@ -30,6 +34,10 @@
 .info {
   row-gap: 60px;
   align-self: center;
+}
+
+.infoServer {
+  margin-top: 44px;
 }
 
 .text {
@@ -44,11 +52,16 @@
 .heading {
   font-size: $font-size-heading-accent;
   color: $color-main-text-3;
+  letter-spacing: 0.9px;
 }
 
 .description {
   white-space: pre-wrap;
   text-align: center;
+}
+
+.descriptionServer {
+  font-size: $font-size-main-text-l;
 }
 
 .button {
