@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 import Button from '@/components/UI/Button/Button';
-import imageSuccess from '../../../../../public/assets/images/feedback-success.svg';
+import imageSuccess from '../../../../../public/assets/images/feedback-success.png';
 import styles from './Success.module.scss';
 
 function Success({ onModalClose }) {

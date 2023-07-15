@@ -74,7 +74,7 @@
 }
 
 // YELLOW BUTTON
-.button-promo {
+.buttonPromo {
   @extend %button-default;
 
   @include render-font(
@@ -107,7 +107,7 @@
 }
 
 // WHITE BUTTON
-.button-additional {
+.buttonAdditional {
   @extend %button-default;
 
   @include render-font(
@@ -140,8 +140,13 @@
   }
 }
 
+.buttonAdditionalBorderColor {
+  composes: button-additional;
+  border: 1px solid $color-main-3;
+}
+
 // Close Button
-.button-close {
+.buttonClose {
   position: absolute;
   top: 31px;
   right: 31px;

@@ -1,11 +1,11 @@
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import styles from './Button.module.scss';
 
 function Button({
   children,
-  classSelector = 'button',
-  extraClassSelector,
+  buttonTypeClass = '',
   type = 'button',
   ariaLabel,
   disabled = false,
@@ -15,15 +15,17 @@ function Button({
   isLoading = false,
   isLoadingText,
 }) {
+  const buttonClass = classNames({
+    [`${styles[`button${buttonTypeClass}`]}`]: true,
+  });
+
   return btnLink ? (
-    <Link className={classSelector} href={href}>
+    <Link className={buttonClass} href={href}>
       {children}
     </Link>
   ) : (
     <button
-      className={`${styles[classSelector]}${
-        extraClassSelector ? ` ${extraClassSelector}` : ''
-      }`}
+      className={buttonClass}
       // eslint-disable-next-line react/button-has-type
       type={type}
       aria-label={ariaLabel}
@@ -43,13 +45,13 @@ function Button({
 
 Button.propTypes = {
   children: PropTypes.string,
-  classSelector: PropTypes.oneOf([
-    'button',
-    'button-promo',
-    'button-additional',
-    'button-close',
+  buttonTypeClass: PropTypes.oneOf([
+    '',
+    'Promo',
+    'Additional',
+    'AdditionalBorderColor',
+    'Close',
   ]),
-  extraClassSelector: PropTypes.string,
   type: PropTypes.oneOf(['button', 'submit', 'reset', 'menu']),
   ariaLabel: PropTypes.string,
   disabled: PropTypes.bool,
@@ -62,8 +64,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   children: undefined,
-  classSelector: 'button',
-  extraClassSelector: undefined,
+  buttonTypeClass: '',
   type: 'button',
   ariaLabel: undefined,
   disabled: false,

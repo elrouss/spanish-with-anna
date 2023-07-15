@@ -22,8 +22,8 @@ function Feedback({ isModalOpened, onModalClose }) {
         )}
       </div>
       <Button
-        classSelector="button-close"
-        ariaLabel="Закрыть модальное окно с обратной связью"
+        buttonTypeClass="Close"
+        ariaLabel="Закрыть модальное окно с формой обратной связи"
         onClick={onModalClose}
       />
     </div>

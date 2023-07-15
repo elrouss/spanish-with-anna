@@ -5,9 +5,9 @@ import * as Yup from 'yup';
 import {
   schemaEmail,
   schemaName,
-  schemaPhone,
+  schemaPhoneFeedback,
   schemaPreferredCommunication,
-  schemaFeedbackMessage,
+  schemaMessageFeedback,
   schemaPersonalDataConsent,
 } from '../../../../utils/validation/yupSchemas';
 import CustomInput from '../../CustomInput/CustomInput';
@@ -15,6 +15,8 @@ import Radio from '@/components/UI/Radio/Radio';
 import Textarea from '@/components/UI/Textarea/Textarea';
 import Checkbox from '@/components/UI/Checkbox/Checkbox';
 import Button from '@/components/UI/Button/Button';
+import { sendFeedback } from '@/utils/api/api';
+import filterFormValues from '@/utils/validation/auxiliary-functions';
 import styles from './Request.module.scss';
 
 function Request({ onSuccess }) {
@@ -24,22 +26,29 @@ function Request({ onSuccess }) {
       name: '',
       email: '',
       phone: '',
-      preferredCommunication: 'phone',
+      preferred_communication: 'email',
       message: '',
-      personalDataConsent: true,
+      is_agree: true,
     },
 
     validationSchema: Yup.object()
       .shape(schemaName(Yup))
       .shape(schemaEmail(Yup))
-      .shape(schemaPhone(Yup))
+      .shape(schemaPhoneFeedback(Yup))
       .shape(schemaPreferredCommunication(Yup))
-      .shape(schemaFeedbackMessage(Yup))
+      .shape(schemaMessageFeedback(Yup))
       .shape(schemaPersonalDataConsent(Yup)),
 
-    onSubmit: (values, { resetForm }) => {
-      onSuccess(true);
-      resetForm();
+    onSubmit: (values, { resetForm, setSubmitting }) => {
+      const filterData = filterFormValues(values);
+
+      sendFeedback(
+        filterData,
+        setIsLoading,
+        setSubmitting,
+        onSuccess,
+        resetForm
+      );
     },
   });
 
@@ -68,7 +77,7 @@ function Request({ onSuccess }) {
         <CustomInput
           name="phone"
           type="tel"
-          placeholder="Телефон *"
+          placeholder="Телефон"
           formik={formik}
         />
       </div>
@@ -77,16 +86,16 @@ function Request({ onSuccess }) {
         <Radio
           id="feedback-phone"
           label="Телефон"
-          name="preferredCommunication"
+          name="preferred_communication"
           value="phone"
-          checked
           formik={formik}
         />
         <Radio
           id="feedback-email"
           label="Email"
-          name="preferredCommunication"
+          name="preferred_communication"
           value="email"
+          checked
           formik={formik}
         />
       </div>
@@ -99,7 +108,7 @@ function Request({ onSuccess }) {
       <div className={styles.personalData}>
         <Checkbox
           id="feedback-personal-data-consent"
-          name="personalDataConsent"
+          name="is_agree"
           checked
           formik={formik}
         />
