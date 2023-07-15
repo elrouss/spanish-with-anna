@@ -11,6 +11,9 @@
 
   @media screen and (max-width: calc($media-desktop-s - 1px)) {
     max-width: $wrapper-main-tablet;
+  }
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
     margin-bottom: 160px;
     padding-top: 80px;
   }
