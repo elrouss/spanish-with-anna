@@ -5,7 +5,7 @@
   margin: 0px auto;
   padding: 150px 0 105px;
 
-  @media screen and (max-width: 1279px) {
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
     border-radius: 0;
   }
 }
@@ -29,7 +29,7 @@
 
   text-transform: uppercase;
 
-  @media screen and (max-width: 1279px) {
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
     padding-left: 60px;
   }
 }
@@ -70,7 +70,7 @@
     border: none;
   }
 
-  @media screen and (max-width: 1279px) {
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
     max-width: calc(100vw + 60px * 2);
     gap: 52px;
     border-radius: 0;
@@ -88,7 +88,7 @@
   background-color: $color-main-2;
   border-radius: 100px;
 
-  @media screen and (max-width: 1279px) {
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
     border-radius: 0;
     width: 100vw;
   }
