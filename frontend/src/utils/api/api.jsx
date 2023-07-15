@@ -1,6 +1,12 @@
 import URLS from './urls';
 
-export async function sendFeedback(data, onLoad, onSuccess, onResetForm) {
+export async function sendFeedback(
+  data,
+  onLoad,
+  onSubmit,
+  onSuccess,
+  onResetForm
+) {
   try {
     onLoad(true);
 
@@ -24,5 +30,6 @@ export async function sendFeedback(data, onLoad, onSuccess, onResetForm) {
     );
   } finally {
     onLoad(false);
+    onSubmit(false);
   }
 }

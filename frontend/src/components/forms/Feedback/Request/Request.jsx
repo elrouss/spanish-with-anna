@@ -10,13 +10,13 @@ import {
   schemaMessageFeedback,
   schemaPersonalDataConsent,
 } from '../../../../utils/validation/yupSchemas';
-import { DOUBLE_SPACE_REGEX } from '@/utils/constants';
 import CustomInput from '../../CustomInput/CustomInput';
 import Radio from '@/components/UI/Radio/Radio';
 import Textarea from '@/components/UI/Textarea/Textarea';
 import Checkbox from '@/components/UI/Checkbox/Checkbox';
 import Button from '@/components/UI/Button/Button';
 import { sendFeedback } from '@/utils/api/api';
+import filterFormValues from '@/utils/validation/auxiliary-functions';
 import styles from './Request.module.scss';
 
 function Request({ onSuccess }) {
@@ -39,20 +39,16 @@ function Request({ onSuccess }) {
       .shape(schemaMessageFeedback(Yup))
       .shape(schemaPersonalDataConsent(Yup)),
 
-    onSubmit: (values, { resetForm }) => {
-      const copyValues = { ...values };
+    onSubmit: (values, { resetForm, setSubmitting }) => {
+      const filterData = filterFormValues(values);
 
-      Object.keys(copyValues).map((key) => {
-        if (typeof copyValues[key] === 'string') {
-          copyValues[key] = copyValues[key]
-            .trim()
-            .replace(DOUBLE_SPACE_REGEX, ' ');
-        }
-
-        return copyValues;
-      });
-
-      sendFeedback(copyValues, setIsLoading, onSuccess, resetForm);
+      sendFeedback(
+        filterData,
+        setIsLoading,
+        setSubmitting,
+        onSuccess,
+        resetForm
+      );
     },
   });
 
