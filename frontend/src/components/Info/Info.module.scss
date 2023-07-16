@@ -7,6 +7,7 @@
 
   @media screen and (max-width: calc($media-desktop-s - 1px)) {
     border-radius: 0;
+    max-width: 100%;
   }
 }
 
@@ -30,7 +31,7 @@
   text-transform: uppercase;
 
   @media screen and (max-width: calc($media-desktop-s - 1px)) {
-    padding-left: 60px;
+    padding-left: $margin-blocks-sides-formula-tablet;
   }
 }
 
@@ -48,12 +49,24 @@
   overflow-x: scroll;
   overflow-y: visible;
 
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
+    max-width: calc($wrapper-main-desktop + $margin-blocks-sides-formula-tablet * 2);
+  }
+
   &:first-of-type {
     padding-left: 60px;
+
+    @media screen and (max-width: calc($media-desktop-s - 1px)) {
+      padding-left: $margin-blocks-sides-formula-tablet;
+    }
   }
 
   &:last-of-type {
     padding-right: 60px;
+
+    @media screen and (max-width: calc($media-desktop-s - 1px)) {
+      padding-right: $margin-blocks-sides-formula-tablet;
+    }
   }
 
   &::-webkit-scrollbar {
@@ -71,7 +84,7 @@
   }
 
   @media screen and (max-width: calc($media-desktop-s - 1px)) {
-    max-width: calc(100vw + 60px * 2);
+    max-width: calc(100vw + $margin-blocks-sides-formula-tablet * 2);
     gap: 52px;
     border-radius: 0;
   }
@@ -90,6 +103,6 @@
 
   @media screen and (max-width: calc($media-desktop-s - 1px)) {
     border-radius: 0;
-    width: 100vw;
+    width: 100%;
   }
 }
