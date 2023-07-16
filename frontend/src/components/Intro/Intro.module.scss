@@ -11,8 +11,8 @@
   max-width: 425px;
   padding-top: 16px;
 
-  @media screen and (max-width: 1279px) {
-    padding-left: 60px;
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
+    padding-left: $margin-blocks-sides-formula-tablet;
   }
 }
 
@@ -68,6 +68,10 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
+    margin-right: 0;
+  }
 
   @media screen and (max-width: calc($media-laptop - 1px)) {
     width: 503px;
