@@ -10,12 +10,23 @@
   display: flex;
   justify-content: space-between;
   margin-left: 140px;
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
 }
 
 .info {
   position: relative;
   width: 48%;
   padding: 130px 0;
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    width: calc(100% - $margin-blocks-sides-formula-tablet);
+    margin-left: $margin-blocks-sides-formula-tablet;
+  }
 }
 
 .title {
@@ -57,6 +68,11 @@
     box-shadow: inset 1px 4px 4px $color-additional-8;
     color: $color-additional-3;
   }
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 .translationImage {
@@ -65,6 +81,11 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    width: 100vw;
+    height: 350px;
+  }
 }
 
 .decorativeTile {
