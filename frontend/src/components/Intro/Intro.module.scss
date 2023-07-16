@@ -5,6 +5,19 @@
   justify-content: space-between;
   max-width: $wrapper-main-desktop;
   margin: 151px auto 0;
+
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
+   justify-content: start;
+   gap: 30px;
+   margin-left: 0;
+   margin-right: 0;
+   overflow: hidden;
+  }
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    justify-content: space-between;
+    overflow: visible;
+   }
 }
 
 .content {
@@ -59,19 +72,15 @@
 }
 
 .photo {
-  width: 630px;
+  width: 600px;
   height: 605px;
-  margin-right: -57px;
+  margin-right: -27px;
   overflow: hidden;
 
   background-image: url('../../../public/assets/images/intro-image-main.png');
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-
-  @media screen and (max-width: calc($media-desktop-s - 1px)) {
-    margin-right: 0;
-  }
+  background-size: cover;
+  background-position: top left;
 
   @media screen and (max-width: calc($media-laptop - 1px)) {
     width: 503px;
@@ -81,5 +90,6 @@
     margin-left: -155px;
     background-image: url('../../../public/assets/images/into-image-main-2.png');
     background-position: right;
+    background-size: contain;
   }
 }
