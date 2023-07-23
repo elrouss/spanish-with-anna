@@ -4,6 +4,11 @@
   max-width: $wrapper-main-desktop;
   margin: 0px auto;
   padding: 150px 0 105px;
+
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
+    border-radius: 0;
+    max-width: 100%;
+  }
 }
 
 .content {
@@ -24,20 +29,70 @@
   );
 
   text-transform: uppercase;
+
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
+    padding-left: $margin-blocks-sides-formula-tablet;
+  }
 }
 
 .list {
+  box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 373px);
   gap: 20px;
-  justify-content: space-between;
 
   margin-top: 100px;
+  padding-bottom: 50px;
+  width: 100vw;
+  max-width: calc($wrapper-main-desktop + 60px * 2);
+
+  overflow-x: scroll;
+  overflow-y: visible;
+
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
+    max-width: calc($wrapper-main-desktop + $margin-blocks-sides-formula-tablet * 2);
+  }
+
+  &:first-of-type {
+    padding-left: 60px;
+
+    @media screen and (max-width: calc($media-desktop-s - 1px)) {
+      padding-left: $margin-blocks-sides-formula-tablet;
+    }
+  }
+
+  &:last-of-type {
+    padding-right: 60px;
+
+    @media screen and (max-width: calc($media-desktop-s - 1px)) {
+      padding-right: $margin-blocks-sides-formula-tablet;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &:-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+  }
+
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
+    max-width: calc(100vw + $margin-blocks-sides-formula-tablet * 2);
+    gap: 52px;
+    border-radius: 0;
+  }
 }
 
 .decoration {
   position: absolute;
-  bottom: -60px;
+  bottom: 6px;
   z-index: $z-index-below-content-default;
 
   width: calc(100% + 100px);
@@ -45,4 +100,9 @@
 
   background-color: $color-main-2;
   border-radius: 100px;
+
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
+    border-radius: 0;
+    width: 100%;
+  }
 }
