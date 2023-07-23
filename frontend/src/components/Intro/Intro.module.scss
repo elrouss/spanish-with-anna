@@ -5,11 +5,28 @@
   justify-content: space-between;
   max-width: $wrapper-main-desktop;
   margin: 151px auto 0;
+
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
+   justify-content: start;
+   gap: 30px;
+   margin-left: 0;
+   margin-right: 0;
+   overflow: hidden;
+  }
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    justify-content: space-between;
+    overflow: visible;
+   }
 }
 
 .content {
   max-width: 425px;
   padding-top: 16px;
+
+  @media screen and (max-width: calc($media-desktop-s - 1px)) {
+    padding-left: $margin-blocks-sides-formula-tablet;
+  }
 }
 
 .subtitle {
@@ -26,11 +43,21 @@
 
 .headingImage {
   margin-top: 10px;
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    width: 363px;
+    margin-top: 5px;
+  }
 }
 
 .description {
   margin: 35px 0 40px;
   @include render-font();
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    max-width: 283px;
+    margin-top: 93px;
+  }
 }
 
 .button {
@@ -38,8 +65,31 @@
   width: fit-content;
   min-width: 120px;
   text-align: center;
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    min-width: 145px;
+  }
 }
 
 .photo {
-  margin-right: -54px;
+  width: 600px;
+  height: 605px;
+  margin-right: -27px;
+  overflow: hidden;
+
+  background-image: url('../../../public/assets/images/intro-image-main.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top left;
+
+  @media screen and (max-width: calc($media-laptop - 1px)) {
+    width: 503px;
+    height: 710px;
+    margin: 0;
+    margin-top: 56px;
+    margin-left: -155px;
+    background-image: url('../../../public/assets/images/into-image-main-2.png');
+    background-position: right;
+    background-size: contain;
+  }
 }
