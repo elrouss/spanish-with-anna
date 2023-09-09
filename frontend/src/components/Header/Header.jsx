@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import styles from './Header.module.scss';
 import IconLogo from '../../assets/icons/logo';
 import IconArrowDown from '../../assets/icons/arrow-down';
+import ROUTES from '../../utils/routes';
 import Button from '../Button/Button';
 import { manrope } from '@/assets/fonts/fonts';
 
@@ -94,14 +95,14 @@ export default function Header() {
           </ul>
           <ul className={styles.navigationAuth}>
             <li>
-              <Link className={styles.navigationLink} href="/">
+              <Link className={styles.navigationLink} href={ROUTES.signup}>
                 Регистрация
               </Link>
             </li>
             <li>
               <Button
                 classSelector={`button-promo ${manrope.className}`}
-                href="/"
+                href={ROUTES.signin}
               >
                 Вход
               </Button>

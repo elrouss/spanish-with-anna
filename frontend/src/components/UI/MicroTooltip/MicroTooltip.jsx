@@ -4,7 +4,11 @@ import MicroTooltipIcon from '../../../assets/icons/MicroTooltipIcon';
 
 function MicroTooltip({ text }) {
   return (
-    <button type="button" className={styles.container}>
+    <button
+      className={styles.container}
+      type="button"
+      aria-label="Посмотреть подсказку к полю ввода пароля"
+    >
       <div className={styles.subcontainer}>
         <p className={styles.text}>{text}</p>
       </div>
