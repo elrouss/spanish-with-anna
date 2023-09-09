@@ -4,6 +4,7 @@
   position: relative;
   height: 20px;
   width: 20px;
+  background-color: transparent;
   &:hover > .subcontainer {
     visibility: visible;
     opacity: 1;
