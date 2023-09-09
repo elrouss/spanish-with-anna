@@ -1,5 +1,5 @@
-import RegisterForm from '../../components/forms/Autorization/AutorizationForms/RegisterForm';
-import FormsContainer from '../../components/forms/Autorization/FormsContainer/FormsContainer';
+import RegisterForm from '../../components/forms/Authorization/AuthorizationForms/RegisterForm';
+import FormsContainer from '../../components/forms/Authorization/FormsContainer/FormsContainer';
 import signup from '../../assets/images/signup.png';
 import { signupData } from '../../utils/data/authorization';
 

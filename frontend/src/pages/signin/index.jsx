@@ -1,5 +1,5 @@
-import LoginForm from '../../components/forms/Autorization/AutorizationForms/LoginForm';
-import FormsContainer from '../../components/forms/Autorization/FormsContainer/FormsContainer';
+import LoginForm from '../../components/forms/Authorization/AuthorizationForms/LoginForm';
+import FormsContainer from '../../components/forms/Authorization/FormsContainer/FormsContainer';
 import signin from '../../assets/images/signin.png';
 import { signinData } from '../../utils/data/authorization';
 
