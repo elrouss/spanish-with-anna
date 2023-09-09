@@ -50,6 +50,7 @@ export default function FormsContainer({
             {formParaphernaliaData.explanation}
           </p>
         </div>
+        <div className={styles.bush} />
         <div className={styles.form}>
           <h1 className={styles.heading}>{formParaphernaliaData.heading}</h1>
           <p className={styles.subheading}>

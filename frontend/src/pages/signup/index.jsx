@@ -1,6 +1,6 @@
 import RegisterForm from '../../components/forms/Autorization/AutorizationForms/RegisterForm';
 import FormsContainer from '../../components/forms/Autorization/FormsContainer/FormsContainer';
-import signup from '../../assets/images/signup.svg';
+import signup from '../../assets/images/signup.png';
 import { signupData } from '../../utils/data/authorization';
 
 export default function SignUpPage() {

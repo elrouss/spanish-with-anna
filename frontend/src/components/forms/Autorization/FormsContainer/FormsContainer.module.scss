@@ -8,6 +8,7 @@
   display: flex;
   height: 100px;
   max-width: 1440px;
+  z-index: 11;
 }
 
 @media (max-width: 1440px) {
@@ -51,6 +52,7 @@
 }
 
 .main {
+  position: relative;
   display: flex;
   justify-content: flex-end;
   gap: 170px;
@@ -133,6 +135,28 @@
   padding: 0 30px;
 }
 
+.bush {
+  position: absolute;
+  bottom: 0;
+  right: 551px;
+  width: 208px;
+  height: 336px;
+  background-image: url('../../../../assets/images/reg-bush.png');
+}
+
+@media (max-width: 1440px) {
+  .bush {
+    right: calc(271px +  calculate-responsive-size(1440, 1024, 280, 100));
+  }
+}
+
+@media (max-width: 1023px) {
+  .bush {
+    z-index: $z-index-upper-content-default;
+    right: -95px;
+  }
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -141,6 +165,7 @@
   background-color: $color-main-1;
   border-bottom-left-radius: 50px;
   border-top-left-radius: 50px;
+  z-index: $z-index-upper-content-default;
 }
 
 @media (max-width: 1440px) {
@@ -154,6 +179,7 @@
     width: 100%;
     padding: 100px 0 50px 0;
     border-radius: 0;
+    z-index: 0;
   }
 }
 
