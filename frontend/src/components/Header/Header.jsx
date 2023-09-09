@@ -36,7 +36,7 @@ export default function Header() {
       <div className={styles.container}>
         <Link
           className={styles.logo}
-          href="/"
+          href={ROUTES.home}
           aria-label="Логотип, на домашнюю страницу"
         >
           <IconLogo />

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Image from 'next/image';
+import ROUTES from '../../../../utils/routes';
 import styles from './FormsContainer.module.scss';
 import IconLogo from '../../../../assets/icons/logo';
 
@@ -15,7 +16,7 @@ export default function FormsContainer({
         <div className={styles.headerContainer}>
           <Link
             className={styles.logo}
-            href="/"
+            href={ROUTES.home}
             aria-label="Логотип, на домашнюю страницу"
           >
             <IconLogo />

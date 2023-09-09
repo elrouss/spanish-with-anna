@@ -31,7 +31,7 @@
 
 @media (max-width: 1440px) {
   .headerContainer {
-    padding: 0 calc((100vw - 768px)/(1440 - 768) * (134 - 60) + 60px) 0 calc((100vw - 768px)/(1440 - 768) * (140 - 60) + 60px);
+    padding: 0 calculate-responsive-size(1440, 768, 134, 60) 0 calculate-responsive-size(1440, 768, 140, 60);
   }
 }
 
@@ -57,12 +57,12 @@
   min-height: 100vh;
   margin-right: calc(50vw - 720px);
   padding-left: calc(50vw - 720px);
-  background-color: #F0F9FB;
+  background-color: $color-main-2;
 }
 
 @media (max-width: 1440px) {
   .main {
-    gap: calc((100vw - 1024px)/(1440 - 1024) * (170 - 70) + 70px);
+    gap: calculate-responsive-size(1440, 1024, 170, 70);
     margin: 0;
   }
 }
@@ -145,7 +145,7 @@
 
 @media (max-width: 1440px) {
   .form {
-    padding: 100px calc((100vw - 1024px)/(1440 - 1024) * (138 - 50) + 50px) 50px calc((100vw - 1024px)/(1440 - 1024) * (142 - 50) + 50px);
+    padding: 100px calculate-responsive-size(1440, 1024, 138, 50) 50px calculate-responsive-size(1440, 1024, 142, 50);
   }
 }
 
