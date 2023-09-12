@@ -1,0 +1,38 @@
+version: '3.3'
+services:
+  db:
+    image: postgres:13.0-alpine
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data/
+    env_file:
+      - ../backend/spanish_with_anna/.env 
+
+  backend:
+    build:
+      context: ../backend/spanish_with_anna
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - static_value:/app/static/
+      - media_value:/app/media/
+    depends_on:
+      - db
+    env_file:
+      - ../backend/spanish_with_anna/.env 
+
+  nginx:
+    image: nginx:1.19.3
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - static_value:/var/html/static/
+      - media_value:/var/html/media/
+    depends_on:
+      - backend
+
+volumes:
+  postgresql_data:
+  static_value:
+  media_value:
+  
