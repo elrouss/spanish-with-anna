@@ -48,6 +48,8 @@ services:
       context: ../backend/spanish_with_anna
       dockerfile: Dockerfile
     restart: always
+    ports:
+      - 8000:8000
     volumes:
       - static_value:/app/static/
       - media_value:/app/media/
@@ -58,17 +60,34 @@ services:
     env_file:
       - ../backend/spanish_with_anna/.env 
 
+  frontend:
+    container_name: frontend
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    volumes: 
+      - ../frontend/:/app/result_build/
+    depends_on:
+      - backend
+    networks:
+      - postgres
+
   nginx:
-    container_name: backend
+    container_name: nginx
     image: nginx:1.19.3
     ports:
       - "80:80"
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ../frontend/build:/usr/share/nginx/html/
+      - ../docs/:/usr/share/nginx/html/api/docs/
       - static_value:/var/html/static/
       - media_value:/var/html/media/
+      - ../frontend/:/app/result_build/
     networks:
       - postgres
     depends_on:
       - backend
-  
