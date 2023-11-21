@@ -10,8 +10,8 @@ function ServicesTranslation() {
         <div className={styles.info}>
           <Image
             className={styles.translationIcon}
-            width={62}
-            height={53}
+            width={window.matchMedia('(min-width: 768px)').matches ? 62 : 50}
+            height={window.matchMedia('(min-width: 768px)').matches ? 53 : 42}
             src={translationIcon}
             alt="Перевести"
           />
