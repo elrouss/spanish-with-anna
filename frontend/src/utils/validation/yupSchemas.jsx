@@ -42,3 +42,7 @@ export const schemaMessageFeedback = (Yup) => ({
 export const schemaPersonalDataConsent = (Yup) => ({
   is_agree: Yup.bool().required().oneOf([true]),
 });
+
+export const schemaRememberMe = (Yup) => ({
+  personalDataConsent: Yup.bool(),
+});

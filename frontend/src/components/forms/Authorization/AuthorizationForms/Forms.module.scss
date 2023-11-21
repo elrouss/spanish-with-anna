@@ -1,0 +1,33 @@
+@import '../../../../styles/index.scss';
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 380px;
+  @include render-font(
+    $size: $font-size-main-text,
+    $line-height: 1.42,
+  );
+}
+
+.inputQueries {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+.forgottenPasswordButton {
+  background-color: transparent;
+  color: $color-main-3;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    color: $color-secondary-2;
+  }
+  &:active {
+    color: $color-complementary-7;
+  }
+}
+
