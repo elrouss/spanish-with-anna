@@ -8,6 +8,8 @@
   @media screen and (max-width: calc($media-desktop-s - 1px)) {
     border-radius: 0;
     max-width: 100%;
+    padding-bottom: 0;
+    padding-top: 75px;
   }
 }
 
@@ -33,6 +35,12 @@
   @media screen and (max-width: calc($media-desktop-s - 1px)) {
     padding-left: $margin-blocks-sides-formula-tablet;
   }
+
+  @media screen and (max-width: calc($media-tablet - 1px)) {
+    width: 300px;
+    padding-left: 18px;
+    font-size: $font-size-heading-s;
+  }
 }
 
 .list {
@@ -53,11 +61,20 @@
     max-width: calc($wrapper-main-desktop + $margin-blocks-sides-formula-tablet * 2);
   }
 
+  @media screen and (max-width: calc($media-tablet - 1px)) {
+    grid-template-columns: repeat(3, 276px);
+    margin-top: 70px;
+  }
+
   &:first-of-type {
     padding-left: 60px;
 
     @media screen and (max-width: calc($media-desktop-s - 1px)) {
       padding-left: $margin-blocks-sides-formula-tablet;
+    }
+
+    @media screen and (max-width: calc($media-tablet - 1px)) {
+      padding-left: 18px;
     }
   }
 
@@ -66,6 +83,10 @@
 
     @media screen and (max-width: calc($media-desktop-s - 1px)) {
       padding-right: $margin-blocks-sides-formula-tablet;
+    }
+
+    @media screen and (max-width: calc($media-tablet - 1px)) {
+      padding-right: 18px;
     }
   }
 
@@ -88,6 +109,10 @@
     gap: 52px;
     border-radius: 0;
   }
+
+  @media screen and (max-width: calc($media-tablet - 1px)) {
+    gap: 24px;
+  }
 }
 
 .decoration {
@@ -104,5 +129,10 @@
   @media screen and (max-width: calc($media-desktop-s - 1px)) {
     border-radius: 0;
     width: 100%;
+  }
+
+  @media screen and (max-width: calc($media-tablet - 1px)) {
+    bottom: 34px;
+    height: 176px;
   }
 }

@@ -17,7 +17,7 @@ function Info() {
   return (
     <section className={styles.info}>
       <div className={styles.wrapper}>
-        <h2 className={styles.title}>Информация по онлайн-курсам</h2>
+        <h2 className={styles.title}>Информация по&nbsp;онлайн-курсам</h2>
         <div className={styles.content}>
           <ul className={styles.list}>{infoCards}</ul>
           <div className={styles.decoration} />
