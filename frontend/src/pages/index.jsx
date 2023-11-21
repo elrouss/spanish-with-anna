@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useState } from 'react';
 
 import Header from '../components/Header/Header';
 import Intro from '../components/Intro/Intro';
@@ -12,7 +13,20 @@ import FAQ from '@/components/FAQ/FAQ';
 import ServicesTranslation from '@/components/ServicesTranslation/ServicesTranslation';
 import Footer from '@/components/Footer/Footer';
 
+import ModalOverlay from '@/components/ModalOverlay/ModalOverlay';
+import Feedback from '@/components/forms/Feedback/Feedback';
+
 export default function Home() {
+  const [isFeedbackOpened, setIsFeedbackOpened] = useState(false);
+
+  const handleFeedbackOpen = () => {
+    setIsFeedbackOpened(true);
+  };
+
+  const handleFeedbackClose = () => {
+    setIsFeedbackOpened(false);
+  };
+
   return (
     <>
       <Head>
@@ -31,10 +45,21 @@ export default function Home() {
         <DecorativeBackground />
         <Signup />
         <Reviews />
-        <FAQ />
+        <FAQ onModalOpen={handleFeedbackOpen} />
         <ServicesTranslation />
       </main>
-      <Footer />
+      <Footer onModalOpen={handleFeedbackOpen} />
+
+      <ModalOverlay
+        id="feedback"
+        isModalOpened={isFeedbackOpened}
+        onModalClose={handleFeedbackClose}
+      >
+        <Feedback
+          isModalOpened={isFeedbackOpened}
+          onModalClose={handleFeedbackClose}
+        />
+      </ModalOverlay>
     </>
   );
 }

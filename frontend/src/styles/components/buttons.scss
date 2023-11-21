@@ -11,16 +11,25 @@
   border-radius: 50px;
   background-color: $color-main-3;
 
-  &:hover {
+  cursor: pointer;
+
+  &:hover:enabled {
     background-color: $color-additional-5;
     @include render-button-box-shadow();
   }
 
-  &:active {
+  &:active:enabled {
     color: $color-complementary-8;
 
     background-color: $color-main-3;
     @include render-button-box-shadow($color: $color-complementary-7);
+  }
+
+  &:disabled {
+    color: $color-complementary-3;
+    background-color: $color-complementary-2;
+
+    cursor: default;
   }
 
   &_size_xl {
@@ -42,7 +51,7 @@
 
   background-color: $color-accent-promo;
 
-  &:hover {
+  &:hover:enabled {
     background-color: $color-accent-promo-additional-4;
     @include render-button-box-shadow(
       $height: 8px,
@@ -51,7 +60,7 @@
     );
   }
 
-  &:active {
+  &:active:enabled {
     color: $color-additional-3;
 
     background-color: $color-accent-promo;
@@ -76,7 +85,7 @@
 
   background-color: $color-main-1;
 
-  &:hover {
+  &:hover:enabled {
     background-color: $color-additional-1;
     @include render-button-box-shadow(
       $height: 7px,
@@ -85,7 +94,7 @@
     );
   }
 
-  &:active {
+  &:active:enabled {
     color: $color-additional-3;
 
     background-color: $color-additional-2;

@@ -1,6 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document';
-
-import { manrope } from '@/assets/fonts/fonts';
+import { manrope, raleway } from '@/assets/fonts/fonts';
 
 export default function Document() {
   return (
@@ -8,7 +7,10 @@ export default function Document() {
       <Head />
       <body>
         <Main />
-        <div className={manrope.variable} id="modals" />
+        <div
+          className={`${manrope.variable} ${raleway.variable}`}
+          id="modals"
+        />
         <NextScript />
       </body>
     </Html>

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 
 import FooterLink from './FooterLink/FooterLink';
@@ -8,7 +9,7 @@ import IconTelegram from '@/assets/icons/telegram';
 
 import styles from './Footer.module.scss';
 
-function Footer() {
+function Footer({ onModalOpen }) {
   return (
     <footer className={styles.footer}>
       <div className={styles.wrapper}>
@@ -27,7 +28,13 @@ function Footer() {
               <FooterLink href="/#">Услуги перевода</FooterLink>
             </ul>
             <ul className={styles.listLinksCenter}>
-              <FooterLink href="/#">Задать вопрос</FooterLink>
+              <button
+                className={styles.link}
+                type="button"
+                onClick={onModalOpen}
+              >
+                Задать вопрос
+              </button>
               <FooterLink href="/#">Права собственности</FooterLink>
               <FooterLink href="/#">Политика конфиденциальности</FooterLink>
             </ul>
@@ -72,5 +79,9 @@ function Footer() {
     </footer>
   );
 }
+
+Footer.propTypes = {
+  onModalOpen: PropTypes.func.isRequired,
+};
 
 export default Footer;

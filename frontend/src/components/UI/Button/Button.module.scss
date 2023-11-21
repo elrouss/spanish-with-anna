@@ -1,0 +1,174 @@
+@import '../../../styles/index.scss';
+
+@keyframes dotTyping {
+  0% {
+    box-shadow: 9994px 0 0 0 $color-main-1, 9999px 0 0 0 $color-main-1,
+      10004px 0 0 0 $color-main-1;
+  }
+  16.667% {
+    box-shadow: 9994px -3px 0 0 $color-main-1, 9999px 0 0 0 $color-main-1,
+      10004px 0 0 0 $color-main-1;
+  }
+  33.333% {
+    box-shadow: 9994px 0 0 0 $color-main-1, 9999px 0 0 0 $color-main-1,
+      10004px 0 0 0 $color-main-1;
+  }
+  50% {
+    box-shadow: 9994px 0 0 0 $color-main-1, 9999px -3px 0 0 $color-main-1,
+      10004px 0 0 0 $color-main-1;
+  }
+  66.667% {
+    box-shadow: 9994px 0 0 0 $color-main-1, 9999px 0 0 0 $color-main-1,
+      10004px 0 0 0 $color-main-1;
+  }
+  83.333% {
+    box-shadow: 9994px 0 0 0 $color-main-1, 9999px 0 0 0 $color-main-1,
+      10004px -3px 0 0 $color-main-1;
+  }
+  100% {
+    box-shadow: 9994px 0 0 0 $color-main-1, 9999px 0 0 0 $color-main-1,
+      10004px 0 0 0 $color-main-1;
+  }
+}
+
+// DEFAULT BUTTON WITH DARK GREEN COLOR
+.button {
+  @extend %button-default;
+
+  @include render-font(
+    $size: $font-size-main-text-l,
+    $line-height: $font-line-height-main-text-l,
+    $color: $color-main-1
+  );
+
+  border-radius: 50px;
+  background-color: $color-main-3;
+
+  cursor: pointer;
+
+  &:hover:enabled {
+    background-color: $color-additional-5;
+    @include render-button-box-shadow();
+  }
+
+  &:active:enabled {
+    color: $color-complementary-8;
+
+    background-color: $color-main-3;
+    @include render-button-box-shadow($color: $color-complementary-7);
+  }
+
+  &:disabled {
+    color: $color-complementary-3;
+    background-color: $color-complementary-2;
+
+    cursor: default;
+  }
+
+  &_size_xl {
+    $size: 122.5px;
+
+    padding-right: $size;
+    padding-left: $size;
+  }
+}
+
+// YELLOW BUTTON
+.buttonPromo {
+  @extend %button-default;
+
+  @include render-font(
+    $size: $font-size-main-text-l,
+    $line-height: $font-line-height-main-text-l
+  );
+
+  background-color: $color-accent-promo;
+
+  &:hover:enabled {
+    background-color: $color-accent-promo-additional-4;
+    @include render-button-box-shadow(
+      $height: 8px,
+      $radius: 8px,
+      $color: $color-accent-promo-additional-2
+    );
+  }
+
+  &:active:enabled {
+    color: $color-additional-3;
+
+    background-color: $color-accent-promo;
+    @include render-button-box-shadow(
+      $width: 1px,
+      $height: 5px,
+      $radius: 5px,
+      $color: rgba(0, 0, 0, 0.16)
+    );
+  }
+}
+
+// WHITE BUTTON
+.buttonAdditional {
+  @extend %button-default;
+
+  @include render-font(
+    $size: $font-size-main-text-l,
+    $line-height: $font-line-height-main-text-l,
+    $color: $color-main-text-2
+  );
+
+  background-color: $color-main-1;
+
+  &:hover:enabled {
+    background-color: $color-additional-1;
+    @include render-button-box-shadow(
+      $height: 7px,
+      $radius: 4px,
+      $color: $color-main-1
+    );
+  }
+
+  &:active:enabled {
+    color: $color-additional-3;
+
+    background-color: $color-additional-2;
+    @include render-button-box-shadow(
+      $width: 1px,
+      $height: 4px,
+      $radius: 4px,
+      $color: $color-additional-7
+    );
+  }
+}
+
+.buttonAdditionalBorderColor {
+  composes: button-additional;
+  border: 1px solid $color-main-3;
+}
+
+// Close Button
+.buttonClose {
+  position: absolute;
+  top: 31px;
+  right: 31px;
+
+  background: url(../../../../public/assets/icons/close-icon.svg) center
+    no-repeat;
+  width: 14px;
+  height: 14px;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+.dotTyping {
+  position: relative;
+  left: -9992px;
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: $color-main-1;
+  animation: dotTyping 1.2s infinite linear;
+}

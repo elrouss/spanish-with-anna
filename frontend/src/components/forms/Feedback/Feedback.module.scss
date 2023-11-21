@@ -1,0 +1,35 @@
+@import '../../../styles/index.scss';
+
+.modal {
+  position: relative;
+  width: 570px;
+  min-height: 760px;
+  background-color: $color-main-1;
+  border-radius: 50px;
+}
+
+.wrapper {
+  padding: 50px;
+
+  @include render-font(
+    $size: $font-size-main-text,
+    $line-height: $font-line-height-main-text,
+    $color: $color-main-text-1
+  );
+
+  h3 {
+    @include render-font(
+      $family: var(--font-raleway),
+      $weight: 600,
+      $size: $font-size-heading,
+      $line-height: $font-line-height-heading,
+      $color: $color-main-text-2
+    );
+    text-transform: uppercase;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 14px;
+  }
+}

@@ -1,0 +1,27 @@
+@import '../../../styles/index.scss';
+
+.textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+  padding: 18px;
+  box-sizing: border-box;
+  border: 1px solid $color-complementary-2;
+  border-radius: 30px;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::placeholder {
+    @include render-font($color: $color-complementary-3);
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid $color-main-text-1;
+  }
+}
